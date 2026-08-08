@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study - Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styles for Study page */
+        .study-header {
+            padding-top: 150px; /* Space for fixed header */
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-left: 9%;
+            padding-right: 9%;
+        }
+        
+        .study-header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        .category-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            padding: 0 9%;
+            margin-bottom: 8rem;
+        }
+
+        .category-card {
+            padding: 3rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            transition: 0.4s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--main-color);
+            z-index: -1;
+            transition: 0.4s ease;
+        }
+
+        .category-card:hover::before {
+            height: 100%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px var(--glass-shadow);
+        }
+        
+        .category-card i {
+            font-size: 4rem;
+            color: var(--main-color);
+            margin-bottom: 1.5rem;
+            transition: 0.4s ease;
+        }
+        
+        .category-card:hover i,
+        .category-card:hover h3,
+        .category-card:hover p {
+            color: #fff;
+        }
+
+        .category-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            transition: 0.4s ease;
+        }
+
+        .category-card p {
+            font-size: 1rem;
+            opacity: 0.8;
+            transition: 0.4s ease;
+        }
+
+        @media (max-width: 768px) {
+            .study-header { padding-top: 120px; }
+            .category-container { padding: 0 5%; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo">Dev<span>.</span></a>
+        
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="study.html" class="active">Study</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                <i class='bx bx-moon'></i>
+            </button>
+            <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
+        </div>
+    </header>
+
+    <main>
+        <div class="study-header fade-in">
+            <h2 class="heading">My <span>Study</span> Archive</h2>
+            <p>꾸준히 학습하고 기록한 내용들을 카테고리별로 모아둔 공간입니다.</p>
+        </div>
+
+        <div class="category-container">
+            <!-- Category 1 -->
+            <div class="category-card glass-panel fade-in">
+                <i class='bx bxl-javascript'></i>
+                <h3>JavaScript</h3>
+                <p>ES6+ 문법, 비동기 처리, 렌더링 최적화 및 브라우저 동작 원리</p>
+            </div>
+            
+            <!-- Category 2 -->
+            <div class="category-card glass-panel fade-in" style="animation-delay: 0.1s;">
+                <i class='bx bxl-react'></i>
+                <h3>React & Next.js</h3>
+                <p>상태 관리, 훅(Hooks), SSR/SSG 렌더링, 컴포넌트 설계</p>
+            </div>
+
+            <!-- Category 3 -->
+            <div class="category-card glass-panel fade-in" style="animation-delay: 0.2s;">
+                <i class='bx bx-data'></i>
+                <h3>Data Structures</h3>
+                <p>배열, 연결 리스트, 스택, 큐, 트리, 그래프 등 핵심 자료구조</p>
+            </div>
+
+            <!-- Category 4 -->
+            <div class="category-card glass-panel fade-in" style="animation-delay: 0.3s;">
+                <i class='bx bx-code-block'></i>
+                <h3>Algorithms</h3>
+                <p>정렬, 탐색, 동적 계획법, 그리디, 코딩 테스트 문제 풀이</p>
+            </div>
+            
+            <!-- Category 5 -->
+            <div class="category-card glass-panel fade-in" style="animation-delay: 0.4s;">
+                <i class='bx bxl-nodejs'></i>
+                <h3>Backend</h3>
+                <p>Node.js, Express 프레임워크, REST API 설계 및 데이터베이스 연동</p>
+            </div>
+
+            <!-- Category 6 -->
+            <div class="category-card glass-panel fade-in" style="animation-delay: 0.5s;">
+                <i class='bx bx-book-bookmark'></i>
+                <h3>CS Fundamentals</h3>
+                <p>운영체제 핵심 개념, 네트워크 계층, 데이터베이스 개론</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>&copy; 2024 Wonho. All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

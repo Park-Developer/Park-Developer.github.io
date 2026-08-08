@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squash ane merge</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3><em>사용하는 이유</em></h3>
+<hr />
+<p>(1) 3-way merge 된 것들은 매우 복잡해보임 
+(2) main 브랜치 git log 출력해보면 3-way merge된 브랜치들의 commit 내역도 다 같이 출력되어서 더러워짐 </p>
+<p>그거 쓰면 새로운 브랜치에 있던 commit 들을 연결해주는게 아니라 똑 떼와서 main 브랜치에 붙여주기 때문에</p>
+<p>1번과 2번걱정을 안해도 됩니다. </p>
+<p>squash and merge 이거 하면 어떻게 되냐면</p>
+<p>3-way merge처럼 선으로 이어주지 않고</p>
+<p>새 브랜치에 있던 코드변경사항들이 <strong>main 브랜치로</strong> <strong>텔레포트</strong>합니다.</p>
+<p><img src="../../Archieve/Attachment/Pasted%20image%2020260726003225.png" alt="Pasted image 20260726003225.png"></p>
+<p>그럼 이제 main 브랜치의 git log 출력해볼 때</p>
+<p>merge 완료된 브랜치의 commit 내역 같은 것들은 출력되지 않습니다. </p>
+<p>그게 왜 좋은거냐고요? </p>
+<p>이런건 님들이 직접 해봐야 체감이 되는 것이기 때문에 3-way merge 많이 해보든가 하십시오.</p>
+</body>
+</html>
