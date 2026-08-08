@@ -9,9 +9,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 24px 32px;
+            box-sizing: border-box;
         }
         pre {
             background: #f4f4f4;
@@ -56,6 +55,20 @@
             color: #666;
         }
     </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
     <h3><em>PMIC Overview</em></h3>
@@ -75,7 +88,7 @@
 - 열 관리
 - 장애 보호 기능
 - 전원 및 통신 인터페이스 조합을 통해 SoC와 연결
-<img src="../../HW 개발/Archieve/Attachment/Pasted image 20260714001112.png" alt="Pasted image 20260714001112.png"></p>
+<img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260714001112.png" alt="Pasted image 20260714001112.png"></p>
 <h3><em>Requirements</em></h3>
 <hr />
 <p>SoC에 전원을 공급하기 위해 PMIC를 활용할 때는 신뢰할 수 있고 효율적인 작동을 보장하기 위해 몇 가지 핵심 파라미터들을 면밀히 검토해야 한다</p>

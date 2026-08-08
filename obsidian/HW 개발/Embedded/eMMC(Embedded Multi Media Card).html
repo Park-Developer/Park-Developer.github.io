@@ -9,9 +9,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 24px 32px;
+            box-sizing: border-box;
         }
         pre {
             background: #f4f4f4;
@@ -56,18 +55,32 @@
             color: #666;
         }
     </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
     <h3><em>Overview</em></h3>
 <hr />
 <p>: NAND Flash 메모리와 Flash 메모리 컨트롤러가 결합되어 있는 메모리 카드이며, 단순 일체형 보드와는 다르다.</p>
-<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260708000333.png" alt="Pasted image 20260708000333.png"></p>
+<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260708000333.png" alt="Pasted image 20260708000333.png"></p>
 <h3><em>Concept</em></h3>
 <hr />
 <p>: NAND Flash 메모리는 여러 구역에서 지우고 쓸 수 있고 EEPROM에 비해 저렴하다. NAND Flash 메모리는 단지 저장 장치이므로 호스트 측 컨트롤러에서만 데이터 전송을 조작할 수 있다.
 =&gt; NAND Flash 메모리만 가지고는 write 할 수 없으므로 컨트롤러를 통해 write를 수행할 수 있게 만든 보드가 eMMC이다.
 =&gt; eMMC는 read와 write가 가능한 메모리이다.
 =&gt; NAND 플래시를 호스트에 직접 연결하는 것과 비교할 때 호스트측 소프트웨어의 복잡성을 줄일 수 있다.</p>
-<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260708000634.png" alt="Pasted image 20260708000634.png"></p>
+<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260708000634.png" alt="Pasted image 20260708000634.png"></p>
 </body>
 </html>

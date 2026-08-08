@@ -9,9 +9,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 24px 32px;
+            box-sizing: border-box;
         }
         pre {
             background: #f4f4f4;
@@ -56,16 +55,30 @@
             color: #666;
         }
     </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260708000936.png" alt="Pasted image 20260708000936.png"></p>
+<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260708000936.png" alt="Pasted image 20260708000936.png"></p>
 <ul>
 <li>
 <p>Microporcessor(MPU) : Qualcomm QRB2210</p>
 <ul>
-<li>쿼드코어 <a href="Cortex-A.html">Arm Cortex-A53</a> @2.0 GHz</li>
+<li>쿼드코어 <a href="../../HW%20%EA%B0%9C%EB%B0%9C/arm/Cortex-A.html">Arm Cortex-A53</a> @2.0 GHz</li>
 <li>Adreno 702 GPU (845MHz) - 3D 그래픽 가속</li>
 <li>
 <ul>
@@ -74,7 +87,7 @@
 </li>
 <li>
 <ul>
-<li><a href="OS/Debian.md.html">Debian</a> Linux OS 실행, 엣지 컴퓨팅·임베디드 비전에 최적</li>
+<li><a href="../../HW%20%EA%B0%9C%EB%B0%9C/OS/Debian.html">Debian</a> Linux OS 실행, 엣지 컴퓨팅·임베디드 비전에 최적</li>
 </ul>
 </li>
 </ul>
@@ -84,7 +97,7 @@
 <ul>
 <li>Arm Cortex-M33 @최대 160MHz</li>
 <li>2MB Flash, 786KB SRAM</li>
-<li><a href="OS/Zephyr.md.html">Zephyr OS </a>기반 실시간 저전력 임베디드 애플리케이션용</li>
+<li><a href="../../HW%20%EA%B0%9C%EB%B0%9C/OS/Zephyr.html">Zephyr OS </a>기반 실시간 저전력 임베디드 애플리케이션용</li>
 </ul>
 </li>
 <li>
@@ -98,7 +111,7 @@
 <li>
 <p>메모리</p>
 <ul>
-<li><a href="Embedded/eMMC%28Embedded%20Multi%20Media%20Card%29.md.html">eMMC</a> 16GB 또는 32GB</li>
+<li><a href="../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/eMMC%28Embedded%20Multi%20Media%20Card%29.html">eMMC</a> 16GB 또는 32GB</li>
 <li>LPDDR4 2GB 또는 4GB</li>
 </ul>
 </li>

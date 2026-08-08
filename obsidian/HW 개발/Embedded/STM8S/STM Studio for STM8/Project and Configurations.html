@@ -9,9 +9,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 24px 32px;
+            box-sizing: border-box;
         }
         pre {
             background: #f4f4f4;
@@ -56,6 +55,20 @@
             color: #666;
         }
     </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
     <h3><em>Overview</em></h3>
@@ -73,7 +86,7 @@ reconfigure the entire environment each time STM-STUDIO is launched.</p>
 settings</p>
 <h3><em>Configuration in the File menu</em></h3>
 <hr />
-<p><img src="../../../../HW 개발/Archieve/Attachment/Pasted image 20260707002215.png" alt="Pasted image 20260707002215.png">
+<p><img src="../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260707002215.png" alt="Pasted image 20260707002215.png">
 - <strong>Open</strong> : open a project(<code>tsp</code>) or configuration(<code>tsc</code>) file.
 - <strong>New Project</strong> : close the current project and open a default project with an empty configuration.
 - <strong>Save Project As</strong> : save the current projet under a new name(new <code>tsp</code> file).

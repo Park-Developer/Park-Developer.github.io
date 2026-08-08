@@ -23,29 +23,48 @@
             display: flex;
             height: 100vh;
             padding: 100px 3% 20px 3%; /* Space for fixed header */
-            gap: 20px;
+        }
+
+        .resizer {
+            width: 8px;
+            margin: 0 10px;
+            cursor: col-resize;
+            background-color: transparent;
+            transition: background-color 0.3s;
+            border-radius: 4px;
+            z-index: 10;
+        }
+
+        .resizer:hover, .resizer.resizing {
+            background-color: var(--main-color);
         }
 
         .sidebar {
             flex: 0 0 350px;
-            overflow-y: auto;
             padding: 20px;
             display: flex;
             flex-direction: column;
             border-radius: 20px;
         }
         
-        /* Scrollbar styles for sidebar */
-        .sidebar::-webkit-scrollbar {
+        /* Tree Container scroll settings */
+        .tree-container {
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        /* Scrollbar styles for tree container */
+        .tree-container::-webkit-scrollbar {
             width: 8px;
         }
-        .sidebar::-webkit-scrollbar-thumb {
+        .tree-container::-webkit-scrollbar-thumb {
             background: var(--main-color);
             border-radius: 4px;
         }
 
         .content-viewer {
             flex: 1;
+            min-height: 0;
             border-radius: 20px;
             overflow: hidden;
             display: flex;
@@ -55,6 +74,7 @@
         #content-iframe {
             width: 100%;
             height: 100%;
+            flex: 1;
             border: none;
             background: #fff;
             transition: 0.3s ease;
@@ -64,6 +84,45 @@
             /* If the html pages themselves don't support dark mode natively, a white background iframe might be jarring, 
                but we can set a fallback background */
             background: #fff; /* kept white to ensure markdown HTML renders legibly if it doesn't have dark mode styles */
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            margin-bottom: 15px;
+            flex-shrink: 0;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 1.2rem;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 12px 15px 12px 40px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.5);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: 0.3s ease;
+        }
+        
+        [data-theme="dark"] .search-container input {
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .search-container input:focus {
+            border-color: var(--main-color);
+            box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
         }
 
         /* Tree Styles */
@@ -160,11 +219,18 @@
     </header>
 
     <main class="study-layout fade-in">
-        <aside class="sidebar glass-panel">
+        <aside class="sidebar glass-panel" id="sidebar">
+            <div class="search-container">
+                <i class='bx bx-search'></i>
+                <input type="text" id="tree-search" placeholder="Search files...">
+            </div>
+            
             <div class="tree-container" id="tree-container">
                 <!-- Tree items will be dynamically generated here -->
             </div>
         </aside>
+        
+        <div class="resizer" id="resizer"></div>
         
         <section class="content-viewer glass-panel">
             <iframe id="content-iframe" src="about:blank" title="Study Content"></iframe>
@@ -186,6 +252,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const treeContainer = document.getElementById('tree-container');
             const iframe = document.getElementById('content-iframe');
+            const searchInput = document.getElementById('tree-search');
             let activeElement = null;
 
             // Fetch the generated tree.json
@@ -248,8 +315,8 @@
                             div.classList.add('active');
                             activeElement = div;
                             
-                            // Load html file in iframe
-                            iframe.src = 'obsidian/' + item.path;
+                            // Load html file in iframe with cache-busting to bypass browser cache
+                            iframe.src = 'obsidian/' + item.path + '?v=' + new Date().getTime();
                         });
                     }
                     
@@ -257,6 +324,89 @@
                 });
                 return ul;
             }
+
+            // Search logic
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const rootUl = treeContainer.querySelector('.tree-root');
+                if (rootUl) {
+                    filterTree(rootUl, term);
+                }
+            });
+
+            function filterTree(ul, term) {
+                let hasVisibleChild = false;
+                const lis = ul.children;
+                for (let i = 0; i < lis.length; i++) {
+                    const li = lis[i];
+                    const div = li.querySelector('.tree-item');
+                    const text = div.querySelector('span').textContent.toLowerCase();
+                    const icon = div.querySelector('i');
+                    const isDir = icon.classList.contains('bx-folder') || icon.classList.contains('bx-folder-open');
+                    
+                    let match = text.includes(term);
+                    
+                    if (isDir) {
+                        const childUl = li.querySelector('.tree-ul');
+                        const childMatch = filterTree(childUl, term);
+                        
+                        if (childMatch || match) {
+                            li.style.display = '';
+                            hasVisibleChild = true;
+                            
+                            // Auto-expand if searching and not empty
+                            if (term !== '' && childUl.style.display === 'none') {
+                                childUl.style.display = 'block';
+                                icon.className = 'bx bx-folder-open';
+                            } else if (term === '') {
+                                // Collapse when search is cleared
+                                childUl.style.display = 'none';
+                                icon.className = 'bx bx-folder';
+                            }
+                        } else {
+                            li.style.display = 'none';
+                        }
+                    } else {
+                        if (match) {
+                            li.style.display = '';
+                            hasVisibleChild = true;
+                        } else {
+                            li.style.display = 'none';
+                        }
+                    }
+                }
+                return hasVisibleChild;
+            }
+
+            // Resizer Logic
+            const sidebar = document.getElementById('sidebar');
+            const resizer = document.getElementById('resizer');
+            let isResizing = false;
+
+            resizer.addEventListener('mousedown', (e) => {
+                isResizing = true;
+                document.body.style.cursor = 'col-resize';
+                resizer.classList.add('resizing');
+                iframe.style.pointerEvents = 'none'; // Prevent iframe from capturing mouse
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!isResizing) return;
+                // Calculate width based on mouse position
+                const newWidth = e.clientX - sidebar.getBoundingClientRect().left;
+                if (newWidth > 200 && newWidth < document.body.offsetWidth - 300) {
+                    sidebar.style.flex = `0 0 ${newWidth}px`;
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isResizing) {
+                    isResizing = false;
+                    document.body.style.cursor = '';
+                    resizer.classList.remove('resizing');
+                    iframe.style.pointerEvents = 'auto';
+                }
+            });
         });
     </script>
 </body>

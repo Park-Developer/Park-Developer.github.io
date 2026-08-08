@@ -9,9 +9,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 24px 32px;
+            box-sizing: border-box;
         }
         pre {
             background: #f4f4f4;
@@ -56,11 +55,25 @@
             color: #666;
         }
     </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
     <h3><em>Git Push 조건</em></h3>
 <hr />
 <p>: 원격 저장소 최신 내용이 로컬 저장소에 있을 때에만 Git Push가 가능함.</p>
-<p><strong>=&gt; 기본적으로 ~={red}pull 먼저=~하고 push함</strong></p>
+<p><strong>=&gt; 기본적으로 <span style="color: red;">pull 먼저</span>하고 push함</strong></p>
 </body>
 </html>

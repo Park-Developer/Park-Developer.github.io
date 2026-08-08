@@ -9,9 +9,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 24px 32px;
+            box-sizing: border-box;
         }
         pre {
             background: #f4f4f4;
@@ -56,6 +55,20 @@
             color: #666;
         }
     </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
     <h3>*CLAUDE.md 배치</h3>
@@ -65,7 +78,7 @@
 <li>작업 디렉토리 위의 디렉토리 계층 구조에 있는 CLAUDE.md 및 CLAUDE.local.md 파일은 시작 시 전체 로드된다. </li>
 <li>하위 디렉토리의 파일은 Claude가 해당 디렉토리의 파일을 읽을 때 필요에 따라 로드된다.</li>
 </ul>
-<p><img src="../../../Tech/Archieve/Attachment/Pasted image 20260627161107.png" alt="Pasted image 20260627161107.png"></p>
+<p><img src="../../../Tech/Archieve/Attachment/Pasted%20image%2020260627161107.png" alt="Pasted image 20260627161107.png"></p>
 <h3>*프로젝트 CLAUDE.md 설정</h3>
 <hr />
 <p>: 프로젝트용 CLAUDE.md는 <code>./CLAUDE.md</code> 또는 <code>./.claude/CLAUDE.md</code>에 저장할 수 있다.</p>
@@ -161,7 +174,7 @@ paths:
 <ul>
 <li><code>paths</code> 필드가 없는 규칙은 무조건 로드되며 모든 파일에 적용됩니다. 경로 범위 규칙은 모든 도구 사용 시가 아니라 Claude가 패턴과 일치하는 파일을 읽을 때 트리거됩니다.</li>
 <li><code>paths</code> 필드에서 glob 패턴을 사용하여 확장명, 디렉토리 또는 조합으로 파일을 일치시킵니다:
-    **<img src="../../../Tech/Archieve/Attachment/Pasted image 20260627172257.png" alt="Pasted image 20260627172257.png">
+    **<img src="../../../Tech/Archieve/Attachment/Pasted%20image%2020260627172257.png" alt="Pasted image 20260627172257.png">
     **</li>
 </ul>
 <pre><code>---

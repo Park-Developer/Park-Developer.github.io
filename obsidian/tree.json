@@ -700,11 +700,6 @@
         ]
       },
       {
-        "name": "Vault",
-        "type": "file",
-        "path": "HW 개발/Vault.html"
-      },
-      {
         "name": "arm",
         "type": "directory",
         "path": "HW 개발/arm",
@@ -1106,11 +1101,6 @@
             "path": "Tech/Obsidian/태그.html"
           }
         ]
-      },
-      {
-        "name": "Vault",
-        "type": "file",
-        "path": "Tech/Vault.html"
       }
     ]
   }

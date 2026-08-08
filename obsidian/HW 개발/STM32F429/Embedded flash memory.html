@@ -9,9 +9,8 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 24px 32px;
+            box-sizing: border-box;
         }
         pre {
             background: #f4f4f4;
@@ -56,6 +55,20 @@
             color: #666;
         }
     </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
 </head>
 <body>
     <h3><em>Overview</em></h3>
@@ -67,7 +80,7 @@
 </li>
 <li>
 <p>The devices embed 512 bytes of OTP memory, and a flash memory of up to 2Mbytes available for storing programs and data
-<img src="../../HW 개발/Archieve/Attachment/Pasted image 20260625005748.png" alt="Pasted image 20260625005748.png"></p>
+<img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260625005748.png" alt="Pasted image 20260625005748.png"></p>
 </li>
 </ul>
 <h3><em>Embedded Flash memory Interface</em></h3>
@@ -78,7 +91,7 @@
 • Prefetch on I-Code
 • 64 cache lines of 128 bits on I-Code
 • 8 cache lines of 128 bits on D-Code</p>
-<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260628002839.png" alt="Pasted image 20260628002839.png"></p>
+<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628002839.png" alt="Pasted image 20260628002839.png"></p>
 <h3><em>Embedded Flash memory Features</em></h3>
 <hr />
 <ul>
@@ -109,15 +122,15 @@ capability (RWW)</li>
     – When the DB1M bit is set, to perform an erase operation on bank 2, the sector
     number must be programmed (sector number from 12 to 19). Refer to FLASH_CR
     register for SNB (Sector number) configura
-    <img src="../../HW 개발/Archieve/Attachment/Pasted image 20260628005553.png" alt="Pasted image 20260628005553.png"></li>
+    <img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628005553.png" alt="Pasted image 20260628005553.png"></li>
 </ul>
 </li>
 </ul>
-<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260628005624.png" alt="Pasted image 20260628005624.png"></p>
+<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628005624.png" alt="Pasted image 20260628005624.png"></p>
 <h3><em>Read Interface</em></h3>
 <hr />
 <p>: To correctly read data from flash memory, the number of wait states(LATENCY) must be correctly programmed in the Flash access control register(<code>FLASH_ACR</code>) according to the frequency of the CPU clock(HCLK) and the supply voltage of the device</p>
-<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260628010304.png" alt="Pasted image 20260628010304.png"></p>
+<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628010304.png" alt="Pasted image 20260628010304.png"></p>
 <ul>
 <li>After reset, the CPU clock frequency is 16 MHz and 0 wait state (WS) is configured in the
 FLASH_ACR register.</li>
@@ -135,7 +148,7 @@ frequencies.</p>
 <p><strong>Instruction Prefetch</strong>
     : Prefetch on the I-Code bus can be used to read the next sequential instruction line from the flash memory while the current instruction line is being requested by the CPU.</p>
 <p>=&gt; Prefetch is enabled by setting the PRFTEN bit in the FLASH_ACR register. This feature is useful if at least one wait state is needed to access the flash memory
-<img src="../../HW 개발/Archieve/Attachment/Pasted image 20260628010917.png" alt="Pasted image 20260628010917.png"></p>
+<img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628010917.png" alt="Pasted image 20260628010917.png"></p>
 </li>
 <li>
 <p><strong>Instruction Cache Memory</strong>
@@ -143,7 +156,7 @@ frequencies.</p>
 <ul>
 <li>Each time a miss occurs, the line read is copied into the instruction cachee memory.</li>
 <li>If some data contained in the instruction cache memory are requested by the CPU, they are provided without inserting any delay.</li>
-<li>Once all the instruction cache memory lines have been filled, the <a href="Embedded/LRU%28Least%20Recently%20Used%29%20.md.html">LRU(least recently used) policy</a> is used to determint the line to replace in the instruction memory cache.</li>
+<li>Once all the instruction cache memory lines have been filled, the <a href="../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/LRU%28Least%20Recently%20Used%29%20.html">LRU(least recently used) policy</a> is used to determint the line to replace in the instruction memory cache.</li>
 </ul>
 </li>
 <li>
@@ -192,11 +205,11 @@ reset.</p>
 <h3><em>Option Bytes</em></h3>
 <hr />
 <p>: The option bytes are configured by the end user depending on the application requirements</p>
-<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260701002950.png" alt="Pasted image 20260701002950.png">
-<img src="../../HW 개발/Archieve/Attachment/Pasted image 20260701003004.png" alt="Pasted image 20260701003004.png"></p>
+<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260701002950.png" alt="Pasted image 20260701002950.png">
+<img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260701003004.png" alt="Pasted image 20260701003004.png"></p>
 <h3><em>One-Time Programmable(OTP) Bytes</em></h3>
 <hr />
 <p>: The OTP area is divided into 16 OTP data blocks of 32 bytes and one lock OTP block of 16bytes
-<img src="../../HW 개발/Archieve/Attachment/Pasted image 20260701003539.png" alt="Pasted image 20260701003539.png"></p>
+<img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260701003539.png" alt="Pasted image 20260701003539.png"></p>
 </body>
 </html>
