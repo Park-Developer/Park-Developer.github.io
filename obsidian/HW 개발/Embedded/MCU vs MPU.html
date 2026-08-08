@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCU vs MPU</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3><em>차이점</em></h3>
+<hr />
+<p>: MCU가 하나의 컴퓨터를 소형화 시켜놓은 칩이라면, MPU는 단지 CPU 그 자체만을 소형화시켜 놓은 칩이다.</p>
+<ul>
+<li>
+<p>MCU(Micro Controller Unit)는 CPU의 기능을 하는 핵심 장치와 그 주변 장치들을 포함하고 있는 통합형 칩셋이다.</p>
+<p>-&gt; MCU 칩 하나만으로 주변 장치 제어 가능</p>
+</li>
+<li>
+<p>MPU(Micro Processor Unit)는 컴퓨터의 핵심 기능인 주어진 기계어를 해석하고 연산을 수행하는 기능에 중점을 두고 있다. 
+    -&gt; MPU는 주변에 RAM, ROM, I/O 등의 장치를 추가해주지 않으면 작동이 불가능</p>
+</li>
+</ul>
+<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260618001925.png" alt="Pasted image 20260618001925.png"></p>
+<h3>Reference</h3>
+<ul>
+<li>https://www.hackerschool.org/Sub_Html/HS_University/HardwareHacking/06.html</li>
+</ul>
+</body>
+</html>

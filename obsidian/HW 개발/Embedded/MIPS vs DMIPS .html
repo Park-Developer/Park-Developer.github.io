@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIPS vs DMIPS </title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3>MIPS(Million Instructions Per Second)</h3>
+<hr />
+<p>: CPU가 1초동안 처리할 수 있는 명령의 수를 나타냄. 1MIPS는 1초동안 100만개의 명령을 처리한다는 듯</p>
+<p>$MIPS=f/CPI*10^6$</p>
+<p>MIPS가 CPU clock 보다 정확한 이유를 예를 들어 설명하자면 아래와 같습니다.\
+A CPU : 2GHz로 동작하고 한 개의 명령어를 처리하는 데 2 clock이 소요됩니다
+B CPU : 3GHz로 동작하고 한 개의 명령어를 처리하는 데 4 clock이 소요됩니다.
+동작 clock만 보면 B CPU의 성능이 더 좋은 것으로 보이지만 MIPS로 계산하면 다른 결과가 나옵니다.</p>
+<p>A CPU = 2GHz / 2 * 10 ^ 6 = 1000 MIPS</p>
+<p>B CPU = 3GHz / 4 * 10 ^ 6 = 750 MIPS</p>
+<p>출처: <a href="https://kaylifelog.tistory.com/entry/CPU-MIPS%EC%99%80-DMIPS">https://kaylifelog.tistory.com/entry/CPU-MIPS와-DMIPS</a> [Kay on the Life:티스토리]</p>
+<h3>DMIPS(Dhrystone MIPS)</h3>
+<hr />
+<p>: Dhrystone(D)은 측정 대상이 되는 시스템으로 기준이 되는 특정 작업을 수행시켜 거리는 시간을 측정한 후 이를 정수화하여 CPU의 성능을 비교할 수 있도록 고안된 벤치마크 프로그램</p>
+</body>
+</html>

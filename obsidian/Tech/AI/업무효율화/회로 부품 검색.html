@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회로 부품 검색</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3>검색 방법</h3>
+<hr />
+<p>: 검색 조건을 만족하는 부품을 찾아서 리스트로 제공할 것. 리스트에는 부품명, 제조사, 스펙, 현재 주문 가능한 수량, datasheet 링크를 기입할 것.</p>
+<p>검색 조건을 모두 만족하는 부품이 없을 경우, 검색 조건을 최대한 만족하는 부품으로 찾아줄 것</p>
+<h3>검색 조건</h3>
+<hr />
+<ol>
+<li>
+<p>PCB Library가 있을 것 : https://componentsearchengine.com 와 https://www.ultralibrarian.com 에서 검색이 가능해야하며, footprint와 3D 모델이 있어야 함</p>
+</li>
+<li>
+<p>자재 주문이 가능할 것 : digikey와 mouser electronics에서 검색이 가능해야하며, 즉시 주문이 가능한 수량이 1000개가 넘어야 함</p>
+</li>
+<li>
+<p>대체품이 있어야 함</p>
+</li>
+</ol>
+</body>
+</html>

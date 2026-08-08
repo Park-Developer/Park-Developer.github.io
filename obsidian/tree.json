@@ -1,0 +1,1117 @@
+[
+  {
+    "name": "HW 개발",
+    "type": "directory",
+    "path": "HW 개발",
+    "children": [
+      {
+        "name": "AP",
+        "type": "directory",
+        "path": "HW 개발/AP",
+        "children": [
+          {
+            "name": "AP",
+            "type": "file",
+            "path": "HW 개발/AP/AP.html"
+          },
+          {
+            "name": "MIPI",
+            "type": "file",
+            "path": "HW 개발/AP/MIPI.html"
+          },
+          {
+            "name": "SPMI",
+            "type": "file",
+            "path": "HW 개발/AP/SPMI.html"
+          }
+        ]
+      },
+      {
+        "name": "Archieve",
+        "type": "directory",
+        "path": "HW 개발/Archieve",
+        "children": [
+          {
+            "name": "Archieve",
+            "type": "file",
+            "path": "HW 개발/Archieve/Archieve.html"
+          },
+          {
+            "name": "Attachment",
+            "type": "directory",
+            "path": "HW 개발/Archieve/Attachment",
+            "children": [
+              {
+                "name": "Attachment",
+                "type": "file",
+                "path": "HW 개발/Archieve/Attachment/Attachment.html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Arduino UNO Q",
+        "type": "directory",
+        "path": "HW 개발/Arduino UNO Q",
+        "children": [
+          {
+            "name": "Arduino UNO Q 사양",
+            "type": "file",
+            "path": "HW 개발/Arduino UNO Q/Arduino UNO Q 사양.html"
+          },
+          {
+            "name": "Arduino UNO Q",
+            "type": "file",
+            "path": "HW 개발/Arduino UNO Q/Arduino UNO Q.html"
+          },
+          {
+            "name": "Power",
+            "type": "file",
+            "path": "HW 개발/Arduino UNO Q/Power.html"
+          },
+          {
+            "name": "Untitled",
+            "type": "file",
+            "path": "HW 개발/Arduino UNO Q/Untitled.html"
+          },
+          {
+            "name": "테스트용 아두이노 Q 정보",
+            "type": "file",
+            "path": "HW 개발/Arduino UNO Q/테스트용 아두이노 Q 정보.html"
+          }
+        ]
+      },
+      {
+        "name": "Circuit",
+        "type": "directory",
+        "path": "HW 개발/Circuit",
+        "children": [
+          {
+            "name": "Circuit",
+            "type": "file",
+            "path": "HW 개발/Circuit/Circuit.html"
+          },
+          {
+            "name": "LDO(Low Dropout Regulator)",
+            "type": "file",
+            "path": "HW 개발/Circuit/LDO(Low Dropout Regulator).html"
+          },
+          {
+            "name": "PMIC(Power Management Integrated Circuit)",
+            "type": "file",
+            "path": "HW 개발/Circuit/PMIC(Power Management Integrated Circuit).html"
+          },
+          {
+            "name": "USB",
+            "type": "directory",
+            "path": "HW 개발/Circuit/USB",
+            "children": [
+              {
+                "name": "Role of CC pin",
+                "type": "file",
+                "path": "HW 개발/Circuit/USB/Role of CC pin.html"
+              },
+              {
+                "name": "USB Type-C",
+                "type": "file",
+                "path": "HW 개발/Circuit/USB/USB Type-C.html"
+              },
+              {
+                "name": "USB",
+                "type": "file",
+                "path": "HW 개발/Circuit/USB/USB.html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Electrical Engineering",
+        "type": "directory",
+        "path": "HW 개발/Electrical Engineering",
+        "children": [
+          {
+            "name": "Connector Baisc",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/Connector Baisc.html"
+          },
+          {
+            "name": "Electrical Engineering",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/Electrical Engineering.html"
+          },
+          {
+            "name": "IDC Cable",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/IDC Cable.html"
+          },
+          {
+            "name": "SO DIMM Socket",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/SO DIMM Socket.html"
+          }
+        ]
+      },
+      {
+        "name": "Embedded",
+        "type": "directory",
+        "path": "HW 개발/Embedded",
+        "children": [
+          {
+            "name": "CODEC",
+            "type": "file",
+            "path": "HW 개발/Embedded/CODEC.html"
+          },
+          {
+            "name": "CoM(Computer On Module)",
+            "type": "file",
+            "path": "HW 개발/Embedded/CoM(Computer On Module).html"
+          },
+          {
+            "name": "DDR(Double Data Rate)",
+            "type": "file",
+            "path": "HW 개발/Embedded/DDR(Double Data Rate).html"
+          },
+          {
+            "name": "DRAM(Dynamic RAM)",
+            "type": "file",
+            "path": "HW 개발/Embedded/DRAM(Dynamic RAM).html"
+          },
+          {
+            "name": "DWARF",
+            "type": "file",
+            "path": "HW 개발/Embedded/DWARF.html"
+          },
+          {
+            "name": "Dongle",
+            "type": "file",
+            "path": "HW 개발/Embedded/Dongle.html"
+          },
+          {
+            "name": "ELF",
+            "type": "file",
+            "path": "HW 개발/Embedded/ELF.html"
+          },
+          {
+            "name": "Embedded",
+            "type": "file",
+            "path": "HW 개발/Embedded/Embedded.html"
+          },
+          {
+            "name": "Endian",
+            "type": "file",
+            "path": "HW 개발/Embedded/Endian.html"
+          },
+          {
+            "name": "FIFO",
+            "type": "file",
+            "path": "HW 개발/Embedded/FIFO.html"
+          },
+          {
+            "name": "GCC",
+            "type": "file",
+            "path": "HW 개발/Embedded/GCC.html"
+          },
+          {
+            "name": "GDB",
+            "type": "file",
+            "path": "HW 개발/Embedded/GDB.html"
+          },
+          {
+            "name": "GNU Project",
+            "type": "file",
+            "path": "HW 개발/Embedded/GNU Project.html"
+          },
+          {
+            "name": "LPDDR",
+            "type": "file",
+            "path": "HW 개발/Embedded/LPDDR.html"
+          },
+          {
+            "name": "LRU(Least Recently Used) ",
+            "type": "file",
+            "path": "HW 개발/Embedded/LRU(Least Recently Used) .html"
+          },
+          {
+            "name": "LSB & MSB",
+            "type": "file",
+            "path": "HW 개발/Embedded/LSB & MSB.html"
+          },
+          {
+            "name": "MCU vs MPU",
+            "type": "file",
+            "path": "HW 개발/Embedded/MCU vs MPU.html"
+          },
+          {
+            "name": "MIPS vs DMIPS ",
+            "type": "file",
+            "path": "HW 개발/Embedded/MIPS vs DMIPS .html"
+          },
+          {
+            "name": "NMI(Non-Maskable Interrupt)",
+            "type": "file",
+            "path": "HW 개발/Embedded/NMI(Non-Maskable Interrupt).html"
+          },
+          {
+            "name": "OTP Memory",
+            "type": "file",
+            "path": "HW 개발/Embedded/OTP Memory.html"
+          },
+          {
+            "name": "OpenOCD",
+            "type": "file",
+            "path": "HW 개발/Embedded/OpenOCD.html"
+          },
+          {
+            "name": "RAM(Random Access Memory)",
+            "type": "file",
+            "path": "HW 개발/Embedded/RAM(Random Access Memory).html"
+          },
+          {
+            "name": "RISC",
+            "type": "file",
+            "path": "HW 개발/Embedded/RISC.html"
+          },
+          {
+            "name": "RTC",
+            "type": "file",
+            "path": "HW 개발/Embedded/RTC.html"
+          },
+          {
+            "name": "SDRAM(Synchronous Dynamic Random Access Memory)",
+            "type": "file",
+            "path": "HW 개발/Embedded/SDRAM(Synchronous Dynamic Random Access Memory).html"
+          },
+          {
+            "name": "STM8S",
+            "type": "directory",
+            "path": "HW 개발/Embedded/STM8S",
+            "children": [
+              {
+                "name": "STM Studio for STM8",
+                "type": "directory",
+                "path": "HW 개발/Embedded/STM8S/STM Studio for STM8",
+                "children": [
+                  {
+                    "name": "Project and Configurations",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM8S/STM Studio for STM8/Project and Configurations.html"
+                  },
+                  {
+                    "name": "STM Studio for STM8",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM8S/STM Studio for STM8/STM Studio for STM8.html"
+                  },
+                  {
+                    "name": "STM8 STM-Studio Overview",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM8S/STM Studio for STM8/STM8 STM-Studio Overview.html"
+                  }
+                ]
+              },
+              {
+                "name": "STM8S",
+                "type": "file",
+                "path": "HW 개발/Embedded/STM8S/STM8S.html"
+              },
+              {
+                "name": "STM8S208RB",
+                "type": "directory",
+                "path": "HW 개발/Embedded/STM8S/STM8S208RB",
+                "children": [
+                  {
+                    "name": "STM8S208RB EVM",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM8S/STM8S208RB/STM8S208RB EVM.html"
+                  },
+                  {
+                    "name": "STM8S208RB Features",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM8S/STM8S208RB/STM8S208RB Features.html"
+                  },
+                  {
+                    "name": "STM8S208RB Template",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM8S/STM8S208RB/STM8S208RB Template.html"
+                  },
+                  {
+                    "name": "STM8S208RB",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM8S/STM8S208RB/STM8S208RB.html"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "SWD(Serial Wire Debug)",
+            "type": "file",
+            "path": "HW 개발/Embedded/SWD(Serial Wire Debug).html"
+          },
+          {
+            "name": "eMMC(Embedded Multi Media Card)",
+            "type": "file",
+            "path": "HW 개발/Embedded/eMMC(Embedded Multi Media Card).html"
+          }
+        ]
+      },
+      {
+        "name": "ML63Q2557",
+        "type": "directory",
+        "path": "HW 개발/ML63Q2557",
+        "children": [
+          {
+            "name": "AxICORE-ODL",
+            "type": "file",
+            "path": "HW 개발/ML63Q2557/AxICORE-ODL.html"
+          },
+          {
+            "name": "BFloat16 (BF16)",
+            "type": "file",
+            "path": "HW 개발/ML63Q2557/BFloat16 (BF16).html"
+          },
+          {
+            "name": "Function List",
+            "type": "file",
+            "path": "HW 개발/ML63Q2557/Function List.html"
+          },
+          {
+            "name": "ML63Q2557 Overview",
+            "type": "file",
+            "path": "HW 개발/ML63Q2557/ML63Q2557 Overview.html"
+          },
+          {
+            "name": "ML63Q2557",
+            "type": "file",
+            "path": "HW 개발/ML63Q2557/ML63Q2557.html"
+          }
+        ]
+      },
+      {
+        "name": "OS",
+        "type": "directory",
+        "path": "HW 개발/OS",
+        "children": [
+          {
+            "name": "Debian",
+            "type": "file",
+            "path": "HW 개발/OS/Debian.html"
+          },
+          {
+            "name": "OS",
+            "type": "file",
+            "path": "HW 개발/OS/OS.html"
+          },
+          {
+            "name": "Zephyr",
+            "type": "file",
+            "path": "HW 개발/OS/Zephyr.html"
+          }
+        ]
+      },
+      {
+        "name": "PCB",
+        "type": "directory",
+        "path": "HW 개발/PCB",
+        "children": [
+          {
+            "name": "PCB",
+            "type": "file",
+            "path": "HW 개발/PCB/PCB.html"
+          },
+          {
+            "name": "Package",
+            "type": "file",
+            "path": "HW 개발/PCB/Package.html"
+          },
+          {
+            "name": "PoP(Package on Package)",
+            "type": "file",
+            "path": "HW 개발/PCB/PoP(Package on Package).html"
+          }
+        ]
+      },
+      {
+        "name": "QRB2210",
+        "type": "directory",
+        "path": "HW 개발/QRB2210",
+        "children": [
+          {
+            "name": "QRB2210 Overview",
+            "type": "file",
+            "path": "HW 개발/QRB2210/QRB2210 Overview.html"
+          },
+          {
+            "name": "QRB2210",
+            "type": "file",
+            "path": "HW 개발/QRB2210/QRB2210.html"
+          }
+        ]
+      },
+      {
+        "name": "Qualcomm",
+        "type": "directory",
+        "path": "HW 개발/Qualcomm",
+        "children": [
+          {
+            "name": "Dragonwing",
+            "type": "file",
+            "path": "HW 개발/Qualcomm/Dragonwing.html"
+          },
+          {
+            "name": "MSM",
+            "type": "file",
+            "path": "HW 개발/Qualcomm/MSM.html"
+          },
+          {
+            "name": "Qualcomm battery Gauge",
+            "type": "file",
+            "path": "HW 개발/Qualcomm/Qualcomm battery Gauge.html"
+          },
+          {
+            "name": "Qualcomm",
+            "type": "file",
+            "path": "HW 개발/Qualcomm/Qualcomm.html"
+          }
+        ]
+      },
+      {
+        "name": "Robot",
+        "type": "directory",
+        "path": "HW 개발/Robot",
+        "children": [
+          {
+            "name": "Bearing",
+            "type": "file",
+            "path": "HW 개발/Robot/Bearing.html"
+          },
+          {
+            "name": "DC Servo Motor",
+            "type": "file",
+            "path": "HW 개발/Robot/DC Servo Motor.html"
+          },
+          {
+            "name": "LM Guide(Linear Motion Guide)",
+            "type": "file",
+            "path": "HW 개발/Robot/LM Guide(Linear Motion Guide).html"
+          },
+          {
+            "name": "Motor 구조",
+            "type": "file",
+            "path": "HW 개발/Robot/Motor 구조.html"
+          },
+          {
+            "name": "Robot",
+            "type": "file",
+            "path": "HW 개발/Robot/Robot.html"
+          },
+          {
+            "name": "Step Motor",
+            "type": "file",
+            "path": "HW 개발/Robot/Step Motor.html"
+          }
+        ]
+      },
+      {
+        "name": "STM32F429",
+        "type": "directory",
+        "path": "HW 개발/STM32F429",
+        "children": [
+          {
+            "name": "AHB Trace Macrocell(HTM) interface",
+            "type": "file",
+            "path": "HW 개발/STM32F429/AHB Trace Macrocell(HTM) interface.html"
+          },
+          {
+            "name": "Adaptive Real time accelerator",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Adaptive Real time accelerator.html"
+          },
+          {
+            "name": "Arm 32-bit Cortex - M4 CPU",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Arm 32-bit Cortex - M4 CPU.html"
+          },
+          {
+            "name": "Armv7-M",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Armv7-M.html"
+          },
+          {
+            "name": "Banked Stack Pointer(SP)",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Banked Stack Pointer(SP).html"
+          },
+          {
+            "name": "Bit banding",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Bit banding.html"
+          },
+          {
+            "name": "Boot Configuration",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Boot Configuration.html"
+          },
+          {
+            "name": "Bus interfaces",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Bus interfaces.html"
+          },
+          {
+            "name": "CRC(Cyclic Redundancy Check) Calculation Unit",
+            "type": "file",
+            "path": "HW 개발/STM32F429/CRC(Cyclic Redundancy Check) Calculation Unit.html"
+          },
+          {
+            "name": "Cortex-M4 Processor",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Cortex-M4 Processor.html"
+          },
+          {
+            "name": "Cross Trigger Interface Unit",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Cross Trigger Interface Unit.html"
+          },
+          {
+            "name": "DMA(Direct Memory Access) Controller",
+            "type": "file",
+            "path": "HW 개발/STM32F429/DMA(Direct Memory Access) Controller.html"
+          },
+          {
+            "name": "Debug and Trace",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Debug and Trace.html"
+          },
+          {
+            "name": "Debug port AHB-AP interface",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Debug port AHB-AP interface.html"
+          },
+          {
+            "name": "ETM interface",
+            "type": "file",
+            "path": "HW 개발/STM32F429/ETM interface.html"
+          },
+          {
+            "name": "Embedded SRAM",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Embedded SRAM.html"
+          },
+          {
+            "name": "Embedded bootloader",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Embedded bootloader.html"
+          },
+          {
+            "name": "Embedded flash memory",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Embedded flash memory.html"
+          },
+          {
+            "name": "FPU(Floating Point Unit)",
+            "type": "file",
+            "path": "HW 개발/STM32F429/FPU(Floating Point Unit).html"
+          },
+          {
+            "name": "Memory Protection Unit (MPU)",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Memory Protection Unit (MPU).html"
+          },
+          {
+            "name": "Multi-AHB(Advanced High-Performance) bus matrix",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Multi-AHB(Advanced High-Performance) bus matrix.html"
+          },
+          {
+            "name": "Nested Vectored Interrupt Controller (NVIC)",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Nested Vectored Interrupt Controller (NVIC).html"
+          },
+          {
+            "name": "Not understand",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Not understand.html"
+          },
+          {
+            "name": "Physical Remap in STM32F42xxx and STM32F43xxx",
+            "type": "file",
+            "path": "HW 개발/STM32F429/Physical Remap in STM32F42xxx and STM32F43xxx.html"
+          },
+          {
+            "name": "STM32F4 Series",
+            "type": "file",
+            "path": "HW 개발/STM32F429/STM32F4 Series.html"
+          },
+          {
+            "name": "STM32F429 Overview",
+            "type": "file",
+            "path": "HW 개발/STM32F429/STM32F429 Overview.html"
+          },
+          {
+            "name": "STM32F429",
+            "type": "file",
+            "path": "HW 개발/STM32F429/STM32F429.html"
+          },
+          {
+            "name": "TBD",
+            "type": "file",
+            "path": "HW 개발/STM32F429/TBD.html"
+          },
+          {
+            "name": "memory.",
+            "type": "file",
+            "path": "HW 개발/STM32F429/memory..html"
+          },
+          {
+            "name": "tail-chaining",
+            "type": "file",
+            "path": "HW 개발/STM32F429/tail-chaining.html"
+          }
+        ]
+      },
+      {
+        "name": "Tool",
+        "type": "directory",
+        "path": "HW 개발/Tool",
+        "children": [
+          {
+            "name": "LTSpice",
+            "type": "directory",
+            "path": "HW 개발/Tool/LTSpice",
+            "children": [
+              {
+                "name": "LTSpice 기본 설정",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/LTSpice 기본 설정.html"
+              },
+              {
+                "name": "LTSpice",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/LTSpice.html"
+              }
+            ]
+          },
+          {
+            "name": "Tool",
+            "type": "file",
+            "path": "HW 개발/Tool/Tool.html"
+          }
+        ]
+      },
+      {
+        "name": "Vault",
+        "type": "file",
+        "path": "HW 개발/Vault.html"
+      },
+      {
+        "name": "arm",
+        "type": "directory",
+        "path": "HW 개발/arm",
+        "children": [
+          {
+            "name": "Cortex-A",
+            "type": "file",
+            "path": "HW 개발/arm/Cortex-A.html"
+          },
+          {
+            "name": "Cortex-M0+",
+            "type": "file",
+            "path": "HW 개발/arm/Cortex-M0+.html"
+          },
+          {
+            "name": "Cortex-M33",
+            "type": "file",
+            "path": "HW 개발/arm/Cortex-M33.html"
+          },
+          {
+            "name": "arm",
+            "type": "file",
+            "path": "HW 개발/arm/arm.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Project",
+    "type": "directory",
+    "path": "Project",
+    "children": [
+      {
+        "name": "Cable IDE",
+        "type": "directory",
+        "path": "Project/Cable IDE",
+        "children": [
+          {
+            "name": "AI 프롬프트",
+            "type": "file",
+            "path": "Project/Cable IDE/AI 프롬프트.html"
+          },
+          {
+            "name": "Cable IDE",
+            "type": "file",
+            "path": "Project/Cable IDE/Cable IDE.html"
+          },
+          {
+            "name": "Overview",
+            "type": "file",
+            "path": "Project/Cable IDE/Overview.html"
+          },
+          {
+            "name": "Repository",
+            "type": "file",
+            "path": "Project/Cable IDE/Repository.html"
+          }
+        ]
+      },
+      {
+        "name": "English_Study",
+        "type": "directory",
+        "path": "Project/English_Study",
+        "children": [
+          {
+            "name": "English_Study",
+            "type": "file",
+            "path": "Project/English_Study/English_Study.html"
+          },
+          {
+            "name": "Opic",
+            "type": "directory",
+            "path": "Project/English_Study/Opic",
+            "children": [
+              {
+                "name": "Music",
+                "type": "file",
+                "path": "Project/English_Study/Opic/Music.html"
+              },
+              {
+                "name": "Opic",
+                "type": "file",
+                "path": "Project/English_Study/Opic/Opic.html"
+              }
+            ]
+          },
+          {
+            "name": "Untitled",
+            "type": "file",
+            "path": "Project/English_Study/Untitled.html"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "SW 개발",
+    "type": "directory",
+    "path": "SW 개발",
+    "children": [
+      {
+        "name": "Archieve",
+        "type": "directory",
+        "path": "SW 개발/Archieve",
+        "children": [
+          {
+            "name": "Archieve",
+            "type": "file",
+            "path": "SW 개발/Archieve/Archieve.html"
+          },
+          {
+            "name": "Attachment",
+            "type": "directory",
+            "path": "SW 개발/Archieve/Attachment",
+            "children": [
+              {
+                "name": "Attachment",
+                "type": "file",
+                "path": "SW 개발/Archieve/Attachment/Attachment.html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "type": "directory",
+        "path": "SW 개발/Git",
+        "children": [
+          {
+            "name": "Clone",
+            "type": "file",
+            "path": "SW 개발/Git/Clone.html"
+          },
+          {
+            "name": "Git Branch 전략",
+            "type": "file",
+            "path": "SW 개발/Git/Git Branch 전략.html"
+          },
+          {
+            "name": "Git 기본",
+            "type": "file",
+            "path": "SW 개발/Git/Git 기본.html"
+          },
+          {
+            "name": "Git 명령어",
+            "type": "file",
+            "path": "SW 개발/Git/Git 명령어.html"
+          },
+          {
+            "name": "Git",
+            "type": "file",
+            "path": "SW 개발/Git/Git.html"
+          },
+          {
+            "name": "Merge",
+            "type": "file",
+            "path": "SW 개발/Git/Merge.html"
+          },
+          {
+            "name": "Pull Request",
+            "type": "file",
+            "path": "SW 개발/Git/Pull Request.html"
+          },
+          {
+            "name": "Push",
+            "type": "file",
+            "path": "SW 개발/Git/Push.html"
+          },
+          {
+            "name": "Rebase",
+            "type": "file",
+            "path": "SW 개발/Git/Rebase.html"
+          },
+          {
+            "name": "Squash ane merge",
+            "type": "file",
+            "path": "SW 개발/Git/Squash ane merge.html"
+          },
+          {
+            "name": "VSCODE Git 사용",
+            "type": "file",
+            "path": "SW 개발/Git/VSCODE Git 사용.html"
+          },
+          {
+            "name": "reset",
+            "type": "file",
+            "path": "SW 개발/Git/reset.html"
+          },
+          {
+            "name": "revert",
+            "type": "file",
+            "path": "SW 개발/Git/revert.html"
+          }
+        ]
+      },
+      {
+        "name": "SW Tool",
+        "type": "directory",
+        "path": "SW 개발/SW Tool",
+        "children": [
+          {
+            "name": "Github.io",
+            "type": "file",
+            "path": "SW 개발/SW Tool/Github.io.html"
+          },
+          {
+            "name": "SW Tool",
+            "type": "file",
+            "path": "SW 개발/SW Tool/SW Tool.html"
+          }
+        ]
+      },
+      {
+        "name": "SW 기본 개념",
+        "type": "directory",
+        "path": "SW 개발/SW 기본 개념",
+        "children": [
+          {
+            "name": "SW 기본 개념",
+            "type": "file",
+            "path": "SW 개발/SW 기본 개념/SW 기본 개념.html"
+          },
+          {
+            "name": "ㄹ",
+            "type": "file",
+            "path": "SW 개발/SW 기본 개념/ㄹ.html"
+          }
+        ]
+      },
+      {
+        "name": "mht 파일",
+        "type": "file",
+        "path": "SW 개발/mht 파일.html"
+      }
+    ]
+  },
+  {
+    "name": "Tech",
+    "type": "directory",
+    "path": "Tech",
+    "children": [
+      {
+        "name": "AI",
+        "type": "directory",
+        "path": "Tech/AI",
+        "children": [
+          {
+            "name": "AI 지식",
+            "type": "directory",
+            "path": "Tech/AI/AI 지식",
+            "children": [
+              {
+                "name": "AI 지식",
+                "type": "file",
+                "path": "Tech/AI/AI 지식/AI 지식.html"
+              },
+              {
+                "name": "메타데이터(Metadata)",
+                "type": "file",
+                "path": "Tech/AI/AI 지식/메타데이터(Metadata).html"
+              },
+              {
+                "name": "세션(Session)",
+                "type": "file",
+                "path": "Tech/AI/AI 지식/세션(Session).html"
+              },
+              {
+                "name": "컨텍스트 윈도우(Context Window)",
+                "type": "file",
+                "path": "Tech/AI/AI 지식/컨텍스트 윈도우(Context Window).html"
+              },
+              {
+                "name": "컨텍스트(Context)",
+                "type": "file",
+                "path": "Tech/AI/AI 지식/컨텍스트(Context).html"
+              }
+            ]
+          },
+          {
+            "name": "AI",
+            "type": "file",
+            "path": "Tech/AI/AI.html"
+          },
+          {
+            "name": "Claude Code",
+            "type": "directory",
+            "path": "Tech/AI/Claude Code",
+            "children": [
+              {
+                "name": "CLAUDE.md",
+                "type": "file",
+                "path": "Tech/AI/Claude Code/CLAUDE.md.html"
+              },
+              {
+                "name": "Claude Code",
+                "type": "file",
+                "path": "Tech/AI/Claude Code/Claude Code.html"
+              },
+              {
+                "name": "Hook ",
+                "type": "file",
+                "path": "Tech/AI/Claude Code/Hook .html"
+              },
+              {
+                "name": "Overview",
+                "type": "file",
+                "path": "Tech/AI/Claude Code/Overview.html"
+              },
+              {
+                "name": "skill",
+                "type": "file",
+                "path": "Tech/AI/Claude Code/skill.html"
+              },
+              {
+                "name": "자동메모리",
+                "type": "file",
+                "path": "Tech/AI/Claude Code/자동메모리.html"
+              },
+              {
+                "name": "프로젝트 기억 방법",
+                "type": "file",
+                "path": "Tech/AI/Claude Code/프로젝트 기억 방법.html"
+              }
+            ]
+          },
+          {
+            "name": "업무효율화",
+            "type": "directory",
+            "path": "Tech/AI/업무효율화",
+            "children": [
+              {
+                "name": "업무효율화",
+                "type": "file",
+                "path": "Tech/AI/업무효율화/업무효율화.html"
+              },
+              {
+                "name": "이슈 대응 보고서 생성",
+                "type": "file",
+                "path": "Tech/AI/업무효율화/이슈 대응 보고서 생성.html"
+              },
+              {
+                "name": "회로 부품 검색",
+                "type": "file",
+                "path": "Tech/AI/업무효율화/회로 부품 검색.html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Archieve",
+        "type": "directory",
+        "path": "Tech/Archieve",
+        "children": [
+          {
+            "name": "Archieve",
+            "type": "file",
+            "path": "Tech/Archieve/Archieve.html"
+          },
+          {
+            "name": "Attachment",
+            "type": "directory",
+            "path": "Tech/Archieve/Attachment",
+            "children": [
+              {
+                "name": "Attachment",
+                "type": "file",
+                "path": "Tech/Archieve/Attachment/Attachment.html"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Obsidian",
+        "type": "directory",
+        "path": "Tech/Obsidian",
+        "children": [
+          {
+            "name": "Navigator",
+            "type": "file",
+            "path": "Tech/Obsidian/Navigator.html"
+          },
+          {
+            "name": "Obsidian 파일 첨부 폴더 지정",
+            "type": "file",
+            "path": "Tech/Obsidian/Obsidian 파일 첨부 폴더 지정.html"
+          },
+          {
+            "name": "Obsidian",
+            "type": "file",
+            "path": "Tech/Obsidian/Obsidian.html"
+          },
+          {
+            "name": "태그",
+            "type": "file",
+            "path": "Tech/Obsidian/태그.html"
+          }
+        ]
+      },
+      {
+        "name": "Vault",
+        "type": "file",
+        "path": "Tech/Vault.html"
+      }
+    ]
+  }
+]

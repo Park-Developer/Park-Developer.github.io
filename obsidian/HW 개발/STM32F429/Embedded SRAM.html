@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded SRAM</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3>Overview</h3>
+<hr />
+<p>: The STM32F42xxx and STM32F43xxx features 4 Kbytes of backup SRAM plus 256 Kbytes of system SRAM.</p>
+<ul>
+<li>Embedded SRASM can be accessed as bytes, half-words(16 bits) or full words(32 bits).</li>
+<li>Read and Write operation are performed at CPU speed with 0 wait state.</li>
+<li>
+<p>The embedded SRASM is divided into up to three blocks:</p>
+<ul>
+<li>SRAM1 and SRAM2 mapped at address 0x2000 000 and accessible by all AHB masters</li>
+<li>SRAM3(available on SRM32F42xxx and STM32F43xxx) mapped at address 0x2002 000 and accessible by all AHB masters.</li>
+<li>CCM(Core Coupled Memory) mapped at address 0x1000 000 and accessible only by the CPU through the D-bus</li>
+</ul>
+</li>
+<li>
+<p>AHB Masters support concurrent SRAM accesses(from the Ethernet or the USB OTG HS)
+    -&gt; for instance, the Ethernet MAC can read/write from/to SRAM2 while the CPU is
+        reading/writing from/to SRAM1 or SRAM3</p>
+</li>
+<li>
+<p>The CPU can access the SRAM1 through the System bus or through the I-Code/D-Code buses when boot from SRAM is selected or when physical remap is selected.
+<img src="../../HW 개발/Archieve/Attachment/Pasted image 20260625003005.png" alt="Pasted image 20260625003005.png"></p>
+</li>
+</ul>
+<p>: All devices embed
+- Up to 256Kbytes of system SRAM including 64 Kbytes of CCM(core coupled memory) data RAM
+- RAM memory is accessed at CPU clock speed with 0 wait states.
+- 4 Kbytes of backup SRAM
+    : This area is accessible only from the CPU. Its content is protected against possible unwanted write accesses, and is retained in Standby or $V_{BAT}$ mode</p>
+</body>
+</html>

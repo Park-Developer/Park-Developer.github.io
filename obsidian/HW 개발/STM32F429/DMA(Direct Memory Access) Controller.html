@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DMA(Direct Memory Access) Controller</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3><em>Concept</em></h3>
+<hr />
+<p>: Direct memory access(DMA) is used in order to provide high-speed data transfer <u>between peripherals and memory and between memory and memory.</u></p>
+<ul>
+<li>Data can be quickly moved by DMA without any CPU action
+    -&gt; This keeps CPU resources free for other operations.</li>
+<li>The DMA controller combines a powerful dual AHB master bus architecture with independent FIFO to optimize the bandwidth of the system, based on a complex bus matrix architecture.</li>
+<li>The two DMA controller have 16 strems in total(8 for each controller), each dedicated to managing memory access requests from one or more peripherals.</li>
+<li>
+<p>Each has an arbiter for handling the priority between DMA requests.
+    <img src="../../HW 개발/Archieve/Attachment/Pasted image 20260701005833.png" alt="Pasted image 20260701005833.png"></p>
+</li>
+<li>
+<p><strong>Data can be quickly moved by DMA without any CPU action.</strong>
+    -&gt; This keeps CPU resources free for other operations.</p>
+</li>
+<li></li>
+<li><a href="STM32F429/Not%20understand.md.html">The two DMA controller have 16 streams in total(8 for each controller), each dedicated to managing memory access requests from one or more peripherals</a></li>
+<li>And each has an arbiter for handling the priority between DMA requests</li>
+</ul>
+<p>: The devices feature two general-purpose dual-port DMAs(DMA1 and DMA2 with 8 streams each.</p>
+<ul>
+<li>They are able to manage memory-to-memory, peripheral-to-memory, and memory-to-peripheral transfers.</li>
+<li>They feature dedicated FIFOs for APB/AHB peripherals, support burst transfer and are designed to provide the maximum peripheral bandwidth(AHB/APB).</li>
+<li>The two DMA controllers su</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML63Q2557 Overview</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<p>: ML63Q2500 series is a high performance low power 32-bit microcontroller. Equipped with 32-bit CPU core Arm Cortex-M0+.</p>
+<p>It implements peripheral curcuit, such as Solist-AI accelerator nad CAN controller.</p>
+<h3><em>Features</em></h3>
+<hr />
+<ul>
+<li>
+<p>CPU</p>
+<ul>
+<li>32-Bit RISC CPU(Arm Cortex-M0+)</li>
+<li>Arm Thumb/Thumb-2 instruction supported</li>
+<li>Serial Wire Debug Port</li>
+<li>Minimum instruction execution time</li>
+<li>System timer(SysTick)</li>
+</ul>
+</li>
+<li>
+<p>Internal Memory</p>
+<ul>
+<li>Re-writing the program memory area by software.</li>
+<li>Backgorund Operation(CPU can work while erasing and rewriting to the Data Flash Memory Area)</li>
+<li>Flash ROM<ul>
+<li>Program Area : 128/256KB</li>
+<li>Data Area : 8KB</li>
+</ul>
+</li>
+<li>Data RAM<ul>
+<li>Work memory : 16KB</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Solit-Ai Accelerator(AxlCORE-ODL)</p>
+<ul>
+<li>Not only prediction but also learning can be performed on the device
+    -&gt; Detect anomaly conditions by learning normal conditions for each individual.</li>
+<li>Capable of high-speed execution of calculation used in AI processing.<ul>
+<li>Addition, subtraction and multiplication of scalars, vectors, and (non-square) matrices are possible.</li>
+<li>Enables FFT calculation processing useful for vibration sensor data processing.</li>
+<li>Calculations can be executed without CPU load.</li>
+</ul>
+</li>
+<li>Data format: bFloat16 (Built-in integer to bFloat16 conversion function.)</li>
+<li>One-stop utility using model-based technology. Provides software library.</li>
+<li>Built-in bFloat16-format uniform distribution pseudo-random number generator that can be used as a fixed table.</li>
+</ul>
+</li>
+<li>
+<p>CAN controller</p>
+<ul>
+<li>1 channel</li>
+<li>Equipped with one channel of CAN_FD and 2.0B protocol compliant controller</li>
+<li>Ability of real time communication control with up to 5Mbps</li>
+<li>ISO 11898-1:2015 compliant</li>
+<li>SAE J1939 is supported</li>
+<li>CAN FD up to 64 data bytes is supported</li>
+<li>Up to 64 proprietaries receive buffers</li>
+<li>Up to 32 proprietaries transmit buffers</li>
+<li>Equipped with CAN error log function</li>
+<li>Equipped with reception filter</li>
+<li>Individual signals are transmitted when a high-priority message is received</li>
+</ul>
+</li>
+<li>
+<p>Interrupt controller(NVIC)</p>
+<ul>
+<li>1 non-maskable interrupt source and 31 maskable interrupt sources</li>
+<li>Priority level(4-level) can be set for each interrupt</li>
+</ul>
+</li>
+<li>
+<p>DMA controller(DMAC)</p>
+<ul>
+<li>2 channels</li>
+<li>Enable to allocate multiple DMA transfer request sources for each channel</li>
+<li>Channel priority : fixed mode/round robin mode</li>
+<li>DMA transfer mode : cycle steal mode/burst mode</li>
+<li>DMA request mode : software reequests/hardware requests</li>
+<li>Maximum transfer count : 65,536</li>
+<li>Data transfer size :  8bit/16bit/32bit</li>
+<li>Transfer Request Source : SSOIF/UARTF/I2CF/SA-ADC</li>
+</ul>
+</li>
+<li>
+<p>Time base counter(TBC)</p>
+<ul>
+<li>Low-speed time base counter x 1 channel with interrupt, x 1 channel for RTC.</li>
+<li>The clock frequency adjustment in a range approx. -488ppm to 488ppm with 0.119ppm step.</li>
+</ul>
+</li>
+<li>
+<p>Real Time Clock (RTC)</p>
+<ul>
+<li>99 years calendar, alarm, adjustment of the clock</li>
+</ul>
+</li>
+<li>
+<p>1 kHz Timer (TM1K)</p>
+<ul>
+<li>80Hz/60Hz/40Hz/20Hz/10Hz/1Hz interrupt function</li>
+</ul>
+</li>
+<li>
+<p>Timers (TMR)</p>
+<ul>
+<li>16-bit × 6 channels</li>
+<li>32-bit configuration available by using 2 channels</li>
+<li>Selection of one-shot timer mode is possible</li>
+<li>External clock can be selected as timer clock.</li>
+</ul>
+</li>
+<li>
+<p>Function Timers (FTM)</p>
+<ul>
+<li>16-bit × 2 channels</li>
+<li>Equipped with the timer/capture/PWM functions using a 16-bit counter</li>
+<li>An event trigger (external pin input interrupt or timer interrupt request) can control start/stop/clear of the timer (however, the minimum pulse width of pin input is timer clock 3φ)</li>
+<li>1 to 64 dividing of LSCLK/OSCLK/HSCLK/external input selectable as timer clock</li>
+<li>Two types of PWM with the same period and different duties and complementary PWM with the dead time set can be output.</li>
+</ul>
+</li>
+<li>
+<p>Watchdog timer(WDT)</p>
+<ul>
+<li>Non-maskable interrupt and reset</li>
+<li>Free runnong</li>
+<li>Overflow period : 4 types selectable (125ms, 500ms, 2s, and 8s when LSCLK = 32.768 kHz)</li>
+</ul>
+</li>
+<li>
+<p>Three-phase motor control PWM (NTMS)</p>
+<ul>
+<li>16-bit × 3 channels, 2 outputs each; total 6 outputs</li>
+<li>Center-aligned waveform output with up-down counter</li>
+<li>Generatable a trigger of the SA-ADC conversion starting</li>
+<li>Emergency stop with analog-comparator or pin input</li>
+</ul>
+</li>
+<li>
+<p>Synchronous serial port (SSIOF)</p>
+<ul>
+<li>2 channels</li>
+<li>4-stage FIFO for each transmission and reception</li>
+<li>Master/slave selectable</li>
+<li>LSB first/MSB first selectable</li>
+<li>Clock polarity and phase selectable</li>
+<li>Supports slave-select signal</li>
+</ul>
+</li>
+<li>
+<p>UART (UARTF)</p>
+<ul>
+<li>4 channels</li>
+<li>4-stage FIFO for each transmission and reception</li>
+<li>Full duplex buffer system</li>
+<li>Communication speed: up to 115200bps.</li>
+<li>Programmable interface (data length, parity, stop bits selectable)</li>
+</ul>
+</li>
+<li>
+<p>I2C bus interface (I2CF)</p>
+<ul>
+<li>1 channel</li>
+<li>4-stage FIFO for each transmission and reception</li>
+<li>Master/slave function</li>
+<li>Fast mode (400 kHz), standard mode (100 kHz)</li>
+</ul>
+</li>
+<li>
+<p>General-purpose ports (GPIO)</p>
+<ul>
+<li>Input/output port × up to 49 channels (including secondary or tertiary or quaternary).</li>
+<li>Port interrupt: 8 sources selectable from all GPIOs</li>
+</ul>
+</li>
+<li>
+<p>CRC generator</p>
+<ul>
+<li>Generator polynomial: CRC-16/CRC-CCITT (X16+X12+X5+1) CRC-32 (X32+X26+X23+X22+X16+X12+X11+X10+X8+X7+X5+X4+X2+X1+1)</li>
+<li>MSB first or LSB first selectable</li>
+</ul>
+</li>
+<li>
+<p>Successive approximation type A/D converter (SA-ADC)</p>
+<ul>
+<li>2 units</li>
+<li>Input × 12 channels</li>
+<li>12-bit resolution</li>
+<li>Conversion time minimum 1μs/ channel @conversion clock is 24MHz</li>
+<li>Simultaneous conversion of 2 inputs with 2 units is possible</li>
+<li>Sampling time can be chosen</li>
+<li>Consecutive scan conversion function for target input channels</li>
+<li>Consecutive scan conversion with a specific interval time</li>
+<li>One conversion result register for each channel</li>
+<li>Upper /Lower limit is configurable for the conversion result, generates an interrupt</li>
+<li>A/D converter self test function (full scale, zero scale, internal reference voltage)</li>
+<li>Following triggers is available to start the A/D conversion 16-bit timer interrupt requests, functional timer trigger and three-phase motor control PWM ADC conversion staring trigger.</li>
+</ul>
+</li>
+<li>
+<p>Analog comparator (CMP)</p>
+<ul>
+<li>3 units</li>
+<li>Common-mode input voltage range: 0.1 to VDD-1.2V</li>
+<li>Propagation delay: Typ. 0.5μs</li>
+</ul>
+</li>
+<li>
+<p>Voltage Level Supervisor (VLS)</p>
+<ul>
+<li>Monitoring VDD level.</li>
+<li>Threshold voltage: selectable from 10 level</li>
+<li>Functional Voltage level detection reset or interrupt is generatable</li>
+</ul>
+</li>
+<li>
+<p>Reset</p>
+<ul>
+<li>RESET_N pin reset</li>
+<li>Power-on reset</li>
+<li>Watchdog timer (WDT) overflow reset</li>
+<li>Voltage Level Supervisor (VLS) reset</li>
+<li>Crystal oscillation stop detection reset</li>
+<li>SYSRESETREQ of ArmTM CortexTM-M0+ (software reset)</li>
+</ul>
+</li>
+<li>
+<p>Clock</p>
+<ul>
+<li>Low-speed clock:<ul>
+<li>Crystal oscillation (32.768kHz)</li>
+<li>Built-in RC oscillation (32.768kHz)</li>
+</ul>
+</li>
+<li>High-speed clock:<ul>
+<li>PLL (48MHz) generated from Low-speed clock</li>
+<li>Crystal oscillation (40/20MHz) for system or CAN</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Power management</p>
+<ul>
+<li>HALT mode: Instruction execution by CPU is suspended. All peripheral circuits can keep in operating states.</li>
+<li>STOP mode: Stop of low-speed oscillation and high-speed oscillation (Operations of CPU and peripheral circuits are stopped.)</li>
+<li>Clock gear: The frequency of high-speed system clock can be changed by software (1/1, 1/2, 1/4, 1/8, 1/16, 1/32 of the oscillation clock)</li>
+<li>Block Control Function: Power down (reset registers and stop clock supply) the circuits of unused peripherals.</li>
+</ul>
+</li>
+<li>
+<p>Guaranteed operating range</p>
+<ul>
+<li>Operating temperature: (ambient) -40°C to +105°C, (junction) -40°C to +115°C</li>
+<li>Operating voltage: VDD=2.3 to 5.5V</li>
+</ul>
+</li>
+<li>
+<p>Supply current (Typ.)</p>
+<ul>
+<li>High-speed operation (48MHz): 10mA</li>
+<li>Low-speed operation (32.768kHz): 27μA</li>
+<li>HALT mode: 3.5μA</li>
+<li>STOP mode: 2μA</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

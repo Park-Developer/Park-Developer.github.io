@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWD(Serial Wire Debug)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<p>: SWD는 ARM 코어 기반 MCU들에서 주료 활용되는 디버깅 통신 방식이다.</p>
+<p>SWD는 JTAG과 달리, 클럭과 단일 양방향 데이터핀만 있어도, 기존의 5핀 JTAG 디버그 인터페이스를 대체할 수 있다.</p>
+<h3><em>Pin map</em></h3>
+<hr />
+<ul>
+<li>SWDIO(Serial Wire Debug I/O) : 양방향핀이며, 디버깅 명령, 데이터 및 응답을 전송하는데 사용됨</li>
+<li>SWCLK(Serial Wire Clock) : 클럭 신호 전송핀으로, 디버깅 장치와 CMU간의 동기화 역할을 한다.</li>
+<li>Reset : MCU를 reset하는데 사용된다.</li>
+</ul>
+</body>
+</html>

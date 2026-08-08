@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arm 32-bit Cortex - M4 CPU</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>ARM</h1>
+<h3><em>Overview</em></h3>
+<hr />
+<p>: The Cortex-M4 processor is a low-power 32-bit RISC processor that features low gate count, low interrupt latency, and low-cost debug.</p>
+<ul>
+<li>The Cortex-M4 with FPU is a processor with the same capability as the Cortex-M4 processor and includes floating-point arithmetic functionality.</li>
+</ul>
+<h3><em>Features</em></h3>
+<hr />
+<p>: Cortex-M4 processor includes
+* Processor Core
+* A Nested Vectored Interrupt Controller(NVIC) closely integrated with the processor core to achieve low latency interrupt processing.
+* Multiple high-performance bus interface
+* Low cost debug solution with the optional abaility 
+    * implement breakpoints and code patches
+    * implement watchpoint, tracing, and system profiling
+    * support printf style debugging
+    * Bridge to a Trace Port Analyzer(TPA)
+* An optional Memory Protection(MPU)
+* A Floating Point Unit(FPU)
+*
+<img src="../../HW 개발/Archieve/Attachment/Pasted image 20260617003105.png" alt="Pasted image 20260617003105.png"></p>
+<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260617003522.png" alt="Pasted image 20260617003522.png"></p>
+<h3><em>Cortex-M4 Processor Components</em></h3>
+<hr />
+<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260617003704.png" alt="Pasted image 20260617003704.png"></p>
+<ul>
+<li><a href="STM32F429/Cortex-M4%20Processor.md.html">Cortex-M4 Processor</a></li>
+<li><a href="FPU%28Floating%20Point%20Unit%29.html">Floating Point Unit (FPU)</a></li>
+<li><a href="STM32F429/Nested%20Vectored%20Interrupt%20Controller%20%28NVIC%29.md.html">Nested Vectored Interrupt Controller (NVIC)</a></li>
+<li><a href="STM32F429/Memory%20Protection%20Unit%20%28MPU%29.md.html">Memory Protection Unit (MPU)</a></li>
+<li><a href="STM32F429/Cross%20Trigger%20Interface%20Unit.md.html">Cross Trigger Interface Unit</a></li>
+<li><a href="STM32F429/Debug%20and%20Trace.md.html">Debug and Trace</a></li>
+<li><a href="STM32F429/ETM%20interface.md.html">ETM interface</a></li>
+<li><a href="STM32F429/AHB%20Trace%20Macrocell%20interface.md.html">AHB Trace Macrocell interface</a></li>
+<li><a href="STM32F429/Bus%20interfaces.md.html">Bus interfaces</a></li>
+<li><a href="STM32F429/Debug%20port%20AHB-AP%20interface.md.html">Debug port AHB-AP interface</a></li>
+<li></li>
+<li></li>
+</ul>
+<h3><em>Cortex-M4 Pipeline</em></h3>
+<hr />
+<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260617004455.png" alt="Pasted image 20260617004455.png"></p>
+</body>
+</html>

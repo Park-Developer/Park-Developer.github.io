@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino UNO Q 사양</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<p><img src="../../HW 개발/Archieve/Attachment/Pasted image 20260708000936.png" alt="Pasted image 20260708000936.png"></p>
+<ul>
+<li>
+<p>Microporcessor(MPU) : Qualcomm QRB2210</p>
+<ul>
+<li>쿼드코어 <a href="Cortex-A.html">Arm Cortex-A53</a> @2.0 GHz</li>
+<li>Adreno 702 GPU (845MHz) - 3D 그래픽 가속</li>
+<li>
+<ul>
+<li>듀얼 ISP - 최대 25MP @ 30fps 카메라 지원</li>
+</ul>
+</li>
+<li>
+<ul>
+<li><a href="OS/Debian.md.html">Debian</a> Linux OS 실행, 엣지 컴퓨팅·임베디드 비전에 최적</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Microcontroller(MCU - STM32U585)</p>
+<ul>
+<li>Arm Cortex-M33 @최대 160MHz</li>
+<li>2MB Flash, 786KB SRAM</li>
+<li><a href="OS/Zephyr.md.html">Zephyr OS </a>기반 실시간 저전력 임베디드 애플리케이션용</li>
+</ul>
+</li>
+<li>
+<p>무선 모듈(WCBN3536A)</p>
+<ul>
+<li>듀얼 밴드 Wifi5(2.4/5GHz)</li>
+<li>Bluetooth 5.1</li>
+<li>온보드 안테나 내장</li>
+</ul>
+</li>
+<li>
+<p>메모리</p>
+<ul>
+<li><a href="Embedded/eMMC%28Embedded%20Multi%20Media%20Card%29.md.html">eMMC</a> 16GB 또는 32GB</li>
+<li>LPDDR4 2GB 또는 4GB</li>
+</ul>
+</li>
+<li>
+<p>멀티미디어 코덱</p>
+<ul>
+<li>
+<ul>
+<li>ANX7625 - USB‑C를 통한 영상/오디오 출력, 고속 디스플레이·사운드 인터페이스 제공</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>전원 관리</p>
+<ul>
+<li>Qualcomm PM4145 PMIC - 항상 연결형 IoT 동작을 위한 전원 시퀀싱·전력 관리 담당</li>
+</ul>
+</li>
+<li>
+<p><strong>폼팩터</strong></p>
+<ul>
+<li>클래식 <strong>UNO 폼팩터</strong> - 대부분의 Arduino UNO 실드와 기계적·전기적 호환</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

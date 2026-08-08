@@ -13,94 +13,125 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Specific styles for Study page */
-        .study-header {
-            padding-top: 150px; /* Space for fixed header */
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-left: 9%;
-            padding-right: 9%;
-        }
-        
-        .study-header p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-top: 1rem;
+        /* Specific styles for Study Layout */
+        body {
+            /* Prevent full body scroll to keep the header and layout fixed */
+            overflow: hidden;
         }
 
-        .category-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            padding: 0 9%;
-            margin-bottom: 8rem;
+        .study-layout {
+            display: flex;
+            height: 100vh;
+            padding: 100px 3% 20px 3%; /* Space for fixed header */
+            gap: 20px;
         }
 
-        .category-card {
-            padding: 3rem 2rem;
-            border-radius: 24px;
-            text-align: center;
-            transition: 0.4s ease;
-            cursor: pointer;
+        .sidebar {
+            flex: 0 0 350px;
+            overflow-y: auto;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            border-radius: 20px;
         }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
+        
+        /* Scrollbar styles for sidebar */
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .sidebar::-webkit-scrollbar-thumb {
             background: var(--main-color);
-            z-index: -1;
-            transition: 0.4s ease;
+            border-radius: 4px;
         }
 
-        .category-card:hover::before {
+        .content-viewer {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #content-iframe {
+            width: 100%;
             height: 100%;
+            border: none;
+            background: #fff;
+            transition: 0.3s ease;
+        }
+        
+        [data-theme="dark"] #content-iframe {
+            /* If the html pages themselves don't support dark mode natively, a white background iframe might be jarring, 
+               but we can set a fallback background */
+            background: #fff; /* kept white to ensure markdown HTML renders legibly if it doesn't have dark mode styles */
         }
 
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px var(--glass-shadow);
+        /* Tree Styles */
+        .tree-ul {
+            list-style: none;
+            padding-left: 20px;
+            margin: 5px 0;
         }
-        
-        .category-card i {
-            font-size: 4rem;
+
+        .tree-root {
+            padding-left: 0;
+        }
+
+        .tree-li {
+            margin: 5px 0;
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 10px 12px;
+            border-radius: 12px;
+            transition: 0.3s ease;
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .tree-item:hover {
+            background: rgba(79, 70, 229, 0.1); /* Subtle main color bg */
+            transform: translateX(5px);
+        }
+
+        .tree-item i {
+            margin-right: 12px;
+            font-size: 1.4rem;
             color: var(--main-color);
-            margin-bottom: 1.5rem;
-            transition: 0.4s ease;
+            transition: 0.3s ease;
         }
-        
-        .category-card:hover i,
-        .category-card:hover h3,
-        .category-card:hover p {
+
+        .tree-item.active {
+            background: var(--main-color);
             color: #fff;
         }
-
-        .category-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            transition: 0.4s ease;
+        .tree-item.active i {
+            color: #fff;
         }
-
-        .category-card p {
-            font-size: 1rem;
-            opacity: 0.8;
-            transition: 0.4s ease;
-        }
-
-        @media (max-width: 768px) {
-            .study-header { padding-top: 120px; }
-            .category-container { padding: 0 5%; gap: 1.5rem; }
+        
+        @media (max-width: 991px) {
+            .study-layout {
+                flex-direction: column;
+                overflow-y: auto;
+                height: auto;
+                padding-top: 120px;
+                padding-bottom: 50px;
+            }
+            body {
+                overflow-y: auto;
+            }
+            .sidebar {
+                flex: none;
+                height: 300px;
+            }
+            .content-viewer {
+                height: 600px;
+                flex: none;
+            }
         }
     </style>
 </head>
@@ -128,55 +159,16 @@
         </div>
     </header>
 
-    <main>
-        <div class="study-header fade-in">
-            <h2 class="heading">My <span>Study</span> Archive</h2>
-            <p>꾸준히 학습하고 기록한 내용들을 카테고리별로 모아둔 공간입니다.</p>
-        </div>
-
-        <div class="category-container">
-            <!-- Category 1 -->
-            <div class="category-card glass-panel fade-in">
-                <i class='bx bxl-javascript'></i>
-                <h3>JavaScript</h3>
-                <p>ES6+ 문법, 비동기 처리, 렌더링 최적화 및 브라우저 동작 원리</p>
+    <main class="study-layout fade-in">
+        <aside class="sidebar glass-panel">
+            <div class="tree-container" id="tree-container">
+                <!-- Tree items will be dynamically generated here -->
             </div>
-            
-            <!-- Category 2 -->
-            <div class="category-card glass-panel fade-in" style="animation-delay: 0.1s;">
-                <i class='bx bxl-react'></i>
-                <h3>React & Next.js</h3>
-                <p>상태 관리, 훅(Hooks), SSR/SSG 렌더링, 컴포넌트 설계</p>
-            </div>
-
-            <!-- Category 3 -->
-            <div class="category-card glass-panel fade-in" style="animation-delay: 0.2s;">
-                <i class='bx bx-data'></i>
-                <h3>Data Structures</h3>
-                <p>배열, 연결 리스트, 스택, 큐, 트리, 그래프 등 핵심 자료구조</p>
-            </div>
-
-            <!-- Category 4 -->
-            <div class="category-card glass-panel fade-in" style="animation-delay: 0.3s;">
-                <i class='bx bx-code-block'></i>
-                <h3>Algorithms</h3>
-                <p>정렬, 탐색, 동적 계획법, 그리디, 코딩 테스트 문제 풀이</p>
-            </div>
-            
-            <!-- Category 5 -->
-            <div class="category-card glass-panel fade-in" style="animation-delay: 0.4s;">
-                <i class='bx bxl-nodejs'></i>
-                <h3>Backend</h3>
-                <p>Node.js, Express 프레임워크, REST API 설계 및 데이터베이스 연동</p>
-            </div>
-
-            <!-- Category 6 -->
-            <div class="category-card glass-panel fade-in" style="animation-delay: 0.5s;">
-                <i class='bx bx-book-bookmark'></i>
-                <h3>CS Fundamentals</h3>
-                <p>운영체제 핵심 개념, 네트워크 계층, 데이터베이스 개론</p>
-            </div>
-        </div>
+        </aside>
+        
+        <section class="content-viewer glass-panel">
+            <iframe id="content-iframe" src="about:blank" title="Study Content"></iframe>
+        </section>
     </main>
 
     <footer class="footer">
@@ -190,5 +182,82 @@
 
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const treeContainer = document.getElementById('tree-container');
+            const iframe = document.getElementById('content-iframe');
+            let activeElement = null;
+
+            // Fetch the generated tree.json
+            fetch('obsidian/tree.json')
+                .then(response => response.json())
+                .then(data => {
+                    const ul = buildTree(data, true);
+                    treeContainer.appendChild(ul);
+                })
+                .catch(err => {
+                    treeContainer.innerHTML = '<p style="text-align:center; margin-top: 20px;">문서를 불러오지 못했습니다.</p>';
+                    console.error('Failed to load tree:', err);
+                });
+
+            function buildTree(items, isRoot = false) {
+                const ul = document.createElement('ul');
+                ul.className = isRoot ? 'tree-ul tree-root' : 'tree-ul';
+                
+                items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'tree-li';
+                    
+                    const div = document.createElement('div');
+                    div.className = 'tree-item';
+                    
+                    const icon = document.createElement('i');
+                    if (item.type === 'directory') {
+                        icon.className = 'bx bx-folder';
+                    } else {
+                        icon.className = 'bx bx-file';
+                    }
+                    
+                    const text = document.createElement('span');
+                    text.textContent = item.name;
+                    
+                    div.appendChild(icon);
+                    div.appendChild(text);
+                    
+                    li.appendChild(div);
+                    
+                    if (item.type === 'directory') {
+                        const childrenUl = buildTree(item.children);
+                        childrenUl.style.display = 'none'; // Initially collapsed
+                        
+                        div.addEventListener('click', () => {
+                            if (childrenUl.style.display === 'none') {
+                                childrenUl.style.display = 'block';
+                                icon.className = 'bx bx-folder-open';
+                            } else {
+                                childrenUl.style.display = 'none';
+                                icon.className = 'bx bx-folder';
+                            }
+                        });
+                        li.appendChild(childrenUl);
+                    } else {
+                        div.addEventListener('click', () => {
+                            if (activeElement) {
+                                activeElement.classList.remove('active');
+                            }
+                            div.classList.add('active');
+                            activeElement = div;
+                            
+                            // Load html file in iframe
+                            iframe.src = 'obsidian/' + item.path;
+                        });
+                    }
+                    
+                    ul.appendChild(li);
+                });
+                return ul;
+            }
+        });
+    </script>
 </body>
 </html>

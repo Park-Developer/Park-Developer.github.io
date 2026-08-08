@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDO(Low Dropout Regulator)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<p>: An LDO is nothing more than a three terminal linear system providing closed-loop control. The solution is easy to implement, requiring only the device itself and an input and output capacitor.</p>
+<p><img src="../../Archieve/Attachment/Pasted%20image%2020260806235410.png" alt=""></p>
+<h3><em>LDO Operation</em></h3>
+<hr />
+<p>: An LDO can be thought fo as a variable resistor.</p>
+<p>=&gt; LDO is built from four main elements : (1) pass transistor, (2) bandgap reference, (3) operational amplifier, (4) feedback resistor.</p>
+<h3><em>Designing with an LDO</em></h3>
+<hr />
+<ol>
+<li>
+<p><strong>Output Voltage</strong>
+    : Many LDOs are supplied in standard fixed output voltage. However, some LDOs are offered with an adjustable output voltage. This requires the designer to use an external feed-back resistor divier.</p>
+</li>
+<li>
+<p><strong>Dropout Voltage</strong>
+     : The sum of the output voltage and the typical dropout voltage must be less than the minimum input voltage. If the sum is greater, the LDO will not be able to regulate the output at minimum input voltages.</p>
+</li>
+<li>
+<p><strong>Output Capacitor</strong>
+    : A very important specification that should not be over looked is the requirments that some LDOs place on the output capacitor.</p>
+<p>Certain LDOs require the output capacitor to be either tantalum or aluminum electrolytic to produce a stable system. These capacitors have a large ESR(Equivalent Series Resistance)</p>
+</li>
+</ol>
+<h3><em>LDO Parameter</em></h3>
+<hr />
+<ul>
+<li>
+<p>$I_{GND}$ : the current used by the LDO to perform the regulating operation and is often referred to as the quiescent current($I_q$) for no load conditions.</p>
+</li>
+<li>
+<p>Efficiency : When the LDO output current is much greater than the device quiescent current, the system efficiency is found by dividing the output voltage by the input voltage.
+    <img src="../../Archieve/Attachment/Pasted%20image%2020260807001219.png" alt="467"></p>
+<p><img src="../../Archieve/Attachment/Pasted%20image%2020260807001246.png" alt=""></p>
+<p>System line and load step performance is greatly improved on LDOs that have higher Iq. Since the Iq is used by the LDO to preform the regulating operation, it can respond quicker to a sudden change in load requirements or line voltage.</p>
+</li>
+</ul>
+</body>
+</html>

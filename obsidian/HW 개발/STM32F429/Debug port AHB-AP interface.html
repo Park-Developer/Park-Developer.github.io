@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug port AHB-AP interface</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<p>: The processor contains an Advanced High-performance Bus access Port(AHB-AP) interface for debug accesses. An external Debug Port(DP) component accesses this interface.</p>
+<p>The Cortex-M4 system support three possible DP implementations:</p>
+<ul>
+<li>Serial Wire JTAGH Debug Port(SWJ-DP)
+    : The SWJ-DP is a standard CoreSight debug port that combines JTAG-DP and Serial Wire Debug Port(SW-DP)</li>
+<li>SW-DP
+    : This provides a two-pin interface to the AHB-AP port</li>
+<li>No DP present
+    : If no debug functionality is present within the processor, a DP is not required</li>
+</ul>
+</body>
+</html>
