@@ -69,6 +69,7 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            padding: 0;
         }
 
         #content-iframe {
@@ -405,6 +406,20 @@
                     document.body.style.cursor = '';
                     resizer.classList.remove('resizing');
                     iframe.style.pointerEvents = 'auto';
+                }
+            });
+
+            // Remove iframe padding dynamically
+            iframe.addEventListener('load', function() {
+                try {
+                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    if (iframeDoc && iframeDoc.body) {
+                        // 기본적으로 너무 넓었던 여백을 보기 편한 적당한 크기로 조정
+                        iframeDoc.body.style.padding = '16px 24px';
+                        iframeDoc.body.style.margin = '0';
+                    }
+                } catch (e) {
+                    console.error("Cannot access iframe content to remove padding:", e);
                 }
             });
         });
