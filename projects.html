@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo">Dev<span>.</span></a>
+        
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="study.html">Study</a>
+            <a href="now.html">Now</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                <i class='bx bx-moon'></i>
+            </button>
+            <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
+        </div>
+    </header>
+
+    <main class="projects-layout fade-in">
+        <h2 class="heading">My <span>Projects</span></h2>
+        
+        <div class="kanban-board">
+            <!-- To Do Column -->
+            <div class="kanban-column" id="todo-column">
+                <div class="column-header">
+                    <h3>진행 예정</h3>
+                    <span class="count">0</span>
+                </div>
+                <div class="column-body" data-status="todo"></div>
+            </div>
+
+            <!-- In Progress Column -->
+            <div class="kanban-column" id="inprogress-column">
+                <div class="column-header">
+                    <h3>진행중</h3>
+                    <span class="count">0</span>
+                </div>
+                <div class="column-body" data-status="inprogress"></div>
+            </div>
+
+            <!-- Done Column -->
+            <div class="kanban-column" id="done-column">
+                <div class="column-header">
+                    <h3>완료됨</h3>
+                    <span class="count">0</span>
+                </div>
+                <div class="column-body" data-status="done"></div>
+            </div>
+
+            <!-- Halted Column -->
+            <div class="kanban-column" id="halted-column">
+                <div class="column-header">
+                    <h3>중단됨</h3>
+                    <span class="count">0</span>
+                </div>
+                <div class="column-body" data-status="halted"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Dashboard Modal -->
+    <div id="project-modal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <button class="close-modal"><i class='bx bx-x'></i></button>
+            <div class="modal-header">
+                <div>
+                    <h2 id="modal-title">Project Title</h2>
+                    <span id="modal-status" class="status-badge">Status</span>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-left">
+                    <div class="dashboard-section">
+                        <h3><i class='bx bx-info-circle'></i> Description</h3>
+                        <p id="modal-desc">Project description goes here...</p>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3><i class='bx bx-code-alt'></i> Tech Stack</h3>
+                        <div id="modal-tech" class="skills"></div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3><i class='bx bx-check-square'></i> Tasks Progress</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar-bg">
+                                <div id="modal-progress-fill" class="progress-fill"></div>
+                            </div>
+                            <span id="modal-progress-text">0%</span>
+                        </div>
+                        <ul id="modal-tasks" class="task-list"></ul>
+                    </div>
+                </div>
+
+                <div class="modal-right">
+                    <div class="dashboard-section">
+                        <h3><i class='bx bx-history'></i> Activity Timeline</h3>
+                        <div id="modal-timeline" class="timeline"></div>
+                    </div>
+                    
+                    <div class="dashboard-section">
+                        <h3><i class='bx bx-link'></i> Links</h3>
+                        <div id="modal-links" class="project-links"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>&copy; 2024 Wonho. All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+</body>
+</html>

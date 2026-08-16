@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now - Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <header class="header">
+        <a href="index.html" class="logo">Dev<span>.</span></a>
+        
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="study.html">Study</a>
+            <a href="now.html" class="active">Now</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+                <i class='bx bx-moon'></i>
+            </button>
+            <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
+        </div>
+    </header>
+
+    <main class="now-layout fade-in">
+        <h2 class="heading">What I'm doing <span>Now</span></h2>
+        <p class="now-intro">현재 진행 중인 프로젝트, 공부하고 있는 주제, 그리고 다양한 계획들을 공유합니다.</p>
+
+        <div class="now-grid">
+            <!-- Left Column: Ongoing Projects & Studies -->
+            <div class="now-col">
+                <div class="now-section glass-panel">
+                    <div class="section-header">
+                        <h3><i class='bx bx-laptop'></i> 현재 진행중인 프로젝트</h3>
+                    </div>
+                    <div id="now-projects" class="now-list">
+                        <!-- Loaded dynamically from projects.js -->
+                    </div>
+                </div>
+
+
+                <div class="now-section glass-panel">
+                    <div class="section-header">
+                        <h3><i class='bx bx-time-five'></i> 최근 작성한 문서</h3>
+                    </div>
+                    <ul id="now-recent-files" class="recent-file-list">
+                        <!-- Loaded dynamically from obsidian/recent.json -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Other Plans & Input Form -->
+            <div class="now-col">
+                <div class="now-section glass-panel">
+                    <div class="section-header">
+                        <h3><i class='bx bx-calendar-event'></i> 기타 계획 및 할 일</h3>
+                    </div>
+                    <ul id="now-plans" class="now-task-list">
+                        <!-- Loaded dynamically from localStorage -->
+                    </ul>
+                </div>
+
+                <div class="now-section glass-panel highlight-panel">
+                    <div class="section-header">
+                        <h3><i class='bx bx-plus-circle'></i> 새로운 항목 추가</h3>
+                    </div>
+                    <form id="now-form" class="now-form">
+                        <div class="input-group">
+                            <label for="item-text">내용</label>
+                            <input type="text" id="item-text" placeholder="여기에 입력하세요..." required>
+                        </div>
+                        <button type="submit" class="btn submit-btn"><i class='bx bx-plus'></i> 추가하기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p>&copy; 2024 Wonho. All Rights Reserved.</p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+    <script src="projects.js"></script>
+    <script src="now.js"></script>
+</body>
+</html>
