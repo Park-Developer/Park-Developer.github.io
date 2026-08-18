@@ -1,95 +1,258 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Portfolio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DevFocus - Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-highest": "#e0e3e5",
+                "surface-container-high": "#e6e8ea",
+                "on-surface-variant": "#3c494c",
+                "outline": "#6c797d",
+                "surface-container": "#f1f5f9",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a",
+                "on-primary-container": "#005763",
+                "surface-variant": "#e0e3e5",
+                "outline-variant": "#bbc9cd",
+                "tertiary": "#732ee4",
+                "primary-container": "#22d3ee",
+                "secondary-fixed-dim": "#bec6e0",
+                "surface": "#f7f9fb",
+                "surface-bright": "#f7f9fb",
+                "error": "#ba1a1a",
+                "on-surface": "#191c1e",
+                "inverse-on-surface": "#eff1f3",
+                "inverse-primary": "#2fd9f4",
+                "on-background": "#191c1e",
+                "text-secondary": "#475569",
+                "on-tertiary-fixed": "#25005a",
+                "on-tertiary-fixed-variant": "#5a00c6",
+                "primary-fixed-dim": "#2fd9f4",
+                "surface-tint": "#006877",
+                "tertiary-container": "#cdb4ff",
+                "on-tertiary": "#ffffff",
+                "primary": "#006877",
+                "tertiary-fixed-dim": "#d2bbff",
+                "on-primary": "#ffffff",
+                "on-tertiary-container": "#630dd4",
+                "on-error": "#ffffff",
+                "surface-container-low": "#f2f4f6",
+                "on-primary-fixed": "#001f25",
+                "secondary-fixed": "#dae2fd",
+                "background": "#f7f9fb",
+                "surface-container-lowest": "#ffffff",
+                "code-bg": "#f1f5f9",
+                "on-primary-fixed-variant": "#004e5a",
+                "secondary-container": "#dae2fd",
+                "surface-dim": "#d8dadc",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed": "#131b2e",
+                "secondary": "#565e74",
+                "tertiary-fixed": "#eaddff",
+                "inverse-surface": "#2d3133",
+                "text-primary": "#0f172a",
+                "on-secondary-container": "#5c647a",
+                "primary-fixed": "#a2eeff",
+                "surface-border": "#e2e8f0",
+                "on-secondary-fixed-variant": "#3f465c"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "md": "24px",
+                "container-max": "1120px",
+                "base": "4px",
+                "sm": "16px",
+                "lg": "48px",
+                "xs": "8px",
+                "xl": "80px"
+        },
+        "fontFamily": {
+                "body-md": ["Inter"],
+                "headline-md": ["Inter"],
+                "code-block": ["JetBrains Mono"],
+                "headline-lg": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-xl": ["Inter"],
+                "label-sm": ["JetBrains Mono"]
+        },
+        "fontSize": {
+                "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "code-block": ["14px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        .glow-hover:hover {
+            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.25); /* primary-container glow */
+            border-color: #22d3ee;
+            transform: translateY(-2px);
+        }
+    </style>
+
+<style>
+    /* Dark Mode Overrides */
+    .dark .bg-background { background-color: #0f172a !important; }
+    .dark .text-on-background { color: #e2e8f0 !important; }
+    .dark .bg-surface-container-lowest { background-color: #1e293b !important; }
+    .dark .bg-surface-container-low { background-color: #334155 !important; }
+    .dark .bg-surface-container { background-color: #1e293b !important; }
+    .dark .text-text-primary { color: #f8fafc !important; }
+    .dark .text-text-secondary { color: #94a3b8 !important; }
+    .dark .text-on-surface { color: #f1f5f9 !important; }
+    .dark .border-surface-border { border-color: #475569 !important; }
+    .dark .bg-code-bg { background-color: #020617 !important; }
+    .dark .bg-surface-variant { background-color: #334155 !important; }
+    .dark .text-primary { color: #22d3ee !important; }
+    .dark .border-primary { border-color: #22d3ee !important; }
+    .dark iframe { background-color: #0f172a !important; color-scheme: dark; }
+</style>
+
 </head>
-<body>
-    <!-- Background Elements -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-16">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest fixed top-0 w-full border-b border-surface-border z-50">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<a href="index.html" class="font-headline-md text-headline-md font-bold text-on-surface">DevFocus</a>
+<div class="hidden md:flex space-x-md">
+<a class="text-primary border-b-2 border-primary pb-1 cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="index.html">Home</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="blog.html">Blog</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="projects.html">Projects</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="study.html">Study</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="now.html">Now</a>
+</div>
+<div class="flex space-x-sm items-center">
+<span class="material-symbols-outlined text-on-surface cursor-pointer hover:text-primary transition-colors" id="theme-toggle">dark_mode</span>
+</div>
+</div>
+</nav>
 
-    <header class="header">
-        <a href="#" class="logo">Dev<span>.</span></a>
+<!-- Main Content -->
+<main class="flex-grow pb-xl px-gutter max-w-container-max mx-auto w-full">
+    
+    <!-- Hero Section -->
+    <section id="home" class="flex flex-col md:flex-row items-center justify-between py-xl gap-lg">
+        <div class="flex-1">
+            <h3 class="font-headline-md text-headline-md text-primary mb-2">Hello, I'm</h3>
+            <h1 class="font-headline-xl text-headline-xl text-text-primary mb-4">Wonho</h1>
+            <h3 class="font-headline-md text-headline-md text-text-secondary mb-6">And I'm a <span class="text-primary">Developer</span></h3>
+            <p class="font-body-lg text-body-lg text-text-secondary mb-8 max-w-2xl">
+                안녕하세요! 사용자 경험을 중시하며, 창의적인 디자인과 효율적인 코드로 세상을 연결하는 개발자입니다. 계속해서 성장하며 더 나은 가치를 만들어갑니다.
+            </p>
+            
+            <div class="flex gap-4 mb-8">
+                <a href="#" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors border border-surface-border">
+                    <span class="material-symbols-outlined">code</span>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors border border-surface-border">
+                    <span class="material-symbols-outlined">work</span>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors border border-surface-border">
+                    <span class="material-symbols-outlined">mail</span>
+                </a>
+            </div>
+
+            <a href="projects.html" class="inline-block bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:opacity-90 transition-opacity">View My Work</a>
+        </div>
+
+        <div class="flex-1 flex justify-center">
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-surface-border flex items-center justify-center bg-surface-container-low shadow-lg relative overflow-hidden">
+                <span class="material-symbols-outlined text-primary" style="font-size: 120px;">developer_mode</span>
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-lg">
+        <div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-xl p-lg flex flex-col md:flex-row gap-lg">
+            <div class="flex-1">
+                <h2 class="font-headline-lg text-headline-lg text-text-primary mb-6">About <span class="text-primary">Me</span></h2>
+                <p class="font-body-md text-body-md text-text-secondary mb-8 leading-relaxed">
+                    최신 웹 기술에 관심이 많으며, 확장 가능하고 유지보수하기 쉬운 아키텍처를 설계하는 것을 목표로 합니다. 끊임없는 학습을 통해 더 나은 문제 해결책을 모색합니다.
+                </p>
+            </div>
+            
+            <div class="flex-1">
+                <h3 class="font-headline-md text-headline-md text-text-primary mb-6">Skills</h3>
+                <div class="flex flex-wrap gap-sm">
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">HTML5 / CSS3</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">JavaScript (ES6+)</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">React & Next.js</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">Node.js</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">UI/UX Design</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full mt-auto border-t border-surface-border">
+<div class="flex flex-col md:flex-row justify-between items-center py-md px-gutter max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md text-on-surface font-bold mb-sm md:mb-0">DevFocus</div>
+<div class="flex space-x-md mb-sm md:mb-0">
+<a class="text-text-secondary font-label-sm text-label-sm hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#">RSS</a>
+<a class="text-text-secondary font-label-sm text-label-sm hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#">Newsletter</a>
+<a class="text-text-secondary font-label-sm text-label-sm hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="text-text-secondary font-label-sm text-label-sm opacity-80">
+    © 2024 Wonho. All Rights Reserved.
+</div>
+</div>
+</footer>
+
+<script>
+    
+    // Theme toggle logic
+    (function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (!themeToggle) return;
+        const themeIcon = themeToggle.tagName.toLowerCase() === 'span' ? themeToggle : themeToggle.querySelector('span');
         
-        <nav class="navbar">
-            <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="study.html">Study</a>
-            <a href="now.html">Now</a>
-        </nav>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            if (themeIcon) themeIcon.textContent = 'light_mode';
+        }
 
-        <div class="header-actions">
-            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                <i class='bx bx-moon'></i>
-            </button>
-            <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="home">
-            <div class="home-content fade-in">
-                <h3>Hello, I'm</h3>
-                <h1>Wonho</h1>
-                <h3>And I'm a <span class="multiple-text">Developer</span></h3>
-                <p>안녕하세요! 사용자 경험을 중시하며, 창의적인 디자인과 효율적인 코드로 세상을 연결하는 개발자입니다. 계속해서 성장하며 더 나은 가치를 만들어갑니다.</p>
-                <div class="social-media">
-                    <a href="#"><i class='bx bxl-github'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                    <a href="#"><i class='bx bx-envelope'></i></a>
-                </div>
-                <a href="projects.html" class="btn">View My Work</a>
-            </div>
-
-            <div class="home-img fade-in-right">
-                <div class="glass-card img-container">
-                    <!-- Placeholder avatar using Boxicons as a fallback or you can add a real image here -->
-                    <i class='bx bx-code-alt' style="font-size: 8rem; color: var(--main-color);"></i>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="about-content glass-panel scroll-element">
-                <h2 class="heading">About <span>Me</span></h2>
-                <p>최신 웹 기술에 관심이 많으며, 확장 가능하고 유지보수하기 쉬운 아키텍처를 설계하는 것을 목표로 합니다. 끊임없는 학습을 통해 더 나은 문제 해결책을 모색합니다.</p>
-                
-                <div class="skills">
-                    <span class="skill-tag">HTML5 / CSS3</span>
-                    <span class="skill-tag">JavaScript (ES6+)</span>
-                    <span class="skill-tag">React & Next.js</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">UI/UX Design</span>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="footer-text">
-            <p>&copy; 2024 Wonho. All Rights Reserved.</p>
-        </div>
-        <div class="footer-iconTop">
-            <a href="#home"><i class='bx bx-up-arrow-alt'></i></a>
-        </div>
-    </footer>
-
-    <!-- Custom JS -->
-    <script src="script.js"></script>
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                if (themeIcon) themeIcon.textContent = 'dark_mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                if (themeIcon) themeIcon.textContent = 'light_mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    })();
+</script>
 </body>
 </html>

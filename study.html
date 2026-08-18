@@ -1,429 +1,478 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html class="h-full" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study - Developer Portfolio</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Specific styles for Study Layout */
-        body {
-            /* Prevent full body scroll to keep the header and layout fixed */
-            overflow: hidden;
-        }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Study - DevFocus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    .code-block-active {
+        border-left: 2px solid #22d3ee; /* Primary Cyan */
+    }
 
-        .study-layout {
-            display: flex;
-            height: 100vh;
-            padding: 100px 3% 20px 3%; /* Space for fixed header */
-        }
+    /* Resizer */
+    .resizer {
+        width: 4px;
+        cursor: col-resize;
+        transition: background-color 0.3s;
+        z-index: 10;
+    }
+    .resizer:hover, .resizer.resizing {
+        background-color: #006877; /* primary */
+    }
 
-        .resizer {
-            width: 8px;
-            margin: 0 10px;
-            cursor: col-resize;
-            background-color: transparent;
-            transition: background-color 0.3s;
-            border-radius: 4px;
-            z-index: 10;
-        }
-
-        .resizer:hover, .resizer.resizing {
-            background-color: var(--main-color);
-        }
-
-        .sidebar {
-            flex: 0 0 350px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            border-radius: 20px;
-        }
-        
-        /* Tree Container scroll settings */
-        .tree-container {
-            flex: 1;
-            overflow-y: auto;
-        }
-        
-        /* Scrollbar styles for tree container */
-        .tree-container::-webkit-scrollbar {
-            width: 8px;
-        }
-        .tree-container::-webkit-scrollbar-thumb {
-            background: var(--main-color);
-            border-radius: 4px;
-        }
-
-        .content-viewer {
-            flex: 1;
-            min-height: 0;
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            padding: 0;
-        }
-
-        #content-iframe {
-            width: 100%;
-            height: 100%;
-            flex: 1;
-            border: none;
-            background: #fff;
-            transition: 0.3s ease;
-        }
-        
-        [data-theme="dark"] #content-iframe {
-            /* If the html pages themselves don't support dark mode natively, a white background iframe might be jarring, 
-               but we can set a fallback background */
-            background: #fff; /* kept white to ensure markdown HTML renders legibly if it doesn't have dark mode styles */
-        }
-
-        /* Search Bar */
-        .search-container {
-            position: relative;
-            margin-bottom: 15px;
-            flex-shrink: 0;
-        }
-
-        .search-container i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-color);
-            opacity: 0.7;
-            font-size: 1.2rem;
-        }
-
-        .search-container input {
-            width: 100%;
-            padding: 12px 15px 12px 40px;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            background: rgba(255, 255, 255, 0.5);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-            outline: none;
-            transition: 0.3s ease;
-        }
-        
-        [data-theme="dark"] .search-container input {
-            background: rgba(30, 41, 59, 0.5);
-        }
-
-        .search-container input:focus {
-            border-color: var(--main-color);
-            box-shadow: 0 0 10px rgba(79, 70, 229, 0.2);
-        }
-
-        /* Tree Styles */
-        .tree-ul {
-            list-style: none;
-            padding-left: 20px;
-            margin: 5px 0;
-        }
-
-        .tree-root {
-            padding-left: 0;
-        }
-
-        .tree-li {
-            margin: 5px 0;
-        }
-
-        .tree-item {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            padding: 10px 12px;
-            border-radius: 12px;
-            transition: 0.3s ease;
-            font-size: 1rem;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-
-        .tree-item:hover {
-            background: rgba(79, 70, 229, 0.1); /* Subtle main color bg */
-            transform: translateX(5px);
-        }
-
-        .tree-item i {
-            margin-right: 12px;
-            font-size: 1.4rem;
-            color: var(--main-color);
-            transition: 0.3s ease;
-        }
-
-        .tree-item.active {
-            background: var(--main-color);
-            color: #fff;
-        }
-        .tree-item.active i {
-            color: #fff;
-        }
-        
-        @media (max-width: 991px) {
-            .study-layout {
-                flex-direction: column;
-                overflow-y: auto;
-                height: auto;
-                padding-top: 120px;
-                padding-bottom: 50px;
-            }
-            body {
-                overflow-y: auto;
-            }
-            .sidebar {
-                flex: none;
-                height: 300px;
-            }
-            .content-viewer {
-                height: 600px;
-                flex: none;
+    /* Scrollbar */
+    .tree-container::-webkit-scrollbar {
+        width: 6px;
+    }
+    .tree-container::-webkit-scrollbar-thumb {
+        background: #bbc9cd;
+        border-radius: 4px;
+    }
+    .dark .tree-container::-webkit-scrollbar-thumb {
+        background: #6c797d;
+    }
+</style>
+<script id="tailwind-config">
+    tailwind.config = {
+        darkMode: "class",
+        theme: {
+            extend: {
+                "colors": {
+                    "tertiary": "#732ee4",
+                    "tertiary-fixed-dim": "#d2bbff",
+                    "inverse-surface": "#2d3133",
+                    "primary-container": "#22d3ee",
+                    "primary": "#006877",
+                    "surface": "#f7f9fb",
+                    "on-tertiary-container": "#630dd4",
+                    "on-surface": "#191c1e",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#131b2e",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container": "#f1f5f9",
+                    "secondary-container": "#dae2fd",
+                    "on-primary-container": "#005763",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#2fd9f4",
+                    "code-bg": "#f1f5f9",
+                    "on-background": "#191c1e",
+                    "on-primary-fixed": "#001f25",
+                    "primary-fixed": "#a2eeff",
+                    "surface-border": "#e2e8f0",
+                    "primary-fixed-dim": "#2fd9f4",
+                    "on-primary-fixed-variant": "#004e5a",
+                    "on-secondary-container": "#5c647a",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#d8dadc",
+                    "background": "#f7f9fb",
+                    "tertiary-fixed": "#eaddff",
+                    "secondary-fixed": "#dae2fd",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#e0e3e5",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container-high": "#e6e8ea",
+                    "text-secondary": "#475569",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#3c494c",
+                    "on-tertiary-fixed": "#25005a",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#5a00c6",
+                    "outline-variant": "#bbc9cd",
+                    "error": "#ba1a1a",
+                    "text-primary": "#0f172a",
+                    "surface-tint": "#006877",
+                    "tertiary-container": "#cdb4ff",
+                    "outline": "#6c797d",
+                    "secondary": "#565e74",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "on-error-container": "#93000a"
+                },
+                "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+                },
+                "spacing": {
+                    "gutter": "24px",
+                    "xs": "8px",
+                    "lg": "48px",
+                    "container-max": "1120px",
+                    "xl": "80px",
+                    "sm": "16px",
+                    "md": "24px",
+                    "base": "4px"
+                },
+                "fontFamily": {
+                    "headline-lg-mobile": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["JetBrains Mono"],
+                    "body-md": ["Inter"],
+                    "code-block": ["JetBrains Mono"],
+                    "headline-lg": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-md": ["Inter"]
+                },
+                "fontSize": {
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "code-block": ["14px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                }
             }
         }
-    </style>
+    }
+</script>
+
+<style>
+    /* Dark Mode Overrides */
+    .dark .bg-background { background-color: #0f172a !important; }
+    .dark .text-on-background { color: #e2e8f0 !important; }
+    .dark .bg-surface-container-lowest { background-color: #1e293b !important; }
+    .dark .bg-surface-container-low { background-color: #334155 !important; }
+    .dark .bg-surface-container { background-color: #1e293b !important; }
+    .dark .text-text-primary { color: #f8fafc !important; }
+    .dark .text-text-secondary { color: #94a3b8 !important; }
+    .dark .text-on-surface { color: #f1f5f9 !important; }
+    .dark .border-surface-border { border-color: #475569 !important; }
+    .dark .bg-code-bg { background-color: #020617 !important; }
+    .dark .bg-surface-variant { background-color: #334155 !important; }
+    .dark .text-primary { color: #22d3ee !important; }
+    .dark .border-primary { border-color: #22d3ee !important; }
+    .dark iframe { background-color: #0f172a !important; color-scheme: dark; }
+</style>
+
 </head>
-<body>
-    <!-- Background Elements -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+<body class="bg-background text-on-background h-full font-body-md text-body-md antialiased overflow-hidden flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-background text-primary font-body-md text-body-md fixed top-0 w-full border-b border-outline-variant flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto z-50">
+<div class="flex items-center gap-xl w-full">
+<a href="index.html" class="font-headline-md text-headline-md font-bold text-primary">DevFocus</a>
+<div class="hidden md:flex gap-md flex-1">
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer transition-all active:scale-95" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer transition-all active:scale-95" href="blog.html">Blog</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer transition-all active:scale-95" href="projects.html">Projects</a>
+<a class="text-primary border-b-2 border-primary pb-1 hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer transition-all active:scale-95" href="study.html">Study</a>
+<a class="text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer transition-all active:scale-95" href="now.html">Now</a>
+</div>
+<div class="flex items-center gap-sm">
+<button id="theme-toggle" class="text-primary hover:text-primary-fixed-dim transition-colors duration-200 cursor-pointer transition-all active:scale-95 flex items-center justify-center p-2 rounded-full hover:bg-surface-variant">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+</button>
+<div class="relative hidden sm:block">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input id="tree-search" class="bg-surface-container-lowest border border-surface-border text-on-surface text-sm rounded-lg focus:ring-primary-container focus:border-primary-container block w-full pr-10 p-2.5 focus:shadow-[0_0_0_2px_rgba(34,211,238,0.2)] transition-all" placeholder="Search notes..." type="text"/>
+</div>
+</div>
+</div>
+</nav>
 
-    <header class="header">
-        <a href="index.html" class="logo">Dev<span>.</span></a>
-        
-        <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="study.html" class="active">Study</a>
-            <a href="now.html">Now</a>
+<!-- Main Content Area - Split Pane Layout -->
+<div class="flex-1 flex pt-16 h-full max-w-container-max mx-auto w-full">
+    
+    <!-- Left Pane: Directory Tree Sidebar -->
+    <aside id="sidebar" class="w-72 bg-surface-container-low border-r border-outline-variant hidden md:flex flex-col h-full overflow-y-auto">
+        <div class="p-md pb-4 sticky top-0 bg-surface-container-low z-10 border-b border-surface-border/50">
+            <h2 class="font-headline-md text-headline-md text-primary font-semibold">Directory</h2>
+        </div>
+        <div id="tree-container" class="flex-1 p-sm space-y-1 tree-container">
+            <!-- Tree loaded by JS -->
+        </div>
+    </aside>
+
+    <!-- Resizer -->
+    <div class="resizer hidden md:block" id="resizer"></div>
+
+    <!-- Right Pane: Content Reading Area -->
+    <main class="flex-1 bg-surface-container-lowest h-full overflow-y-auto relative flex flex-col">
+        <!-- Optional Breadcrumbs if we want to show path -->
+        <nav aria-label="Breadcrumb" class="hidden text-sm text-text-secondary px-6 pt-8 md:px-12 lg:px-16 pb-4" id="breadcrumb-container">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3" id="breadcrumb-list">
+                <li class="inline-flex items-center">
+                    <span class="inline-flex items-center text-text-secondary">
+                        <span class="material-symbols-outlined text-[16px] mr-1" data-icon="home">home</span>
+                        Study
+                    </span>
+                </li>
+                <!-- Dynamic breadcrumbs -->
+            </ol>
         </nav>
-
-        <div class="header-actions">
-            <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                <i class='bx bx-moon'></i>
-            </button>
-            <div id="menu-icon" class="menu-icon"><i class='bx bx-menu'></i></div>
-        </div>
-    </header>
-
-    <main class="study-layout fade-in">
-        <aside class="sidebar glass-panel" id="sidebar">
-            <div class="search-container">
-                <i class='bx bx-search'></i>
-                <input type="text" id="tree-search" placeholder="Search files...">
-            </div>
-            
-            <div class="tree-container" id="tree-container">
-                <!-- Tree items will be dynamically generated here -->
-            </div>
-        </aside>
         
-        <div class="resizer" id="resizer"></div>
-        
-        <section class="content-viewer glass-panel">
-            <iframe id="content-iframe" src="about:blank" title="Study Content"></iframe>
-        </section>
+        <iframe id="content-iframe" src="about:blank" title="Study Content" class="w-full h-full flex-1 border-none bg-surface-container-lowest"></iframe>
     </main>
+</div>
 
-    <footer class="footer">
-        <div class="footer-text">
-            <p>&copy; 2024 Wonho. All Rights Reserved.</p>
-        </div>
-        <div class="footer-iconTop">
-            <a href="#"><i class='bx bx-up-arrow-alt'></i></a>
-        </div>
-    </footer>
+<script>
+    
+    // Theme toggle logic
+    (function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (!themeToggle) return;
+        const themeIcon = themeToggle.tagName.toLowerCase() === 'span' ? themeToggle : themeToggle.querySelector('span');
+        
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            if (themeIcon) themeIcon.textContent = 'light_mode';
+        }
 
-    <!-- Custom JS -->
-    <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const treeContainer = document.getElementById('tree-container');
-            const iframe = document.getElementById('content-iframe');
-            const searchInput = document.getElementById('tree-search');
-            let activeElement = null;
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                if (themeIcon) themeIcon.textContent = 'dark_mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                if (themeIcon) themeIcon.textContent = 'light_mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    })();
+// Study App Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const treeContainer = document.getElementById('tree-container');
+        const iframe = document.getElementById('content-iframe');
+        const searchInput = document.getElementById('tree-search');
+        let activeElement = null;
 
-            // Fetch the generated tree.json
-            fetch('obsidian/tree.json')
-                .then(response => response.json())
-                .then(data => {
-                    const ul = buildTree(data, true);
-                    treeContainer.appendChild(ul);
-                })
-                .catch(err => {
-                    treeContainer.innerHTML = '<p style="text-align:center; margin-top: 20px;">문서를 불러오지 못했습니다.</p>';
-                    console.error('Failed to load tree:', err);
-                });
+        fetch('obsidian/tree.json')
+            .then(response => response.json())
+            .then(data => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'tree-root space-y-1';
+                buildTree(data, wrapper);
+                treeContainer.appendChild(wrapper);
+            })
+            .catch(err => {
+                treeContainer.innerHTML = '<p class="text-center text-text-secondary mt-4">Failed to load documents.</p>';
+                console.error('Failed to load tree:', err);
+            });
 
-            function buildTree(items, isRoot = false) {
-                const ul = document.createElement('ul');
-                ul.className = isRoot ? 'tree-ul tree-root' : 'tree-ul';
-                
-                items.forEach(item => {
-                    const li = document.createElement('li');
-                    li.className = 'tree-li';
+        function buildTree(items, container) {
+            items.forEach(item => {
+                if (item.type === 'directory') {
+                    // Folder wrapper
+                    const folderDiv = document.createElement('div');
+                    folderDiv.className = 'tree-folder';
                     
-                    const div = document.createElement('div');
-                    div.className = 'tree-item';
+                    // Folder button
+                    const btn = document.createElement('button');
+                    btn.className = 'w-full flex items-center justify-between p-2 hover:bg-surface-variant rounded-lg transition-colors cursor-pointer text-on-surface-variant group';
                     
-                    const icon = document.createElement('i');
-                    if (item.type === 'directory') {
-                        icon.className = 'bx bx-folder';
-                    } else {
-                        icon.className = 'bx bx-file';
-                    }
+                    const leftDiv = document.createElement('div');
+                    leftDiv.className = 'flex items-center gap-2';
+                    
+                    const icon = document.createElement('span');
+                    icon.className = 'material-symbols-outlined text-[20px] text-outline transition-transform group-hover:text-primary-container';
+                    icon.textContent = 'folder';
                     
                     const text = document.createElement('span');
+                    text.className = 'font-body-md text-body-md font-medium';
                     text.textContent = item.name;
                     
-                    div.appendChild(icon);
-                    div.appendChild(text);
+                    leftDiv.appendChild(icon);
+                    leftDiv.appendChild(text);
                     
-                    li.appendChild(div);
+                    const arrowIcon = document.createElement('span');
+                    arrowIcon.className = 'material-symbols-outlined text-[18px] text-outline transition-transform group-hover:text-primary';
+                    arrowIcon.textContent = 'chevron_right';
                     
-                    if (item.type === 'directory') {
-                        const childrenUl = buildTree(item.children);
-                        childrenUl.style.display = 'none'; // Initially collapsed
-                        
-                        div.addEventListener('click', () => {
-                            if (childrenUl.style.display === 'none') {
-                                childrenUl.style.display = 'block';
-                                icon.className = 'bx bx-folder-open';
-                            } else {
-                                childrenUl.style.display = 'none';
-                                icon.className = 'bx bx-folder';
-                            }
-                        });
-                        li.appendChild(childrenUl);
-                    } else {
-                        div.addEventListener('click', () => {
-                            if (activeElement) {
-                                activeElement.classList.remove('active');
-                            }
-                            div.classList.add('active');
-                            activeElement = div;
-                            
-                            // Load html file in iframe with cache-busting to bypass browser cache
-                            iframe.src = 'obsidian/' + item.path + '?v=' + new Date().getTime();
-                        });
-                    }
+                    btn.appendChild(leftDiv);
+                    btn.appendChild(arrowIcon);
                     
-                    ul.appendChild(li);
-                });
-                return ul;
-            }
+                    folderDiv.appendChild(btn);
 
-            // Search logic
-            searchInput.addEventListener('input', (e) => {
-                const term = e.target.value.toLowerCase();
-                const rootUl = treeContainer.querySelector('.tree-root');
-                if (rootUl) {
-                    filterTree(rootUl, term);
+                    // Subfolder container
+                    const subContainer = document.createElement('div');
+                    subContainer.className = 'ml-4 border-l border-surface-border pl-2 mt-1 space-y-1 hidden tree-subcontainer';
+                    
+                    buildTree(item.children, subContainer);
+                    folderDiv.appendChild(subContainer);
+                    
+                    // Toggle Logic
+                    btn.addEventListener('click', () => {
+                        const isHidden = subContainer.classList.contains('hidden');
+                        if (isHidden) {
+                            subContainer.classList.remove('hidden');
+                            icon.textContent = 'folder_open';
+                            icon.classList.replace('text-outline', 'text-primary-container');
+                            btn.classList.add('text-primary');
+                            arrowIcon.classList.add('rotate-90');
+                        } else {
+                            subContainer.classList.add('hidden');
+                            icon.textContent = 'folder';
+                            icon.classList.replace('text-primary-container', 'text-outline');
+                            btn.classList.remove('text-primary');
+                            arrowIcon.classList.remove('rotate-90');
+                        }
+                    });
+                    
+                    container.appendChild(folderDiv);
+                } else {
+                    // File link
+                    const a = document.createElement('a');
+                    a.className = 'tree-file flex items-center gap-2 p-2 hover:bg-surface-variant rounded-lg transition-colors cursor-pointer group';
+                    
+                    const icon = document.createElement('span');
+                    icon.className = 'material-symbols-outlined text-[18px] text-outline group-hover:text-primary-container file-icon';
+                    icon.textContent = 'description';
+                    
+                    const text = document.createElement('span');
+                    text.className = 'font-body-md text-sm text-on-surface-variant file-text';
+                    text.textContent = item.name;
+                    
+                    a.appendChild(icon);
+                    a.appendChild(text);
+                    
+                    a.addEventListener('click', () => {
+                        if (activeElement) {
+                            activeElement.className = 'tree-file flex items-center gap-2 p-2 hover:bg-surface-variant rounded-lg transition-colors cursor-pointer group';
+                            const prevIcon = activeElement.querySelector('.file-icon');
+                            prevIcon.className = 'material-symbols-outlined text-[18px] text-outline group-hover:text-primary-container file-icon';
+                            const prevText = activeElement.querySelector('.file-text');
+                            prevText.className = 'font-body-md text-sm text-on-surface-variant file-text';
+                        }
+                        
+                        a.className = 'tree-file flex items-center gap-2 p-2 bg-secondary-container text-on-secondary-container rounded-lg transition-colors cursor-pointer font-bold border border-primary-container/30';
+                        icon.className = 'material-symbols-outlined text-[18px] text-primary-container file-icon';
+                        text.className = 'font-body-md text-sm file-text';
+                        
+                        activeElement = a;
+                        iframe.src = 'obsidian/' + item.path + '?v=' + new Date().getTime();
+                    });
+                    
+                    container.appendChild(a);
                 }
             });
+        }
 
-            function filterTree(ul, term) {
-                let hasVisibleChild = false;
-                const lis = ul.children;
-                for (let i = 0; i < lis.length; i++) {
-                    const li = lis[i];
-                    const div = li.querySelector('.tree-item');
-                    const text = div.querySelector('span').textContent.toLowerCase();
-                    const icon = div.querySelector('i');
-                    const isDir = icon.classList.contains('bx-folder') || icon.classList.contains('bx-folder-open');
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const root = treeContainer.querySelector('.tree-root');
+            if (root) filterTree(root, term);
+        });
+
+        function filterTree(container, term) {
+            let hasVisibleChild = false;
+            const children = container.children;
+            
+            for (let i = 0; i < children.length; i++) {
+                const el = children[i];
+                if (el.classList.contains('tree-folder')) {
+                    const btn = el.querySelector('button');
+                    const text = btn.querySelector('.font-body-md').textContent.toLowerCase();
+                    const subContainer = el.querySelector('.tree-subcontainer');
+                    const icon = btn.querySelector('.material-symbols-outlined');
+                    const arrowIcon = btn.querySelectorAll('.material-symbols-outlined')[1];
                     
                     let match = text.includes(term);
+                    const childMatch = filterTree(subContainer, term);
                     
-                    if (isDir) {
-                        const childUl = li.querySelector('.tree-ul');
-                        const childMatch = filterTree(childUl, term);
+                    if (childMatch || match) {
+                        el.style.display = '';
+                        hasVisibleChild = true;
                         
-                        if (childMatch || match) {
-                            li.style.display = '';
-                            hasVisibleChild = true;
-                            
-                            // Auto-expand if searching and not empty
-                            if (term !== '' && childUl.style.display === 'none') {
-                                childUl.style.display = 'block';
-                                icon.className = 'bx bx-folder-open';
-                            } else if (term === '') {
-                                // Collapse when search is cleared
-                                childUl.style.display = 'none';
-                                icon.className = 'bx bx-folder';
-                            }
-                        } else {
-                            li.style.display = 'none';
+                        // Auto-expand if searching
+                        if (term !== '' && subContainer.classList.contains('hidden')) {
+                            subContainer.classList.remove('hidden');
+                            icon.textContent = 'folder_open';
+                            icon.classList.replace('text-outline', 'text-primary-container');
+                            btn.classList.add('text-primary');
+                            arrowIcon.classList.add('rotate-90');
+                        } else if (term === '' && !subContainer.classList.contains('hidden')) {
+                            // Optionally auto-collapse when search cleared
+                            subContainer.classList.add('hidden');
+                            icon.textContent = 'folder';
+                            icon.classList.replace('text-primary-container', 'text-outline');
+                            btn.classList.remove('text-primary');
+                            arrowIcon.classList.remove('rotate-90');
                         }
                     } else {
-                        if (match) {
-                            li.style.display = '';
-                            hasVisibleChild = true;
-                        } else {
-                            li.style.display = 'none';
-                        }
+                        el.style.display = 'none';
+                    }
+                } else if (el.classList.contains('tree-file')) {
+                    const text = el.querySelector('.file-text').textContent.toLowerCase();
+                    if (text.includes(term)) {
+                        el.style.display = '';
+                        hasVisibleChild = true;
+                    } else {
+                        el.style.display = 'none';
                     }
                 }
-                return hasVisibleChild;
             }
+            return hasVisibleChild;
+        }
 
-            // Resizer Logic
-            const sidebar = document.getElementById('sidebar');
-            const resizer = document.getElementById('resizer');
-            let isResizing = false;
+        const sidebar = document.getElementById('sidebar');
+        const resizer = document.getElementById('resizer');
+        let isResizing = false;
 
-            resizer.addEventListener('mousedown', (e) => {
-                isResizing = true;
-                document.body.style.cursor = 'col-resize';
-                resizer.classList.add('resizing');
-                iframe.style.pointerEvents = 'none'; // Prevent iframe from capturing mouse
-            });
-
-            document.addEventListener('mousemove', (e) => {
-                if (!isResizing) return;
-                // Calculate width based on mouse position
-                const newWidth = e.clientX - sidebar.getBoundingClientRect().left;
-                if (newWidth > 200 && newWidth < document.body.offsetWidth - 300) {
-                    sidebar.style.flex = `0 0 ${newWidth}px`;
-                }
-            });
-
-            document.addEventListener('mouseup', () => {
-                if (isResizing) {
-                    isResizing = false;
-                    document.body.style.cursor = '';
-                    resizer.classList.remove('resizing');
-                    iframe.style.pointerEvents = 'auto';
-                }
-            });
-
-            // Remove iframe padding dynamically
-            iframe.addEventListener('load', function() {
-                try {
-                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                    if (iframeDoc && iframeDoc.body) {
-                        // 기본적으로 너무 넓었던 여백을 보기 편한 적당한 크기로 조정
-                        iframeDoc.body.style.padding = '16px 24px';
-                        iframeDoc.body.style.margin = '0';
-                    }
-                } catch (e) {
-                    console.error("Cannot access iframe content to remove padding:", e);
-                }
-            });
+        resizer.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            document.body.style.cursor = 'col-resize';
+            resizer.classList.add('resizing');
+            iframe.style.pointerEvents = 'none';
         });
-    </script>
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isResizing) return;
+            const newWidth = e.clientX;
+            if (newWidth > 200 && newWidth < document.body.offsetWidth - 300) {
+                sidebar.style.width = `${newWidth}px`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isResizing) {
+                isResizing = false;
+                document.body.style.cursor = '';
+                resizer.classList.remove('resizing');
+                iframe.style.pointerEvents = 'auto';
+            }
+        });
+
+        iframe.addEventListener('load', function() {
+            try {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                if (iframeDoc && iframeDoc.body) {
+                    iframeDoc.body.style.padding = '24px 32px';
+                    iframeDoc.body.style.fontFamily = "'Inter', sans-serif";
+                    if(document.documentElement.classList.contains('dark')){
+                        iframeDoc.body.style.backgroundColor = "#ffffff";
+                    }
+                }
+            } catch (e) {
+                console.error("Cannot access iframe content:", e);
+            }
+        });
+    });
+</script>
 </body>
 </html>

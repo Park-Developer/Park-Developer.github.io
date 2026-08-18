@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>DevFocus - Projects</title>
+<title>DevFocus - Developer Blog</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -108,11 +108,8 @@
   }
 </script>
 <style>
-        .glow-hover:hover {
-            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.25); /* primary-container glow */
-            border-color: #22d3ee;
-            transform: translateY(-2px);
-        }
+        .glow-hover:hover { box-shadow: 0 0 12px rgba(0, 104, 119, 0.15); }
+        .border-glow:focus-within { border-color: #006877; box-shadow: 0 0 4px rgba(0, 104, 119, 0.3); }
     </style>
 
 <style>
@@ -141,8 +138,8 @@
 <a href="index.html" class="font-headline-md text-headline-md font-bold text-on-surface">DevFocus</a>
 <div class="hidden md:flex space-x-md">
 <a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="index.html">Home</a>
-<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="blog.html">Blog</a>
-<a class="text-primary border-b-2 border-primary pb-1 cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="projects.html">Projects</a>
+<a class="text-primary border-b-2 border-primary pb-1 cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="blog.html">Blog</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="projects.html">Projects</a>
 <a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="study.html">Study</a>
 <a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="now.html">Now</a>
 </div>
@@ -152,94 +149,117 @@
 </div>
 </nav>
 
+<div class="flex-grow max-w-container-max mx-auto w-full px-gutter flex flex-col md:flex-row gap-lg py-lg">
 <!-- Main Content -->
-<main class="flex-grow pb-xl px-gutter max-w-container-max mx-auto w-full">
-<header class="mb-lg mt-lg text-center md:text-left">
-<h1 class="font-headline-xl text-headline-xl text-text-primary mb-base">Projects</h1>
-<p class="font-body-lg text-body-lg text-text-secondary">A collection of open-source work, experiments, and deployed applications.</p>
-</header>
-<!-- Filters -->
-<div class="flex flex-wrap gap-sm mb-lg justify-center md:justify-start">
-<button class="px-sm py-xs bg-primary text-on-primary rounded font-label-sm text-label-sm uppercase transition-colors shadow-sm">All</button>
-<button class="px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors">Web</button>
-<button class="px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors">Mobile</button>
-<button class="px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors">Open Source</button>
+<main class="flex-grow flex flex-col space-y-lg w-full md:w-2/3 lg:w-3/4">
+<!-- Hero -->
+<section class="py-md border-b border-surface-border">
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-sm">Building the future,<br/><span class="text-primary">one commit at a time.</span></h1>
+<p class="font-body-lg text-body-lg text-text-secondary max-w-2xl">Thoughts, tutorials, and architectural deep dives for the modern developer focused on building scalable systems.</p>
+</section>
+
+<!-- Featured Post -->
+<article class="bg-surface-container rounded-lg border border-surface-border overflow-hidden glow-hover transition-shadow duration-300">
+<div class="p-md border-b border-surface-border">
+<div class="flex items-center gap-sm mb-sm">
+<span class="bg-surface-variant text-on-surface px-xs py-base rounded font-label-sm text-label-sm uppercase tracking-wider">Featured</span>
+<span class="text-text-secondary font-label-sm text-label-sm">Oct 24, 2024</span>
 </div>
-<!-- Projects Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
-<!-- Project Card 1 -->
-<div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-lg p-sm flex flex-col transition-all glow-hover group relative overflow-hidden">
-<div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<div class="relative z-10 flex flex-col h-full">
-<div class="w-full h-48 bg-surface-container-low rounded mb-sm overflow-hidden bg-cover bg-center" data-alt="A sleek, modern web dashboard interface shown on a dark background. The UI features neon cyan accents, detailed data visualization charts, and a minimalist aesthetic typical of high-end developer tools. The lighting is moody, emphasizing the glowing elements." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD12B7As25Yeuon1n7bciK1tKnq1CTtXMgZvHKQtvOrHUcM4-RkZW7-JLIPU7YJa8mWWnEVsjrekRLDco9sYoWYviz8MyDC5FljntsOthpkTgtRaI3_pjcuGs6X2ssXE2PL_SaIITfqBbepXRfb5imJde5FvhvwZMvIoU2zd3vFia6txPph2bK_6ySX8eNUX6AcVi8UalrNhlgEgYWB27bVggT_VYaR2w8pTStvWB8gq_kJZFRwu1SD')"></div>
-<h3 class="font-headline-md text-headline-md text-text-primary mb-base group-hover:text-primary transition-colors">Nexus Analytics</h3>
-<p class="text-text-secondary mb-sm flex-grow">Real-time data visualization dashboard for distributed systems. Built for scale and low latency.</p>
-<div class="flex flex-wrap gap-xs mb-md">
-<span class="font-label-sm text-label-sm bg-surface-container-low px-2 py-1 rounded text-text-secondary uppercase">React</span>
-<span class="font-label-sm text-label-sm bg-surface-container-low px-2 py-1 rounded text-text-secondary uppercase">TypeScript</span>
-<span class="font-label-sm text-label-sm bg-surface-container-low px-2 py-1 rounded text-text-secondary uppercase">Go</span>
-</div>
-<div class="flex items-center justify-between border-t border-surface-border pt-sm mt-auto">
-<a class="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-[20px]">code</span>
-<span class="font-label-sm text-label-sm uppercase">GitHub</span>
-</a>
-<button class="bg-transparent border border-primary text-primary hover:bg-primary/5 px-sm py-xs rounded font-label-sm text-label-sm uppercase transition-colors flex items-center space-x-2">
-<span>View Live</span>
-<span class="material-symbols-outlined text-[16px]">open_in_new</span>
-</button>
+<h2 class="font-headline-lg text-headline-lg text-on-surface hover:text-primary transition-colors cursor-pointer mb-sm">Advanced State Management Patterns in React 19</h2>
+<p class="font-body-md text-body-md text-text-secondary mb-md">Exploring the new capabilities of React's concurrent rendering and how to structure global state without relying on heavy external libraries.</p>
+<div class="bg-code-bg p-sm rounded border-t-2 border-primary relative group border border-surface-border">
+<button class="absolute top-sm right-sm text-text-secondary hover:text-primary font-label-sm text-label-sm opacity-0 group-hover:opacity-100 transition-opacity">Copy</button>
+<pre class="font-code-block text-code-block text-text-primary overflow-x-auto"><code><span class="text-secondary">import</span> { useSyncExternalStore } <span class="text-secondary">from</span> <span class="text-primary">'react'</span>;
+
+<span class="text-secondary">function</span> <span class="text-tertiary">useStore</span>(store, selector) {
+  <span class="text-secondary">return</span> <span class="text-tertiary">useSyncExternalStore</span>(
+    store.subscribe,
+    <span class="text-secondary">() =&gt;</span> <span class="text-tertiary">selector</span>(store.<span class="text-tertiary">getState</span>())
+  );
+}</code></pre>
 </div>
 </div>
+<div class="px-md py-sm bg-surface-container-low flex gap-sm border-t border-surface-border">
+<span class="text-primary font-label-sm text-label-sm uppercase hover:text-primary-fixed-dim cursor-pointer transition-colors">[REACT]</span>
+<span class="text-primary font-label-sm text-label-sm uppercase hover:text-primary-fixed-dim cursor-pointer transition-colors">[ARCHITECTURE]</span>
 </div>
-<!-- Project Card 2 -->
-<div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-lg p-sm flex flex-col transition-all glow-hover group relative overflow-hidden">
-<div class="absolute inset-0 bg-gradient-to-br from-tertiary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<div class="relative z-10 flex flex-col h-full">
-<div class="w-full h-48 bg-surface-container-low rounded mb-sm overflow-hidden bg-cover bg-center" data-alt="A conceptual 3D render of a mobile application wireframe glowing in a dark void. The lines are sharp and precise, illuminated in a striking neon purple. The overall mood is futuristic, tech-forward, and highly polished." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdFjE0viFeHI6ivwweTAyAfZK8Kned0Z2WOIa_MwE2dZJh39IPuAwH4pDq63H1tOaDkMUSrm1swo6GhzCPIEmpmHer6ozJoHu90Ee7vaqU27iLDAo2enjjmR2krSDErOgMbFlaORhyP0rXe7gng5UUfdkEy4FaT2_zuqKqYpaoortXBkJ-MEh4FZzd07cvSi6RPpNRB6aSUHlXgOy5S95ReyDQS7AUQXDwVZyKeId6IUaTvZOCFHJD')"></div>
-<h3 class="font-headline-md text-headline-md text-text-primary mb-base group-hover:text-tertiary transition-colors">Orbit Mobile</h3>
-<p class="text-text-secondary mb-sm flex-grow">Cross-platform task management app with offline-first capabilities and seamless sync.</p>
-<div class="flex flex-wrap gap-xs mb-md">
-<span class="font-label-sm text-label-sm bg-surface-container-low px-2 py-1 rounded text-text-secondary uppercase">React Native</span>
-<span class="font-label-sm text-label-sm bg-surface-container-low px-2 py-1 rounded text-text-secondary uppercase">SQLite</span>
+</article>
+
+<!-- Standard Posts List -->
+<div class="flex flex-col space-y-md">
+<article class="flex flex-col gap-xs py-sm border-b border-surface-border hover:border-secondary transition-colors duration-300">
+<div class="flex gap-sm items-center">
+<span class="text-text-secondary font-label-sm text-label-sm">Oct 18, 2024</span>
+<span class="text-primary font-label-sm text-label-sm uppercase">[TYPESCRIPT]</span>
 </div>
-<div class="flex items-center justify-between border-t border-surface-border pt-sm mt-auto">
-<a class="flex items-center space-x-2 text-text-secondary hover:text-tertiary transition-colors" href="#">
-<span class="material-symbols-outlined text-[20px]">code</span>
-<span class="font-label-sm text-label-sm uppercase">GitHub</span>
-</a>
-<button class="bg-transparent border border-tertiary text-tertiary hover:bg-tertiary/5 px-sm py-xs rounded font-label-sm text-label-sm uppercase transition-colors flex items-center space-x-2">
-<span>View App</span>
-<span class="material-symbols-outlined text-[16px]">smartphone</span>
-</button>
+<h3 class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors cursor-pointer">Type-Safe Routing in Next.js App Directory</h3>
+<p class="font-body-md text-body-md text-text-secondary line-clamp-2">How to build a robust, fully typed routing system to catch dead links at compile time.</p>
+</article>
+
+<article class="flex flex-col gap-xs py-sm border-b border-surface-border hover:border-secondary transition-colors duration-300">
+<div class="flex gap-sm items-center">
+<span class="text-text-secondary font-label-sm text-label-sm">Oct 10, 2024</span>
+<span class="text-primary font-label-sm text-label-sm uppercase">[DEVOPS]</span>
 </div>
+<h3 class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors cursor-pointer">Zero-Downtime Deployments with Kubernetes</h3>
+<p class="font-body-md text-body-md text-text-secondary line-clamp-2">A practical guide to configuring rolling updates and readiness probes for high availability.</p>
+</article>
+
+<article class="flex flex-col gap-xs py-sm border-b border-surface-border hover:border-secondary transition-colors duration-300">
+<div class="flex gap-sm items-center">
+<span class="text-text-secondary font-label-sm text-label-sm">Sep 28, 2024</span>
+<span class="text-primary font-label-sm text-label-sm uppercase">[PERFORMANCE]</span>
 </div>
-</div>
-<!-- Project Card 3 -->
-<div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-lg p-sm flex flex-col transition-all glow-hover group relative overflow-hidden">
-<div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-<div class="relative z-10 flex flex-col h-full">
-<div class="w-full h-48 bg-surface-container-low rounded mb-sm overflow-hidden bg-cover bg-center" data-alt="An abstract visualization of a cloud computing network structure. Glowing cyan and purple nodes are connected by faint, laser-like lines against a deep, dark slate background. It conveys a sense of complex architecture and robust backend infrastructure." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuARUkLlkaiLbPrBc8LOHdL6mJNyDWoEWRB9oTnNEBnDXy-07F4pc7ifvS8PTSzmRIfhkp78ytFFhx9i0ckW38ofB18fbH6E7mYZ4JUsQRUZMt94jqLYW4K8Fl88cgk68gKqLeB0ak7CA5gro09RyjIGILulmx8nTzhcjCEzP-i90pktT5LpTrjJWn-b9mjWSH_5dfsdicCQz50JAYO3nWbdUKqW9Ig5ETE78_d7wlYVe3GaGJG60Vsv')"></div>
-<h3 class="font-headline-md text-headline-md text-text-primary mb-base group-hover:text-primary transition-colors">Cloud CLI</h3>
-<p class="text-text-secondary mb-sm flex-grow">A command-line interface tool for managing multi-cloud container deployments effortlessly.</p>
-<div class="flex flex-wrap gap-xs mb-md">
-<span class="font-label-sm text-label-sm bg-surface-container-low px-2 py-1 rounded text-text-secondary uppercase">Rust</span>
-<span class="font-label-sm text-label-sm bg-surface-container-low px-2 py-1 rounded text-text-secondary uppercase">Docker</span>
-<span class="font-label-sm text-label-sm bg-surface-container-low px-2 py-1 rounded text-text-secondary uppercase">AWS</span>
-</div>
-<div class="flex items-center justify-between border-t border-surface-border pt-sm mt-auto">
-<a class="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined text-[20px]">code</span>
-<span class="font-label-sm text-label-sm uppercase">GitHub</span>
-</a>
-<button class="bg-transparent border border-primary text-primary hover:bg-primary/5 px-sm py-xs rounded font-label-sm text-label-sm uppercase transition-colors flex items-center space-x-2">
-<span>Documentation</span>
-<span class="material-symbols-outlined text-[16px]">menu_book</span>
-</button>
-</div>
-</div>
-</div>
+<h3 class="font-headline-md text-headline-md text-on-surface hover:text-primary transition-colors cursor-pointer">Optimizing WebGL Shader Pipelines</h3>
+<p class="font-body-md text-body-md text-text-secondary line-clamp-2">Techniques for reducing draw calls and managing memory when building immersive 3D web experiences.</p>
+</article>
 </div>
 </main>
+
+<!-- Right Sidebar -->
+<aside class="w-full md:w-1/3 lg:w-1/4 flex flex-col space-y-md sticky top-24 h-fit hidden md:flex">
+<!-- Author Profile -->
+<div class="bg-surface-container-low border border-surface-border rounded-lg p-md">
+<div class="flex items-center gap-sm mb-md">
+<i class="material-symbols-outlined text-[48px] text-primary">person</i>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary">Wonho</h4>
+<p class="font-label-sm text-label-sm text-text-secondary">Developer</p>
+</div>
+</div>
+<!-- Categories/Nav -->
+<nav class="flex flex-col space-y-base mb-md p-sm gap-base">
+<a class="flex items-center gap-sm p-sm rounded-lg transition-colors hover:bg-surface-variant font-body-md text-body-md text-text-secondary group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">code</span>
+<span>Web Dev</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg transition-colors hover:bg-surface-variant font-body-md text-body-md text-text-secondary group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">terminal</span>
+<span>Systems</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg transition-colors hover:bg-surface-variant font-body-md text-body-md text-text-secondary group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">cloud</span>
+<span>Cloud</span>
+</a>
+<a class="flex items-center gap-sm p-sm rounded-lg transition-colors hover:bg-surface-variant font-body-md text-body-md text-text-secondary group" href="#">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">psychology</span>
+<span>AI</span>
+</a>
+</nav>
+</div>
+
+<!-- Newsletter Box -->
+<div class="bg-surface-container-low border border-surface-border rounded-lg p-md">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-sm">Subscribe to Newsletter</h4>
+<p class="font-body-md text-body-md text-text-secondary mb-md">Get the latest posts delivered straight to your inbox.</p>
+<div class="flex flex-col space-y-sm border-glow rounded">
+<input class="bg-background text-on-surface border border-outline-variant rounded px-sm py-sm focus:outline-none focus:border-primary transition-colors font-body-md w-full" placeholder="email@example.com" type="email"/>
+<button class="bg-primary text-on-primary font-bold rounded px-sm py-sm hover:opacity-90 transition-colors font-body-md w-full">Subscribe</button>
+</div>
+</div>
+</aside>
+</div>
+
 <!-- Footer -->
 <footer class="bg-surface-container-lowest w-full mt-auto border-t border-surface-border">
 <div class="flex flex-col md:flex-row justify-between items-center py-md px-gutter max-w-container-max mx-auto">
