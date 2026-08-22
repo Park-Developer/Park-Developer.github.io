@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAL</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 24px 32px;
+            box-sizing: border-box;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+<body>
+    <h3><em>HAL(Hardware Abstraction Layer</em></h3>
+<hr />
+<p>: The HAL drives are designed to offer a <u><b>rich set of APIs</b></u> and to interact easily with the application upper layers.</p>
+<ul>
+<li>Each driver consists of a set of functions covering the most common peripheral features. The development of each driver is driven by a common API which standardizes the driver structure, the functions and the parameter names</li>
+<li>The HAL drivers include a set of driver modules, each module being linked to a standalone peripheral. However, in some cases, the module is linked to a peripheral functional mode. As an example, several modules exist for the USART peripheral: UART driver module, USART driver module, SMARTCARD driver module and IRDA driver module</li>
+</ul>
+<h3><em>HAL main features</em></h3>
+<hr />
+<ul>
+<li>Cross-family portable set of APIs covering the common peripheral features as well as extension APIs in case of specific peripheral features.</li>
+<li>Three API programming models : polling, interrupt and DMA #TBD</li>
+<li>APIs are RTOS compliant:<ul>
+<li>Fully reentrant APIs</li>
+<li>Systematic usage of timeouts in polling mode</li>
+</ul>
+</li>
+<li>Support of peripheral multi-instance allowing concurrent API calls for multiple instances of a given peripheral (such as USART1 or USART2)</li>
+<li>All HAL APIs implement user-callback function mechanism<ul>
+<li>Peripheral Init/DeInit HAL_APIs can call user-callback functions to perform peripheral system level Initialization/De-Initialization</li>
+<li>Peripheral Interrupt Events</li>
+<li>Error Event.</li>
+</ul>
+</li>
+<li>Object locking mechanism : safe hardware access to prevent multiple spurious accesses to shared resources.</li>
+<li>Timeout used for all blocking processes : the timeout can be a simple counter or a timebase.</li>
+</ul>
+<h3><em>HAL Driver files</em></h3>
+<hr />
+<p>ppp : place holder for driver</p>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stm32f4xx_hal_ppp.c</code></td>
+<td>Main peripheral/module driver file<br><br>It includes the APIs that are common to all STM32 devices.<br><br>Example: stm32f4xx_hal_adc.c, stm32f4xx_hal_irda.c.</td>
+</tr>
+<tr>
+<td><code>stm32f4xx_hal_ppp.h</code></td>
+<td>header file of the main driver C file<br><br>It includes common data, handle and enumeration structures, define statements and<br>macros, as well as the exported generic APIs.<br><br>Example:stm32f4xx_hal_adc.h,stm32f4xx_hal_irda.h.</td>
+</tr>
+<tr>
+<td><code>stm32f4xx_hal_ppp_ex.c</code></td>
+<td>Extension file of a peripheral/modul driver. It includes the specific APIs for a given part number or family, as well as the newly defined APIs that overwrite the default generic APIs if the internal process is implemented in different way.<br><br>Example:stm32f4xx_hal_adc_ex.c,stm32f4xx_hal_flash_ex.c.</td>
+</tr>
+<tr>
+<td><code>stm32f4xx_hal_ppp_ex.h</code></td>
+<td>Header file of the extension C file.<br><br>It includes the specific data and enumeration structures, define statements and macros, as well as the exported device part number specific APIs<br><br>Example: stm32f4xx_hal_adc_ex.h,stm32f4xx_hal_flash_ex.h.</td>
+</tr>
+<tr>
+<td><code>stm32f4xx_hal.c</code></td>
+<td>This file is used for HAL initialization and contains DBGMCU, Remap and Time Delay based on Systickj APIs</td>
+</tr>
+<tr>
+<td><code>stm32f4xx_hal.h</code></td>
+<td>stm32f4xx_hal.c header file</td>
+</tr>
+<tr>
+<td><code>stm32f4xx_hal_msp_template.c</code></td>
+<td>Template file to be copied to the user application folder<br><br>It contains the MSP initialization and de-initialization (main routine and callbacks) of the peripheral used in the user application.</td>
+</tr>
+<tr>
+<td><code>stm32f4xx_hal_conf_template.h</code></td>
+<td>Template file allowing to customize the drivers for a given application</td>
+</tr>
+<tr>
+<td><code>stm32f4xx_hal_def.h</code></td>
+<td>Common HAL resources such as common define statements, enumerations, structures and macros.</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

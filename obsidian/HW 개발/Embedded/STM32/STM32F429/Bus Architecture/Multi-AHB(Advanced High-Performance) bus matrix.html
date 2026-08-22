@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-AHB(Advanced High-Performance) bus matrix</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 24px 32px;
+            box-sizing: border-box;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<p>: The 32-bit multi-AHB bus matrix interconnects all the master(CPU, DMAs, Ethernet, USB HS, LCD-TFT, and DMA2D) and the slaves(Flash memory, RAM, FMC, AHB, and APB peripherals) and ensure a seamless operation even when several high-speed peripherals work simultaneously.</p>
+<p><img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260816015642.png" alt=""></p>
+<h3><em>?</em></h3>
+<hr />
+<p>In the STM32F42xx and STM32F43xx devices, the main system consists of 32-bit multilayer
+AHB bus matrix that interconnects:
+- Ten masters:
+    - Cortex® -M4 with FPU core I-bus, D-bus and S-bus
+    - DMA1 memory bus
+    - DMA2 memory bus
+    - DMA2 peripheral bus
+    - Ethernet DMA bus
+    - USB OTG HS DMA bus
+    - LCD Controller DMA-bus
+    - DMA2D (Chrom-Art Accelerator™) memory bus
+- Eight slaves:
+    - Internal flash memory ICode bus
+    - Internal flash memory DCode bus
+    - Main internal SRAM1 (112 KB)
+    - Auxiliary internal SRAM2 (16 KB)
+    - Auxiliary internal SRAM3 (64 KB)
+    - AHB1peripherals including AHB to APB bridges and APB peripherals
+    - AHB2 peripherals
+    - FMC</p>
+<ul>
+<li>The bus matrix provides access from a master to a slave, enabling concurrent access and
+    efficient operation even when several high-speed peripherals work simultaneously. </li>
+<li>The 64-Kbyte CCM (core coupled memory) data RAM is not part of the bus matrix and can be accessed only through the CPU.</li>
+</ul>
+<p><img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260623002811.png" alt="Pasted image 20260623002811.png"></p>
+<h3>I-bus</h3>
+<hr />
+<p>: This bus connects the <strong>instruction</strong> bus of the Cortex-M4 with FPU core to the BusMatrix.
+- This bus is used by the core to fetch instructions
+- The target of this bus is memory containing code(internal flash memroy/SRAM or external memories through the FSMC/FMC)</p>
+<h3>D-bus</h3>
+<hr />
+<p>: This bus connects the databus of the Cortex-M4 with FPU to the 64-Kbyte CCM data RAM to the BusMatrix. 
+- This bus is used by the core for literal load and debug access.
+- The target of this bus is a memory containing code or data(internal flash memory or external memories through the FSMC/FMC)</p>
+<h3>S-bus</h3>
+<hr />
+<p>: This bus connects the system bus of the Cortex-M4 with FPU core to a BusMatrix. 
+- This bus is used to access <u>data</u> located in peripheral or in SRAM.
+- Instructions may also be fetched on this bus(Less efficient than ICode).
+- The targets of this bus are internal SRAM1, SRAM2 and SRAM3, the AHB1 peripherals including the APB peripherals, the AHB2 peripherals and the external memories through the FSMC/FMC</p>
+<h3>DMA memory bus</h3>
+<hr />
+<p>: This bus connects the DMA memory bus master interface to the BusMatrix.
+- It is used by the DMA to perform transfer to/from memories.
+- The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2 and SRAM3) and external memories through the FSMC/FMC.</p>
+<h3>DMA peripheral bus</h3>
+<hr />
+<p>: This bus connects the DMA peripheral master bus interface to the BusMatrix. 
+- It is used by the DMA to access AHB peripherals or <u>to perform memory-to-memory</u> transfers.
+- The targets of this bus are the AHB and APB peripherals plus data memories: internal SRAMs(SRAM1, SRAM2 and SRAM3) and external memories through the FSMC/FMC.</p>
+<h3>Ethernet DMA Bus</h3>
+<hr />
+<p>: This bus connects the Ethernet DMA master interface to the BusMatrix. This bus is used by the Ethernet DMA to load/store data to a memory.</p>
+<p>The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), internal flash memory, and external memories through the FSMC/FMC</p>
+<h3>USB OTG HS DMA Bus</h3>
+<hr />
+<p>: This bus connects the USB OTG HS DMA master interface to the BusMaxtrix. This bus is used by the USB OTG DAM to load/store data to a memory.</p>
+<p>The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), internal flash memory, and external memories through the FSMC/FMC.</p>
+<h3>LCD-TFT Controller DMA bus</h3>
+<hr />
+<p>: This bus connects the LCD controller DMA master interface to the BusMatrix. It is used by the LCD-TFT DMA to load/store data to a memory.</p>
+<p>The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), external memories through FMC, and internal flash memory.</p>
+<h3>DMA2D Bus</h3>
+<hr />
+<p>: This bus connect the DMA2D master interface to the BusMatrix. </p>
+<p>This bus is used by the DMA2D graphic Accelerator to load/store data to  memory.
+The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), external memories through FMC, and internal flash memory.</p>
+<h3>BusMatrix</h3>
+<hr />
+<p>The BusMatrix manages the access arbitration between masters. The arbitration uses a round-robin algorithm</p>
+<h3>AHB/APB bridges</h3>
+<hr />
+<p>: The two AHB/APB bridges, APB1 and APB2, provide full synchronous connections between the AHB and the two APB buses, allowing flexible selection of the peripheral frequency.</p>
+</body>
+</html>

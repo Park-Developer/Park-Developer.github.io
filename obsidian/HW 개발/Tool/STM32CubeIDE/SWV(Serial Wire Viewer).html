@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWV(Serial Wire Viewer)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 24px 32px;
+            box-sizing: border-box;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<p>: System analysis and real-time tracing in STM32 requires a number of interaction technologies:
+- Serial Wire Viewer(SWV)
+- Serial Wire Debug(SWD)
+- Instrument Trace Macrocell(ITM)
+- Serial Wire Output(SWO)</p>
+<p>These technologies are part of Arm CoreSight debugger technology.</p>
+<h3><em>SWD(Serial Wire Debug)</em></h3>
+<hr />
+<ul>
+<li>SWD is a debug port similar to JTAG. It provides the same debug capabilities(Run, Stop on breakpoint, single-step) but with fewer pins.</li>
+<li>It replaces the JTAG connector with a 2-pin interface(one clock pin and one bi-directional data pin)</li>
+<li>The SWD port alone does not allow real-time tracing.</li>
+</ul>
+<h3><em>SWO(Serial Wire Output)</em></h3>
+<hr />
+<ul>
+<li>SWO pin can be used in combination wtih SWD.</li>
+<li>It is used by the processor to emit real-time trace data, thus extending the two SWD pins with third pin.</li>
+<li>The combination of the two SWD pins and SWO pin enables Serial Wire Viewer(SWV) real-time tracing in compatible Arm processors.</li>
+<li>Beware that, SWO being just one pin, it is easy to set a configuration that produces more data than the SWO is able to send.</li>
+</ul>
+<h3><em>SWV(Serial Wire Viewer)</em></h3>
+<hr />
+<p>: SWV is a real-time trace technology that uses the Serial Wire Debug(SWD) port and the Serial Wire Output(SWO) pin. The Serial Wire Viewer provides advanced system analysis and real-time tracing without the need to halt the processor to extract the debug information.</p>
+<ul>
+<li>Event notification on data reading and writing</li>
+<li>Event notification on exception entry and exit</li>
+<li>Event counters</li>
+<li>Timestamp and CPU cycle information, which can be used for program statistical profiling</li>
+</ul>
+</body>
+</html>

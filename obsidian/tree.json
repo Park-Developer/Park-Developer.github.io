@@ -137,9 +137,19 @@
             "path": "HW 개발/Electrical Engineering/Connector Baisc.html"
           },
           {
+            "name": "ELCB(Earth Leakage Circuit Breaker)",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/ELCB(Earth Leakage Circuit Breaker).html"
+          },
+          {
             "name": "Electrical Engineering",
             "type": "file",
             "path": "HW 개발/Electrical Engineering/Electrical Engineering.html"
+          },
+          {
+            "name": "FFC(Flat Flexible Cable)",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/FFC(Flat Flexible Cable).html"
           },
           {
             "name": "IDC Cable",
@@ -158,6 +168,11 @@
         "type": "directory",
         "path": "HW 개발/Embedded",
         "children": [
+          {
+            "name": "BSP(Board Support Package)",
+            "type": "file",
+            "path": "HW 개발/Embedded/BSP(Board Support Package).html"
+          },
           {
             "name": "CODEC",
             "type": "file",
@@ -184,6 +199,11 @@
             "path": "HW 개발/Embedded/DWARF.html"
           },
           {
+            "name": "Device Driver",
+            "type": "file",
+            "path": "HW 개발/Embedded/Device Driver.html"
+          },
+          {
             "name": "Dongle",
             "type": "file",
             "path": "HW 개발/Embedded/Dongle.html"
@@ -192,6 +212,28 @@
             "name": "ELF",
             "type": "file",
             "path": "HW 개발/Embedded/ELF.html"
+          },
+          {
+            "name": "Embedded SW",
+            "type": "directory",
+            "path": "HW 개발/Embedded/Embedded SW",
+            "children": [
+              {
+                "name": "Callback Functions",
+                "type": "file",
+                "path": "HW 개발/Embedded/Embedded SW/Callback Functions.html"
+              },
+              {
+                "name": "Embedded SW",
+                "type": "file",
+                "path": "HW 개발/Embedded/Embedded SW/Embedded SW.html"
+              },
+              {
+                "name": "접미사(suffix)",
+                "type": "file",
+                "path": "HW 개발/Embedded/Embedded SW/접미사(suffix).html"
+              }
+            ]
           },
           {
             "name": "Embedded",
@@ -282,6 +324,243 @@
             "name": "SDRAM(Synchronous Dynamic Random Access Memory)",
             "type": "file",
             "path": "HW 개발/Embedded/SDRAM(Synchronous Dynamic Random Access Memory).html"
+          },
+          {
+            "name": "STM32",
+            "type": "directory",
+            "path": "HW 개발/Embedded/STM32",
+            "children": [
+              {
+                "name": "HAL",
+                "type": "file",
+                "path": "HW 개발/Embedded/STM32/HAL.html"
+              },
+              {
+                "name": "LL",
+                "type": "file",
+                "path": "HW 개발/Embedded/STM32/LL.html"
+              },
+              {
+                "name": "STM32 Firmware",
+                "type": "file",
+                "path": "HW 개발/Embedded/STM32/STM32 Firmware.html"
+              },
+              {
+                "name": "STM32 Portfolio",
+                "type": "file",
+                "path": "HW 개발/Embedded/STM32/STM32 Portfolio.html"
+              },
+              {
+                "name": "STM32",
+                "type": "file",
+                "path": "HW 개발/Embedded/STM32/STM32.html"
+              },
+              {
+                "name": "STM32F429",
+                "type": "directory",
+                "path": "HW 개발/Embedded/STM32/STM32F429",
+                "children": [
+                  {
+                    "name": "AHB Trace Macrocell(HTM) interface",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/AHB Trace Macrocell(HTM) interface.html"
+                  },
+                  {
+                    "name": "Arm 32-bit Cortex - M4 CPU",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Arm 32-bit Cortex - M4 CPU.html"
+                  },
+                  {
+                    "name": "Arm Cortex-M4 with FPU",
+                    "type": "directory",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Arm Cortex-M4 with FPU",
+                    "children": [
+                      {
+                        "name": "Arm Cortex-M4 with FPU",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Arm Cortex-M4 with FPU/Arm Cortex-M4 with FPU.html"
+                      },
+                      {
+                        "name": "Arm® Cortex®-M4 with FPU and embedded flash and SRAM",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Arm Cortex-M4 with FPU/Arm® Cortex®-M4 with FPU and embedded flash and SRAM.html"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Art Accelerator",
+                    "type": "directory",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Art Accelerator",
+                    "children": [
+                      {
+                        "name": "Adaptive Real time accelerator",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Art Accelerator/Adaptive Real time accelerator.html"
+                      },
+                      {
+                        "name": "Art Accelerator",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Art Accelerator/Art Accelerator.html"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Bit banding",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Bit banding.html"
+                  },
+                  {
+                    "name": "Boot Configuration",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Boot Configuration.html"
+                  },
+                  {
+                    "name": "Bus Architecture",
+                    "type": "directory",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Bus Architecture",
+                    "children": [
+                      {
+                        "name": "Bus Architecture",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Bus Architecture/Bus Architecture.html"
+                      },
+                      {
+                        "name": "DMA(Direct Memory Access) Controller",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Bus Architecture/DMA(Direct Memory Access) Controller.html"
+                      },
+                      {
+                        "name": "Multi-AHB(Advanced High-Performance) bus matrix",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Bus Architecture/Multi-AHB(Advanced High-Performance) bus matrix.html"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Bus interfaces",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Bus interfaces.html"
+                  },
+                  {
+                    "name": "CRC(Cyclic Redundancy Check) Calculation Unit",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/CRC(Cyclic Redundancy Check) Calculation Unit.html"
+                  },
+                  {
+                    "name": "Cross Trigger Interface Unit",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Cross Trigger Interface Unit.html"
+                  },
+                  {
+                    "name": "Debug and Trace",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Debug and Trace.html"
+                  },
+                  {
+                    "name": "Debug port AHB-AP interface",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Debug port AHB-AP interface.html"
+                  },
+                  {
+                    "name": "ETM interface",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/ETM interface.html"
+                  },
+                  {
+                    "name": "Embedded bootloader",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Embedded bootloader.html"
+                  },
+                  {
+                    "name": "FPU(Floating Point Unit)",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/FPU(Floating Point Unit).html"
+                  },
+                  {
+                    "name": "LCD-TFT controller (available only on STM32F429xx)",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/LCD-TFT controller (available only on STM32F429xx).html"
+                  },
+                  {
+                    "name": "Memory",
+                    "type": "directory",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Memory",
+                    "children": [
+                      {
+                        "name": "Embedded SRAM",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Memory/Embedded SRAM.html"
+                      },
+                      {
+                        "name": "Embedded flash memory",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Memory/Embedded flash memory.html"
+                      },
+                      {
+                        "name": "Flexible Memory Controller(FMC)",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Memory/Flexible Memory Controller(FMC).html"
+                      },
+                      {
+                        "name": "Memory Protection Unit (MPU)",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Memory/Memory Protection Unit (MPU).html"
+                      },
+                      {
+                        "name": "Memory",
+                        "type": "file",
+                        "path": "HW 개발/Embedded/STM32/STM32F429/Memory/Memory.html"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Nested Vectored Interrupt Controller (NVIC)",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Nested Vectored Interrupt Controller (NVIC).html"
+                  },
+                  {
+                    "name": "Not understand",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Not understand.html"
+                  },
+                  {
+                    "name": "Physical Remap in STM32F42xxx and STM32F43xxx",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/Physical Remap in STM32F42xxx and STM32F43xxx.html"
+                  },
+                  {
+                    "name": "STM32F4 Series",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/STM32F4 Series.html"
+                  },
+                  {
+                    "name": "STM32F429 Code",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/STM32F429 Code.html"
+                  },
+                  {
+                    "name": "STM32F429 Overview",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/STM32F429 Overview.html"
+                  },
+                  {
+                    "name": "STM32F429",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/STM32F429.html"
+                  },
+                  {
+                    "name": "TBD",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/TBD.html"
+                  },
+                  {
+                    "name": "tail-chaining",
+                    "type": "file",
+                    "path": "HW 개발/Embedded/STM32/STM32F429/tail-chaining.html"
+                  }
+                ]
+              }
+            ]
           },
           {
             "name": "STM8S",
@@ -389,6 +668,38 @@
         ]
       },
       {
+        "name": "Module",
+        "type": "directory",
+        "path": "HW 개발/Module",
+        "children": [
+          {
+            "name": "LCD Reference",
+            "type": "file",
+            "path": "HW 개발/Module/LCD Reference.html"
+          },
+          {
+            "name": "Module",
+            "type": "file",
+            "path": "HW 개발/Module/Module.html"
+          },
+          {
+            "name": "RGB Interface",
+            "type": "file",
+            "path": "HW 개발/Module/RGB Interface.html"
+          },
+          {
+            "name": "TFT LCD",
+            "type": "file",
+            "path": "HW 개발/Module/TFT LCD.html"
+          },
+          {
+            "name": "픽셀(Pixel)과 해상도(Resolution)",
+            "type": "file",
+            "path": "HW 개발/Module/픽셀(Pixel)과 해상도(Resolution).html"
+          }
+        ]
+      },
+      {
         "name": "OS",
         "type": "directory",
         "path": "HW 개발/OS",
@@ -415,6 +726,11 @@
         "type": "directory",
         "path": "HW 개발/PCB",
         "children": [
+          {
+            "name": "FPCB(Flexible Printed Circuit Board)",
+            "type": "file",
+            "path": "HW 개발/PCB/FPCB(Flexible Printed Circuit Board).html"
+          },
           {
             "name": "PCB",
             "type": "file",
@@ -514,163 +830,6 @@
         ]
       },
       {
-        "name": "STM32F429",
-        "type": "directory",
-        "path": "HW 개발/STM32F429",
-        "children": [
-          {
-            "name": "AHB Trace Macrocell(HTM) interface",
-            "type": "file",
-            "path": "HW 개발/STM32F429/AHB Trace Macrocell(HTM) interface.html"
-          },
-          {
-            "name": "Adaptive Real time accelerator",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Adaptive Real time accelerator.html"
-          },
-          {
-            "name": "Arm 32-bit Cortex - M4 CPU",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Arm 32-bit Cortex - M4 CPU.html"
-          },
-          {
-            "name": "Armv7-M",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Armv7-M.html"
-          },
-          {
-            "name": "Banked Stack Pointer(SP)",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Banked Stack Pointer(SP).html"
-          },
-          {
-            "name": "Bit banding",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Bit banding.html"
-          },
-          {
-            "name": "Boot Configuration",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Boot Configuration.html"
-          },
-          {
-            "name": "Bus interfaces",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Bus interfaces.html"
-          },
-          {
-            "name": "CRC(Cyclic Redundancy Check) Calculation Unit",
-            "type": "file",
-            "path": "HW 개발/STM32F429/CRC(Cyclic Redundancy Check) Calculation Unit.html"
-          },
-          {
-            "name": "Cortex-M4 Processor",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Cortex-M4 Processor.html"
-          },
-          {
-            "name": "Cross Trigger Interface Unit",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Cross Trigger Interface Unit.html"
-          },
-          {
-            "name": "DMA(Direct Memory Access) Controller",
-            "type": "file",
-            "path": "HW 개발/STM32F429/DMA(Direct Memory Access) Controller.html"
-          },
-          {
-            "name": "Debug and Trace",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Debug and Trace.html"
-          },
-          {
-            "name": "Debug port AHB-AP interface",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Debug port AHB-AP interface.html"
-          },
-          {
-            "name": "ETM interface",
-            "type": "file",
-            "path": "HW 개발/STM32F429/ETM interface.html"
-          },
-          {
-            "name": "Embedded SRAM",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Embedded SRAM.html"
-          },
-          {
-            "name": "Embedded bootloader",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Embedded bootloader.html"
-          },
-          {
-            "name": "Embedded flash memory",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Embedded flash memory.html"
-          },
-          {
-            "name": "FPU(Floating Point Unit)",
-            "type": "file",
-            "path": "HW 개발/STM32F429/FPU(Floating Point Unit).html"
-          },
-          {
-            "name": "Memory Protection Unit (MPU)",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Memory Protection Unit (MPU).html"
-          },
-          {
-            "name": "Multi-AHB(Advanced High-Performance) bus matrix",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Multi-AHB(Advanced High-Performance) bus matrix.html"
-          },
-          {
-            "name": "Nested Vectored Interrupt Controller (NVIC)",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Nested Vectored Interrupt Controller (NVIC).html"
-          },
-          {
-            "name": "Not understand",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Not understand.html"
-          },
-          {
-            "name": "Physical Remap in STM32F42xxx and STM32F43xxx",
-            "type": "file",
-            "path": "HW 개발/STM32F429/Physical Remap in STM32F42xxx and STM32F43xxx.html"
-          },
-          {
-            "name": "STM32F4 Series",
-            "type": "file",
-            "path": "HW 개발/STM32F429/STM32F4 Series.html"
-          },
-          {
-            "name": "STM32F429 Overview",
-            "type": "file",
-            "path": "HW 개발/STM32F429/STM32F429 Overview.html"
-          },
-          {
-            "name": "STM32F429",
-            "type": "file",
-            "path": "HW 개발/STM32F429/STM32F429.html"
-          },
-          {
-            "name": "TBD",
-            "type": "file",
-            "path": "HW 개발/STM32F429/TBD.html"
-          },
-          {
-            "name": "memory.",
-            "type": "file",
-            "path": "HW 개발/STM32F429/memory..html"
-          },
-          {
-            "name": "tail-chaining",
-            "type": "file",
-            "path": "HW 개발/STM32F429/tail-chaining.html"
-          }
-        ]
-      },
-      {
         "name": "Tool",
         "type": "directory",
         "path": "HW 개발/Tool",
@@ -686,9 +845,130 @@
                 "path": "HW 개발/Tool/LTSpice/LTSpice 기본 설정.html"
               },
               {
+                "name": "LTSpice 기본",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/LTSpice 기본.html"
+              },
+              {
                 "name": "LTSpice",
                 "type": "file",
                 "path": "HW 개발/Tool/LTSpice/LTSpice.html"
+              },
+              {
+                "name": "Pulse 신호원 ",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/Pulse 신호원 .html"
+              },
+              {
+                "name": "라이브러리 추가",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/라이브러리 추가.html"
+              },
+              {
+                "name": "시뮬레이션 설정",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/시뮬레이션 설정.html"
+              }
+            ]
+          },
+          {
+            "name": "OrCAD",
+            "type": "directory",
+            "path": "HW 개발/Tool/OrCAD",
+            "children": [
+              {
+                "name": "DRC(Design Rule Check)",
+                "type": "file",
+                "path": "HW 개발/Tool/OrCAD/DRC(Design Rule Check).html"
+              },
+              {
+                "name": "OrCAD",
+                "type": "file",
+                "path": "HW 개발/Tool/OrCAD/OrCAD.html"
+              }
+            ]
+          },
+          {
+            "name": "SPICE",
+            "type": "directory",
+            "path": "HW 개발/Tool/SPICE",
+            "children": [
+              {
+                "name": "SPICE 기본",
+                "type": "file",
+                "path": "HW 개발/Tool/SPICE/SPICE 기본.html"
+              },
+              {
+                "name": "SPICE 디바이스 모델",
+                "type": "file",
+                "path": "HW 개발/Tool/SPICE/SPICE 디바이스 모델.html"
+              },
+              {
+                "name": "SPICE",
+                "type": "file",
+                "path": "HW 개발/Tool/SPICE/SPICE.html"
+              },
+              {
+                "name": "lib & olb",
+                "type": "file",
+                "path": "HW 개발/Tool/SPICE/lib & olb.html"
+              }
+            ]
+          },
+          {
+            "name": "STM32CubeIDE",
+            "type": "directory",
+            "path": "HW 개발/Tool/STM32CubeIDE",
+            "children": [
+              {
+                "name": "Create New Project",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/Create New Project.html"
+              },
+              {
+                "name": "Debugging",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/Debugging.html"
+              },
+              {
+                "name": "Issue Note",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/Issue Note.html"
+              },
+              {
+                "name": "Perspective",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/Perspective.html"
+              },
+              {
+                "name": "STM32CubeIDE",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/STM32CubeIDE.html"
+              },
+              {
+                "name": "SWV(Serial Wire Viewer)",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/SWV(Serial Wire Viewer).html"
+              },
+              {
+                "name": "What is STM32CubeIDE",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/What is STM32CubeIDE.html"
+              },
+              {
+                "name": "Workspace",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/Workspace.html"
+              },
+              {
+                "name": "icons",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/icons.html"
+              },
+              {
+                "name": "기존 Project Import",
+                "type": "file",
+                "path": "HW 개발/Tool/STM32CubeIDE/기존 Project Import.html"
               }
             ]
           },
@@ -705,6 +985,11 @@
         "path": "HW 개발/arm",
         "children": [
           {
+            "name": "CMSIS",
+            "type": "file",
+            "path": "HW 개발/arm/CMSIS.html"
+          },
+          {
             "name": "Cortex-A",
             "type": "file",
             "path": "HW 개발/arm/Cortex-A.html"
@@ -720,6 +1005,33 @@
             "path": "HW 개발/arm/Cortex-M33.html"
           },
           {
+            "name": "Cortex-M4",
+            "type": "directory",
+            "path": "HW 개발/arm/Cortex-M4",
+            "children": [
+              {
+                "name": "Armv7-M",
+                "type": "file",
+                "path": "HW 개발/arm/Cortex-M4/Armv7-M.html"
+              },
+              {
+                "name": "Banked Stack Pointer(SP)",
+                "type": "file",
+                "path": "HW 개발/arm/Cortex-M4/Banked Stack Pointer(SP).html"
+              },
+              {
+                "name": "Cortex-M4 Processor",
+                "type": "file",
+                "path": "HW 개발/arm/Cortex-M4/Cortex-M4 Processor.html"
+              },
+              {
+                "name": "Cortex-M4",
+                "type": "file",
+                "path": "HW 개발/arm/Cortex-M4/Cortex-M4.html"
+              }
+            ]
+          },
+          {
             "name": "arm",
             "type": "file",
             "path": "HW 개발/arm/arm.html"
@@ -733,33 +1045,6 @@
     "type": "directory",
     "path": "Project",
     "children": [
-      {
-        "name": "Cable IDE",
-        "type": "directory",
-        "path": "Project/Cable IDE",
-        "children": [
-          {
-            "name": "AI 프롬프트",
-            "type": "file",
-            "path": "Project/Cable IDE/AI 프롬프트.html"
-          },
-          {
-            "name": "Cable IDE",
-            "type": "file",
-            "path": "Project/Cable IDE/Cable IDE.html"
-          },
-          {
-            "name": "Overview",
-            "type": "file",
-            "path": "Project/Cable IDE/Overview.html"
-          },
-          {
-            "name": "Repository",
-            "type": "file",
-            "path": "Project/Cable IDE/Repository.html"
-          }
-        ]
-      },
       {
         "name": "English_Study",
         "type": "directory",
@@ -886,6 +1171,11 @@
             "path": "SW 개발/Git/VSCODE Git 사용.html"
           },
           {
+            "name": "release",
+            "type": "file",
+            "path": "SW 개발/Git/release.html"
+          },
+          {
             "name": "reset",
             "type": "file",
             "path": "SW 개발/Git/reset.html"
@@ -894,6 +1184,11 @@
             "name": "revert",
             "type": "file",
             "path": "SW 개발/Git/revert.html"
+          },
+          {
+            "name": "tag",
+            "type": "file",
+            "path": "SW 개발/Git/tag.html"
           }
         ]
       },
@@ -979,6 +1274,11 @@
                 "path": "Tech/AI/AI 지식/컨텍스트(Context).html"
               }
             ]
+          },
+          {
+            "name": "AI 학습 방법",
+            "type": "file",
+            "path": "Tech/AI/AI 학습 방법.html"
           },
           {
             "name": "AI",
@@ -1072,6 +1372,23 @@
                 "path": "Tech/Archieve/Attachment/Attachment.html"
               }
             ]
+          }
+        ]
+      },
+      {
+        "name": "Design",
+        "type": "directory",
+        "path": "Tech/Design",
+        "children": [
+          {
+            "name": "AI Design Tool",
+            "type": "file",
+            "path": "Tech/Design/AI Design Tool.html"
+          },
+          {
+            "name": "Design",
+            "type": "file",
+            "path": "Tech/Design/Design.html"
           }
         ]
       },

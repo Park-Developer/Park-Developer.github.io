@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>접미사(suffix)</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 24px 32px;
+            box-sizing: border-box;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<p>: 리터럴의 크기를 명확하게 표현하기 위해 접미사(suffix)를 사용할 수도 있다.</p>
+<p>=&gt; 변수를 선언할 때는 long, long long, unsigned long처럼 정수 자료형으로 크기를 정할 수 있지만 리터럴은 접미사를 활용하여 크기를 명시적으로 표기합니다.</p>
+<pre><code class="language-C">#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf(&quot;%ld\n&quot;, -10**L**);                      // long 크기의 정수 리터럴
+    printf(&quot;%lld\n&quot;, -1234567890123456789**LL**);   // long long 크기의 정수 리터럴
+
+    printf(&quot;%u\n&quot;, 10**U**);                       // unsigned int 크기의 정수 리터럴
+    printf(&quot;%lu\n&quot;, 1234567890**UL**);            // unsigned long 크기의 정수 리터럴
+
+    printf(&quot;%lu\n&quot;, 10**UL**);                   // unsigned long 크기의 정수 리터럴
+    printf(&quot;%llu\n&quot;, 1234567890123456789**ULL**)// unsigned long long 크기정수 리터럴
+
+    return 0;
+}
+</code></pre>
+<h3><em>정수 리터럴 접미사</em></h3>
+<hr />
+<p><img src="../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260817214751.png" alt=""></p>
+<h3><em>Reference</em></h3>
+<hr />
+<p>https://dojang.io/mod/page/view.php?id=71</p>
+</body>
+</html>

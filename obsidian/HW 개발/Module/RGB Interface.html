@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Interface</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 24px 32px;
+            box-sizing: border-box;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+    </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+<body>
+    <h3><em>RGB Interface</em></h3>
+<hr />
+<p>: The RGB interface is a still direct, pixel-by-pixel connection between the SoC and the TFT panel, <u>without any complicated conversion layers in between.</u></p>
+<ul>
+<li>It is simple, well understood, and easy to debug with an oscilloscope or logic analyzer.  </li>
+<li>For resolutions like 480×272, 800×480, 1024×600, or even 1280×800, it remains a very cost-effective choice.</li>
+</ul>
+<h3><em>RGB Meaning</em></h3>
+<hr />
+<p>: Each pixel of a TFT LCD is made up of three sub-pixel(R, G, and B). By driving each sub-pixel with a specific intensity, the panel can reproduce a wide range of colors.</p>
+<ul>
+<li>In an RGB interface, the display controller outputs the color value for each pixel as a set of digital signals.  </li>
+<li>The LCD timing controller (TCON) inside the panel receives these values in sync with the pixel clock and refreshes the pixel matrix line by line.</li>
+</ul>
+<h3><em>Parallel Interface</em></h3>
+<hr />
+<p>: The RGB interface is a parallel interface</p>
+<ul>
+<li>For every pixel clock, several bits for red, green, and blue are output simultaneously on different lines/</li>
+<li>Parallel RGB is electrically simpler, but it requires more pins and more PCB traces.
+    =&gt; This makes it ideal for short-distance connection between an SoC and local TFT panel on the same board or within the same enclosure.</li>
+</ul>
+<h3>Signal Set of a TFT LCD RGB Interface</h3>
+<hr />
+<ol>
+<li>
+<p>Color Data Lines
+    : Depending on the required color depth, TFT LCDs with RGB interfaces usually support one of these common formats:
+    <img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260815175356.png" alt=""></p>
+</li>
+<li>
+<p>Control and Synchonization singals
+    : In addition to the color data lines, several digital control signals define the timing.</p>
+<ul>
+<li>PCLK(Pixel Clock) : Each rising or falling edge(depending on the configuration) latches one pixel worth of RGB data.</li>
+<li>HSYNC(Horizontal Sync) : Indicates the start of a new line(row) of pixels.</li>
+<li>VSYNC(Vertical Sync) : Indicates the start of a new frame of pixels.</li>
+<li>DE(Data Enable) : Marks valid pixel periods within a line. When DE is low, the controller outputs blanking data.</li>
+</ul>
+</li>
+</ol>
+<h3>TODO</h3>
+<hr />
+<h2>4. How the RGB Interface Works: Timing Principles</h2>
+<h3>4.1 Line and Frame Scanning</h3>
+<p>In reality, TFT LCDs are refreshed in a very fixed scanning sequence:</p>
+<ol>
+<li>The controller outputs pixel data for the first line, synchronized with PCLK.</li>
+<li>At the end of the visible pixels for that line, additional clock cycles are added for the horizontal front porch, sync pulse, and back porch.</li>
+<li>HSYNC marks the transition to the next line.</li>
+<li>After all lines of the frame are transmitted, VSYNC marks the start of a new frame.</li>
+</ol>
+<p>This entire sequence repeats at the configured frame rate, typically 50–60 Hz for industrial displays.</p>
+<h3>4.2 Important Timing Parameters</h3>
+<p>For each direction (horizontal and vertical), the timing is divided into four parts:</p>
+<ul>
+<li><strong>Visible area</strong>: The number of active pixels (for example 800 pixels for an 800×480 display).</li>
+<li><strong>Front porch</strong>: Idle clocks after the visible pixels at the end of a line or frame.</li>
+<li><strong>Sync pulse</strong>: Active period of HSYNC or VSYNC.</li>
+<li><strong>Back porch</strong>: Idle clocks before the visible pixels of the next line or frame.</li>
+</ul>
+<p>The total number of pixel clocks per line is:</p>
+<p><code>Htotal = Hactive + Hfront + Hsync + Hback</code></p>
+<p>The total number of lines per frame is:</p>
+<p><code>Vtotal = Vactive + Vfront + Vsync + Vback</code></p>
+<p>Once these values are known, the required pixel clock can be estimated as:</p>
+<p><code>Pixel Clock ≈ Htotal × Vtotal × Frame Rate</code></p>
+<p>For example, an 800×480 panel with typical timing values and a 60 Hz refresh rate usually requires a pixel clock in the range of 30–33 MHz.</p>
+<p><img alt="Data Timing of RGB Interface display" src="https://www.rocktech.com.hk/wp-content/uploads/2025/11/rgb-timing.jpg" /></p>
+<h3>Reference</h3>
+<hr />
+<p>https://www.rocktech.com.hk/rocktech-blog/tft-lcd-rgb-interface/</p>
+</body>
+</html>
