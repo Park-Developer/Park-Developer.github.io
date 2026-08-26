@@ -1,0 +1,63 @@
+[
+  {
+    "title": "ARM Cortex M4 강의 보기",
+    "status": "Not started",
+    "tags": []
+  },
+  {
+    "title": "LTSpice 강의",
+    "status": "Not started",
+    "tags": []
+  },
+  {
+    "title": "오픽 준비",
+    "status": "In progress",
+    "tags": []
+  },
+  {
+    "title": "AI 보드rb-D63Q2557TB64",
+    "status": "In progress",
+    "tags": [
+      "Study",
+      "Company"
+    ]
+  },
+  {
+    "title": "EMC 강의 듣기 -전파통신",
+    "status": "STOP",
+    "tags": []
+  },
+  {
+    "title": "STM8S + SDCC github 노션 제대로 정리하기",
+    "status": "In progress",
+    "tags": [
+      "Company"
+    ]
+  },
+  {
+    "title": "Coursera ",
+    "status": "Not started",
+    "tags": []
+  },
+  {
+    "title": "SRTP-T2 Review",
+    "status": "Not started",
+    "tags": [
+      "Company"
+    ]
+  },
+  {
+    "title": "A-to-Z Project",
+    "status": "Not started",
+    "tags": [
+      "Side Project"
+    ]
+  },
+  {
+    "title": "Arm-Cortex M 강의",
+    "status": "In progress",
+    "tags": [
+      "Side Project"
+    ]
+  }
+]
