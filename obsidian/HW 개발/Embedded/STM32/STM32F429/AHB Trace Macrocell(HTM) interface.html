@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: The AHB Trace Macrocell(HTM) interface enables a simple connection of the AHB trace macrocell to the processor. It provides a channel for the data trace to the HTM.</p>
+<dl>
+<dd>The AHB Trace Macrocell(HTM) interface enables a simple connection of the AHB trace macrocell to the processor. It provides a channel for the data trace to the HTM.</dd>
+</dl>
 <p>Your implementation must include this interface to use the HTM interface. You must set TRCENA to 1 in the Debug Exception and Monitor Control Register(DEMCR) before you enable the HTM to enable the HTM prot to supply trace data.</p>
 </body>
 </html>

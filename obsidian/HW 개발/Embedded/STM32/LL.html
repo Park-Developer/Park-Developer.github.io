@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>LL(Low-Layer)</em></h3>
 <hr />
-<p>: The LL drivers are designed to offer a fast light-weight expert oriented layer which is closer to the hardware than the HAL.</p>
+<dl>
+<dd>The LL drivers are designed to offer a fast light-weight expert oriented layer which is closer to the hardware than the HAL.</dd>
+</dl>
 <ul>
 <li>LL APIs are not provided for peripherals where optimized access is not a key feature, or those requiring heavy software configuration and/or complex upper-level stack (such as USB)</li>
 </ul>

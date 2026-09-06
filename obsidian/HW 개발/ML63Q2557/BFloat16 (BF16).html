@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,6 +76,8 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: BFloat16(Brain Floating Point)은 <a href="https://www.ultralytics.com/glossary/machine-learning-ml">머신러닝</a> 애플리케이션에 최적화된 16비트 컴퓨터 숫자 형식입니다. 원래 <a href="https://research.google/">Google Brain 팀</a>에서 개발했으며, 방대한 <a href="https://www.ultralytics.com/glossary/model-weights">모델 가중치</a>와 그래디언트를 효율적으로 처리하기 위한 특화된 접근 방식을 제공합니다. 표준 32비트 부동소수점(FP32)과 달리, <a href="https://www.johndcook.com/blog/2018/11/15/bfloat16/">BFloat16의 수학적 속성</a>은 지수부에 8비트, 가수부에 7비트를 할당합니다. 이러한 고유한 구조는 FP32와 동일한 동적 범위를 제공하면서도 정밀도는 낮추어, 기존 16비트 형식에서 흔히 발생하는 수치 불안정성 문제 없이 복잡한 <a href="https://www.ultralytics.com/glossary/deep-learning-dl">딥러닝</a> 아키텍처의 메모리 요구 사항을 효과적으로 절반으로 줄여줍니다.</p>
+<dl>
+<dd>BFloat16(Brain Floating Point)은 <a href="https://www.ultralytics.com/glossary/machine-learning-ml">머신러닝</a> 애플리케이션에 최적화된 16비트 컴퓨터 숫자 형식입니다. 원래 <a href="https://research.google/">Google Brain 팀</a>에서 개발했으며, 방대한 <a href="https://www.ultralytics.com/glossary/model-weights">모델 가중치</a>와 그래디언트를 효율적으로 처리하기 위한 특화된 접근 방식을 제공합니다. 표준 32비트 부동소수점(FP32)과 달리, <a href="https://www.johndcook.com/blog/2018/11/15/bfloat16/">BFloat16의 수학적 속성</a>은 지수부에 8비트, 가수부에 7비트를 할당합니다. 이러한 고유한 구조는 FP32와 동일한 동적 범위를 제공하면서도 정밀도는 낮추어, 기존 16비트 형식에서 흔히 발생하는 수치 불안정성 문제 없이 복잡한 <a href="https://www.ultralytics.com/glossary/deep-learning-dl">딥러닝</a> 아키텍처의 메모리 요구 사항을 효과적으로 절반으로 줄여줍니다.</dd>
+</dl>
 </body>
 </html>

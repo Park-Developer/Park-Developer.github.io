@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: The memory protection unit is used to mange the CPU accesses to memory to prevent one task to accidentally corrupt the memory or resources used by any other active task.</p>
+<dl>
+<dd>The memory protection unit is used to mange the CPU accesses to memory to prevent one task to accidentally corrupt the memory or resources used by any other active task.</dd>
+</dl>
 <ul>
 <li>This memory area is organized into up to 8 protected areas that can in turn be divided up into 8 subareas.</li>
 <li>The protection area sizes are between 32bytes and the whole 4 gigabytes of addressable memory</li>
@@ -81,10 +86,12 @@
 <li>It is usually managed by an RTOS. If a program accesses a memory location that is prohibited by the MPU, the RTOS can detect it and act. In an RTOS environment, the kernel can dynamically update the MPU area setting, based on the process to be executed.</li>
 <li>The MPU is optional and can be bypassed for applications that do not need it.</li>
 </ul>
-<p>: An optional MPU for memory protection including
+<dl>
+<dd>An optional MPU for memory protection including
 - Eight Memory Regions
 - Sub Region Disable(SRD), enabling efficient use of memory regions
 - The ability to enable a background region that implements the default memory map attributes
-- </p>
+- </dd>
+</dl>
 </body>
 </html>

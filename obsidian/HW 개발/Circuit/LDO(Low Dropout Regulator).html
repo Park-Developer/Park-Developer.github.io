@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,11 +76,15 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: An LDO is nothing more than a three terminal linear system providing closed-loop control. The solution is easy to implement, requiring only the device itself and an input and output capacitor.</p>
-<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260806235410.png" alt=""></p>
+<dl>
+<dd>An LDO is nothing more than a three terminal linear system providing closed-loop control. The solution is easy to implement, requiring only the device itself and an input and output capacitor.</dd>
+</dl>
+<p><img alt="" src="Pasted%20image%2020260806235410.png" /></p>
 <h3><em>LDO Operation</em></h3>
 <hr />
-<p>: An LDO can be thought fo as a variable resistor.</p>
+<dl>
+<dd>An LDO can be thought fo as a variable resistor.</dd>
+</dl>
 <p>=&gt; LDO is built from four main elements : (1) pass transistor, (2) bandgap reference, (3) operational amplifier, (4) feedback resistor.</p>
 <h3><em>Designing with an LDO</em></h3>
 <hr />
@@ -104,8 +111,8 @@
 </li>
 <li>
 <p>Efficiency : When the LDO output current is much greater than the device quiescent current, the system efficiency is found by dividing the output voltage by the input voltage.
-    <img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260807001219.png" alt="467"></p>
-<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260807001246.png" alt=""></p>
+    <img alt="467" src="Pasted%20image%2020260807001219.png" /></p>
+<p><img alt="" src="Pasted%20image%2020260807001246.png" /></p>
 <p>System line and load step performance is greatly improved on LDOs that have higher Iq. Since the Iq is used by the LDO to preform the regulating operation, it can respond quicker to a sudden change in load requirements or line voltage.</p>
 </li>
 </ul>

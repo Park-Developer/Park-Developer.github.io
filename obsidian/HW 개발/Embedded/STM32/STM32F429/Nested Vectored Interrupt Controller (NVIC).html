@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,14 +76,16 @@
 <body>
     <h3><em>Concept</em></h3>
 <hr />
-<p>: Nested Vectored Interrupt Controller(NVIC) closely integrated with the processor core to achieve low latency interrupt processing</p>
+<dl>
+<dd>Nested Vectored Interrupt Controller(NVIC) closely integrated with the processor core to achieve low latency interrupt processing</dd>
+</dl>
 <ul>
 <li>External Interrupts, configurable from 1 to 240</li>
 <li>Bits of priority, configurable from 3 to 8</li>
 <li>Dynamic reprioritization of interrupts</li>
 <li>Priority grouping
     -&gt; This enables selection of preempting interrupt levels and non preempting interrupt levels</li>
-<li>Support for <a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/tail-chaining.html">tail-chaining</a> and late arrival of interrupts
+<li>Support for <a href="tail-chaining.html">tail-chaining</a> and late arrival of interrupts
     -&gt; This enables back-to-back interrupt processing without the overhead of state saving and restoration between interrupts</li>
 </ul>
 </body>

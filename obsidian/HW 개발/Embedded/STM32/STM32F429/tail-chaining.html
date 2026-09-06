@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: When an exception occurs while the processor is handling another exception of the same or of a higher priority, the new exception is pended. When the processor finishes executing the current exception handler, it then proceeds with the pended exception request. </p>
+<dl>
+<dd>When an exception occurs while the processor is handling another exception of the same or of a higher priority, the new exception is pended. When the processor finishes executing the current exception handler, it then proceeds with the pended exception request. </dd>
+</dl>
 <p>Instead of restoring the register's data that was saved on to the stack frame, and then pushing it back again, the processor skips some of stacking and unstacking steps and enters the exception handler of the pended exception as soon as possible. With this arrangement, the timing gap between the two exception is considerably reduced.</p>
 <h3><em>Reference</em></h3>
 <hr />

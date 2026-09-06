@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: The Cortex-M4 with FPU memory map includes two bit-band regions. These regions map each word in an alias region of memory to a bit in a bit-band region memory.</p>
+<dl>
+<dd>The Cortex-M4 with FPU memory map includes two bit-band regions. These regions map each word in an alias region of memory to a bit in a bit-band region memory.</dd>
+</dl>
 <ul>
 <li>Writing to a word in an alias region has the same effect as a read-modify-write operation on the targeted bit in the bit-band region.</li>
 <li>In the STM32F4xx devices, both the peripheral registers and the SRAM are mapped to a bit-band region, so that single bit-band write and read operation are allowed.</li>
@@ -81,6 +86,6 @@
 </ul>
 <p>A mapping formula shows how to reference each word in the alias region to a corresponding
 bit in the bit-band region. The mapping formula is:</p>
-<p><img src="../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260627221638.png" alt="Pasted image 20260627221638.png"></p>
+<p><img src="../../../Archieve/Attachment/Pasted image 20260627221638.png" alt="Pasted image 20260627221638.png"></p>
 </body>
 </html>

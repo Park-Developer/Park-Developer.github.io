@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>Introduction</em></h3>
 <hr />
-<p>: STM8 STM-STUDIO is a graphical user interface that allows sampling and visualizing in realtime of user's variables while the application is running.</p>
+<dl>
+<dd>STM8 STM-STUDIO is a graphical user interface that allows sampling and visualizing in realtime of user's variables while the application is running.</dd>
+</dl>
 <ul>
 <li>It is designed to run on PCs with Window</li>
 <li>This tool works with STM8 MCU through SWIM interface and with STM32 MCU through JTAG or SWD interface.</li>
@@ -88,7 +93,9 @@
 </ul>
 <h3><em>Creating Variables</em></h3>
 <hr />
-<p>: It is necessary to create a list of variable to be inspected during the recording session.</p>
+<dl>
+<dd>It is necessary to create a list of variable to be inspected during the recording session.</dd>
+</dl>
 <p>STM-STUDIO manages four kinds of variables:
 - <strong>Absolute variables</strong> that are identified by their physical storage address.
 - <strong>Statistical variables</strong> that can compute values like min, max, average and standard deviation of absoulte variables.
@@ -96,14 +103,16 @@
 - <strong>Plugin variables</strong> that contain user-configurable information.</p>
 <h3><em>Adding absolute variables</em></h3>
 <hr />
-<p>: Absolute variables are displayed in the upper pane of the Variables Settings pane.
-=&gt; They can either be added directly, or be imported from an executable(.elf file).</p>
+<dl>
+<dd>Absolute variables are displayed in the upper pane of the Variables Settings pane.
+=&gt; They can either be added directly, or be imported from an executable(.elf file).</dd>
+</dl>
 <ol>
 <li>
 <p><strong>Directly</strong>
     : Variables can be added directly from the table using the New contextual menu (right click on the mouse). The new variable is added with default parameters.
     =&gt; It is the user's responsibility to define the name, the address, the size or optionally the color of the variable by editing each of the table fields.
-    <img src="../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260706001849.png" alt="Pasted image 20260706001849.png"></p>
+    <img src="../../../Archieve/Attachment/Pasted image 20260706001849.png" alt="Pasted image 20260706001849.png"></p>
 </li>
 <li>
 <p><strong>Imported</strong>
@@ -112,23 +121,29 @@
 </ol>
 <h3><em>Absolute Variable Acquisition Mode</em></h3>
 <hr />
-<p>: Absolute variables may be acquired in 2 modes.</p>
+<dl>
+<dd>Absolute variables may be acquired in 2 modes.</dd>
+</dl>
 <ol>
 <li>Direct acquisition mode, which is not application intrusive, but not give an instantaneous view of the application state.</li>
 <li>Snapshot acquisition mdoe, which gives an accurate view of the application state, but which requires application instrumentation.</li>
 </ol>
 <p>Click on the icon on the left column in order to toggle the acquisition mode of a variable.
-<img src="../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260706002832.png" alt="Pasted image 20260706002832.png"></p>
+<img src="../../../Archieve/Attachment/Pasted image 20260706002832.png" alt="Pasted image 20260706002832.png"></p>
 <h3><em>Inspecting Variables</em></h3>
 <hr />
-<p>: Once variables are created, they can be inserted in appropriate windows called "variable viewers" so that they can be visualized during a session.</p>
+<dl>
+<dd>Once variables are created, they can be inserted in appropriate windows called "variable viewers" so that they can be visualized during a session.</dd>
+</dl>
 <p>When creating a new configuration, one default variable viewer is created <u>but the user can add as many variable viewer as necessary.</u></p>
 <h3><em>Adding a variable viewer</em></h3>
 <hr />
-<p>: In the 'Viewer settings' pane, select the 'General' tab and click on the 'Add Viewer' button; or use the contextual menu within the 'Viewers settings' pane and select the 'New Var Viewer' item.</p>
+<dl>
+<dd>In the 'Viewer settings' pane, select the 'General' tab and click on the 'Add Viewer' button; or use the contextual menu within the 'Viewers settings' pane and select the 'New Var Viewer' item.</dd>
+</dl>
 <p>A new tab (VarViewer2) is added to the Viewers settings pane and a VarViewer2 window
 is displayed in the display area.
-<img src="../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260706004427.png" alt="Pasted image 20260706004427.png"></p>
+<img src="../../../Archieve/Attachment/Pasted image 20260706004427.png" alt="Pasted image 20260706004427.png"></p>
 <h3><em>Reference</em></h3>
 <hr />
 <ul>

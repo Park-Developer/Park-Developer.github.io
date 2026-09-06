@@ -48,7 +48,7 @@ script_replacement = """
     })();
 """
 
-for filepath in glob.glob('*.html'):
+for filepath in glob.glob('UI/*.html'):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
 

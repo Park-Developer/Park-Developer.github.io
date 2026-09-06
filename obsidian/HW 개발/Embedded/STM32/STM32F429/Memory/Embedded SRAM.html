@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -81,7 +84,9 @@
 </ul>
 <h3>?</h3>
 <hr />
-<p>: The STM32F42xxx and STM32F43xxx features 4 Kbytes of backup SRAM plus 256 Kbytes of system SRAM.</p>
+<dl>
+<dd>The STM32F42xxx and STM32F43xxx features 4 Kbytes of backup SRAM plus 256 Kbytes of system SRAM.</dd>
+</dl>
 <ul>
 <li>Embedded SRASM can be accessed as bytes, half-words(16 bits) or full words(32 bits).</li>
 <li>Read and Write operation are performed at CPU speed with 0 wait state.</li>
@@ -100,13 +105,15 @@
 </li>
 <li>
 <p>The CPU can access the SRAM1 through the System bus or through the I-Code/D-Code buses when boot from SRAM is selected or when physical remap is selected.
-<img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260625003005.png" alt="Pasted image 20260625003005.png"></p>
+<img src="../../../../Archieve/Attachment/Pasted image 20260625003005.png" alt="Pasted image 20260625003005.png"></p>
 </li>
 </ul>
-<p>: All devices embed
+<dl>
+<dd>All devices embed
 - Up to 256Kbytes of system SRAM including 64 Kbytes of CCM(core coupled memory) data RAM
 - RAM memory is accessed at CPU clock speed with 0 wait states.
 - 4 Kbytes of backup SRAM
-    : This area is accessible only from the CPU. Its content is protected against possible unwanted write accesses, and is retained in Standby or $V_{BAT}$ mode</p>
+    : This area is accessible only from the CPU. Its content is protected against possible unwanted write accesses, and is retained in Standby or $V_{BAT}$ mode</dd>
+</dl>
 </body>
 </html>

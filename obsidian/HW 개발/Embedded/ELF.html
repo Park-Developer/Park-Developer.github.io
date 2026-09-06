@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>Concept</em></h3>
 <hr />
-<p>: ELF(Executableand Linkable Format)은 리눅스, 유닉스 등에서 사용되는 실행 파일, 공유 라이브러리 등의 파일 형식이다.</p>
+<dl>
+<dd>ELF(Executableand Linkable Format)은 리눅스, 유닉스 등에서 사용되는 실행 파일, 공유 라이브러리 등의 파일 형식이다.</dd>
+</dl>
 <ul>
 <li>ELF 형식은 프로그램의 코드, 데이터, 심볼, 리눅스 커널과의 인터페이스 등을 담고있다.</li>
 <li>ELF 파일의 내부 정보를 분석하면, 프로그램의 구조, 코드 정보, 프로그램의 실행 과정 등을 파악할 수 있습니다</li>
@@ -81,7 +86,9 @@
 </ul>
 <h3><em>ELF 명령어</em></h3>
 <hr />
-<p>: ELF 파일을 분석하기 위해 사용할 수 있는 명령어는 다양하지만, 주로 사용되는 명령어는 다음과 같습니다:</p>
+<dl>
+<dd>ELF 파일을 분석하기 위해 사용할 수 있는 명령어는 다양하지만, 주로 사용되는 명령어는 다음과 같습니다:</dd>
+</dl>
 <ul>
 <li>readelf: ELF 파일의 헤더 및 섹션, 심볼 등의 정보를 출력합니다.</li>
 <li>objdump: ELF 파일의 어셈블리어 코드를 출력합니다.</li>
@@ -90,8 +97,10 @@
 </ul>
 <h3><em>ELF 파일 구조</em></h3>
 <hr />
-<p>: ELF 파일은 보통 ELF Header + Program Header Table + Section Header Table로 구성된다.
-<img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260705161942.png" alt="Pasted image 20260705161942.png"></p>
+<dl>
+<dd>ELF 파일은 보통 ELF Header + Program Header Table + Section Header Table로 구성된다.
+<img src="../Archieve/Attachment/Pasted image 20260705161942.png" alt="Pasted image 20260705161942.png"></dd>
+</dl>
 <h3><em>Reference</em></h3>
 <hr />
 <h2>- https://jalni-like-journey.tistory.com/entry/%EC%8B%9C%EC%8A%A4%ED%85%9C-105-%EC%8B%A4%ED%96%89%ED%8C%8C%EC%9D%BC%EC%9D%98-%EC%A2%85%EB%A5%98-PE%ED%8C%8C%EC%9D%BC-ELF%ED%8C%8C%EC%9D%BC%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B3%A0-gdb-pwndbg-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EC%84%A4%EC%B9%98%ED%95%B4%EB%B3%B4%EC%9E%90</h2>

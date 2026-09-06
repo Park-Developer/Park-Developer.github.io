@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,17 +76,21 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: The devices embed 512 bytes of OTP memory, and a flash memory of up to 2Mbytes available for storing programs and data.</p>
+<dl>
+<dd>The devices embed 512 bytes of OTP memory, and a flash memory of up to 2Mbytes available for storing programs and data.</dd>
+</dl>
 <h3><em>??</em></h3>
 <hr />
-<p>: The flash memory interface manages CPU AHB I-Code and D-Code accesses to the flash memory. It implements the erase and program flahs memory operations and the read and write protection mechanisms.</p>
+<dl>
+<dd>The flash memory interface manages CPU AHB I-Code and D-Code accesses to the flash memory. It implements the erase and program flahs memory operations and the read and write protection mechanisms.</dd>
+</dl>
 <ul>
 <li>
 <p>It accelerates code execution with a system of instruction prefetch and cache lines</p>
 </li>
 <li>
 <p>The devices embed 512 bytes of OTP memory, and a flash memory of up to 2Mbytes available for storing programs and data
-<img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260625005748.png" alt="Pasted image 20260625005748.png"></p>
+<img src="../../../../Archieve/Attachment/Pasted image 20260625005748.png" alt="Pasted image 20260625005748.png"></p>
 </li>
 </ul>
 <h3><em>Embedded Flash memory Interface</em></h3>
@@ -94,7 +101,7 @@
 • Prefetch on I-Code
 • 64 cache lines of 128 bits on I-Code
 • 8 cache lines of 128 bits on D-Code</p>
-<p><img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628002839.png" alt="Pasted image 20260628002839.png"></p>
+<p><img src="../../../../Archieve/Attachment/Pasted image 20260628002839.png" alt="Pasted image 20260628002839.png"></p>
 <h3><em>Embedded Flash memory Features</em></h3>
 <hr />
 <ul>
@@ -125,33 +132,37 @@ capability (RWW)</li>
     – When the DB1M bit is set, to perform an erase operation on bank 2, the sector
     number must be programmed (sector number from 12 to 19). Refer to FLASH_CR
     register for SNB (Sector number) configura
-    <img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628005553.png" alt="Pasted image 20260628005553.png"></li>
+    <img src="../../../../Archieve/Attachment/Pasted image 20260628005553.png" alt="Pasted image 20260628005553.png"></li>
 </ul>
 </li>
 </ul>
-<p><img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628005624.png" alt="Pasted image 20260628005624.png"></p>
+<p><img src="../../../../Archieve/Attachment/Pasted image 20260628005624.png" alt="Pasted image 20260628005624.png"></p>
 <h3><em>Read Interface</em></h3>
 <hr />
-<p>: To correctly read data from flash memory, the number of wait states(LATENCY) must be correctly programmed in the Flash access control register(<code>FLASH_ACR</code>) according to the frequency of the CPU clock(HCLK) and the supply voltage of the device</p>
-<p><img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628010304.png" alt="Pasted image 20260628010304.png"></p>
+<dl>
+<dd>To correctly read data from flash memory, the number of wait states(LATENCY) must be correctly programmed in the Flash access control register(<code>FLASH_ACR</code>) according to the frequency of the CPU clock(HCLK) and the supply voltage of the device</dd>
+</dl>
+<p><img src="../../../../Archieve/Attachment/Pasted image 20260628010304.png" alt="Pasted image 20260628010304.png"></p>
 <ul>
 <li>After reset, the CPU clock frequency is 16 MHz and 0 wait state (WS) is configured in the
 FLASH_ACR register.</li>
 </ul>
 <h3><em>Adaptive Real-time memory accelerator(ART Accelerator)</em></h3>
 <hr />
-<p>: The proprietary Adaptive real-time (ART) memory accelerator is optimized for STM32
+<dl>
+<dd>The proprietary Adaptive real-time (ART) memory accelerator is optimized for STM32
 industry-standard Arm® Cortex®-M4 with FPU processors. It balances the inherent
 performance advantage of the Arm® Cortex®-M4 with FPU over flash memory technologies,
 which normally requires the processor to wait for the flash memory at higher operating
-frequencies.</p>
+frequencies.</dd>
+</dl>
 <p>=&gt; To release the processor full performance, the accelerator implements an instruction prefetch queue and branch cache which increases program execution speed from thr 128-bit flash memroy</p>
 <ul>
 <li>
 <p><strong>Instruction Prefetch</strong>
     : Prefetch on the I-Code bus can be used to read the next sequential instruction line from the flash memory while the current instruction line is being requested by the CPU.</p>
 <p>=&gt; Prefetch is enabled by setting the PRFTEN bit in the FLASH_ACR register. This feature is useful if at least one wait state is needed to access the flash memory
-<img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260628010917.png" alt="Pasted image 20260628010917.png"></p>
+<img src="../../../../Archieve/Attachment/Pasted image 20260628010917.png" alt="Pasted image 20260628010917.png"></p>
 </li>
 <li>
 <p><strong>Instruction Cache Memory</strong>
@@ -159,7 +170,7 @@ frequencies.</p>
 <ul>
 <li>Each time a miss occurs, the line read is copied into the instruction cachee memory.</li>
 <li>If some data contained in the instruction cache memory are requested by the CPU, they are provided without inserting any delay.</li>
-<li>Once all the instruction cache memory lines have been filled, the <a href="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/LRU%28Least%20Recently%20Used%29%20.html">LRU(least recently used) policy</a> is used to determint the line to replace in the instruction memory cache.</li>
+<li>Once all the instruction cache memory lines have been filled, the <a href="Embedded/LRU(Least Recently Used) .md.html">LRU(least recently used) policy</a> is used to determint the line to replace in the instruction memory cache.</li>
 </ul>
 </li>
 <li>
@@ -170,13 +181,17 @@ frequencies.</p>
 </ul>
 <h3><em>Erase and program operations</em></h3>
 <hr />
-<p>: Any attempt to read the flash memory on <u>STM32F4xx</u> while it is being written or erased, causes the bus to stall. Read operations are processed correctly once the program operation has completed.</p>
+<dl>
+<dd>Any attempt to read the flash memory on <u>STM32F4xx</u> while it is being written or erased, causes the bus to stall. Read operations are processed correctly once the program operation has completed.</dd>
+</dl>
 <p>On STM32F42xxx and STM32F43xxx devices, two banks are available allowing read operation from one bank while a write/erase operation is performed to the other bank.</p>
 <h3><em>Unlocking the Flash control register</em></h3>
 <hr />
-<p>: After reset, write is not allowed in the Flash control register (FLASH_CR) to protect the flash
+<dl>
+<dd>After reset, write is not allowed in the Flash control register (FLASH_CR) to protect the flash
 memory against possible unwanted operations due, for example, to electric disturbances.
-The following sequence is used to unlock this register</p>
+The following sequence is used to unlock this register</dd>
+</dl>
 <ol>
 <li>Write KEY1 = 0x45670123 in the Flash key register (FLASH_KEYR)</li>
 <li>Write KEY2 = 0xCDEF89AB in the Flash key register (FLASH_KEYR)</li>
@@ -185,7 +200,9 @@ The following sequence is used to unlock this register</p>
 reset.</p>
 <h3><em>Erase</em></h3>
 <hr />
-<p>: The flash memory erase operation can be performed at sector level or on the whole flash memory(Mass Erase).</p>
+<dl>
+<dd>The flash memory erase operation can be performed at sector level or on the whole flash memory(Mass Erase).</dd>
+</dl>
 <ul>
 <li>Mass Erase does not affect the OTP sector or the configuration sector.</li>
 <li>Erase Type<ul>
@@ -197,22 +214,30 @@ reset.</p>
 </ul>
 <h3><em>Read-While_Write(RWW)</em></h3>
 <hr />
-<p>: In STM32F42xxx and STM32F43xxx devices, the flash memory is divided into two banks allowing read-while-write operation.
--&gt; This feature allows to perform a read operation from one bank while an erase or program operation is performed to the other bank.</p>
+<dl>
+<dd>In STM32F42xxx and STM32F43xxx devices, the flash memory is divided into two banks allowing read-while-write operation.
+-&gt; This feature allows to perform a read operation from one bank while an erase or program operation is performed to the other bank.</dd>
+</dl>
 <blockquote>
 <p>Write-while-write operations are not allowed.</p>
 </blockquote>
 <h3><em>Interrupts</em></h3>
 <hr />
-<p>: Setting the end of operation interrupt enable bit(<code>EOPIE</code>) in the FLASH_CR register enables interrupt generation when an erase or program operation ends, that is when the busy bit(BSY) in the FLASH_SR register is cleared.</p>
+<dl>
+<dd>Setting the end of operation interrupt enable bit(<code>EOPIE</code>) in the FLASH_CR register enables interrupt generation when an erase or program operation ends, that is when the busy bit(BSY) in the FLASH_SR register is cleared.</dd>
+</dl>
 <h3><em>Option Bytes</em></h3>
 <hr />
-<p>: The option bytes are configured by the end user depending on the application requirements</p>
-<p><img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260701002950.png" alt="Pasted image 20260701002950.png">
-<img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260701003004.png" alt="Pasted image 20260701003004.png"></p>
+<dl>
+<dd>The option bytes are configured by the end user depending on the application requirements</dd>
+</dl>
+<p><img src="../../../../Archieve/Attachment/Pasted image 20260701002950.png" alt="Pasted image 20260701002950.png">
+<img src="../../../../Archieve/Attachment/Pasted image 20260701003004.png" alt="Pasted image 20260701003004.png"></p>
 <h3><em>One-Time Programmable(OTP) Bytes</em></h3>
 <hr />
-<p>: The OTP area is divided into 16 OTP data blocks of 32 bytes and one lock OTP block of 16bytes
-<img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260701003539.png" alt="Pasted image 20260701003539.png"></p>
+<dl>
+<dd>The OTP area is divided into 16 OTP data blocks of 32 bytes and one lock OTP block of 16bytes
+<img src="../../../../Archieve/Attachment/Pasted image 20260701003539.png" alt="Pasted image 20260701003539.png"></dd>
+</dl>
 </body>
 </html>

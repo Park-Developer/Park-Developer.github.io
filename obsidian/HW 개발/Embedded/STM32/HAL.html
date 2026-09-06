@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>HAL(Hardware Abstraction Layer</em></h3>
 <hr />
-<p>: The HAL drives are designed to offer a <u><b>rich set of APIs</b></u> and to interact easily with the application upper layers.</p>
+<dl>
+<dd>The HAL drives are designed to offer a <u><b>rich set of APIs</b></u> and to interact easily with the application upper layers.</dd>
+</dl>
 <ul>
 <li>Each driver consists of a set of functions covering the most common peripheral features. The development of each driver is driven by a common API which standardizes the driver structure, the functions and the parameter names</li>
 <li>The HAL drivers include a set of driver modules, each module being linked to a standalone peripheral. However, in some cases, the module is linked to a peripheral functional mode. As an example, several modules exist for the USART peripheral: UART driver module, USART driver module, SMARTCARD driver module and IRDA driver module</li>

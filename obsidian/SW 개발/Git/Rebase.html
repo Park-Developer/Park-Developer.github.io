@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,17 +76,23 @@
 <body>
     <h3><em>Git Rebase</em></h3>
 <hr />
-<p>: Transplant a series of commits onto a different starting point.</p>
-<p><img src="../../SW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260726002021.png" alt="Pasted image 20260726002021.png"></p>
-<p><img src="../../SW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260726002028.png" alt="Pasted image 20260726002028.png"></p>
+<dl>
+<dd>Transplant a series of commits onto a different starting point.</dd>
+</dl>
+<p><img src="../Archieve/Attachment/Pasted image 20260726002021.png" alt="Pasted image 20260726002021.png"></p>
+<p><img src="../Archieve/Attachment/Pasted image 20260726002028.png" alt="Pasted image 20260726002028.png"></p>
 <h3><em>사용 하는 이유</em></h3>
 <hr />
-<p>: 브랜치가 너무 많을 경우, 3-way merger만 진행하면 git log가 너무 복잡해 보일 수 있음.</p>
+<dl>
+<dd>브랜치가 너무 많을 경우, 3-way merger만 진행하면 git log가 너무 복잡해 보일 수 있음.</dd>
+</dl>
 <p>git log를 간단하게 하기 위해서는 fastforward를 하는게 좋은데, 충돌이 있는 경우 fastforward가 불가능함</p>
 <p>이를 해결하기 위해 rebase를 한 후 fastforward를 진행하여 git log 단순화</p>
 <h3>3-Way Merge VS Rebase &amp; Merge</h3>
 <hr />
-<p>: 일반 merge는 합쳐지는 대상이 되는 브랜치(master)에 이동해서 merge를 진행하지만, rebase는 새로운 브랜치로 이동해서 rebase 진행. rebase 진행 후에 다시 master로 이동해서 merge 진행</p>
-<p><img src="../../SW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260726002555.png" alt="Pasted image 20260726002555.png"></p>
+<dl>
+<dd>일반 merge는 합쳐지는 대상이 되는 브랜치(master)에 이동해서 merge를 진행하지만, rebase는 새로운 브랜치로 이동해서 rebase 진행. rebase 진행 후에 다시 master로 이동해서 merge 진행</dd>
+</dl>
+<p><img src="../Archieve/Attachment/Pasted image 20260726002555.png" alt="Pasted image 20260726002555.png"></p>
 </body>
 </html>

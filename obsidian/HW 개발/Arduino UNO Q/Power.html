@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,12 +76,14 @@
 <body>
     <h3><em>Power Tree Architecture</em></h3>
 <hr />
-<p>: accepts 5V input over USB-C or 7~24V input on DC input using VIN pin (<code>DC_IN</code>), which is step-down converted to 5V. These two sources are diode-OR combined into the system 5V bus(<code>5V_SYS</code>)</p>
-<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260713225408.png" alt="Pasted image 20260713225408.png"></p>
-<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260713225421.png" alt="Pasted image 20260713225421.png"></p>
+<dl>
+<dd>accepts 5V input over USB-C or 7~24V input on DC input using VIN pin (<code>DC_IN</code>), which is step-down converted to 5V. These two sources are diode-OR combined into the system 5V bus(<code>5V_SYS</code>)</dd>
+</dl>
+<p><img src="../Archieve/Attachment/Pasted image 20260713225408.png" alt="Pasted image 20260713225408.png"></p>
+<p><img src="../Archieve/Attachment/Pasted image 20260713225421.png" alt="Pasted image 20260713225421.png"></p>
 <p>From the 5V system bus(<code>5V_SYS</code>), the board generates a 3.8V pre-regilator node(<code>PWR_3P8V</code>). This node is the supply for the 3.3V converter(<code>PWR_3P3V</code>).</p>
-<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260713230244.png" alt="Pasted image 20260713230244.png"></p>
-<p><img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260713230301.png" alt="Pasted image 20260713230301.png">
+<p><img src="../Archieve/Attachment/Pasted image 20260713230244.png" alt="Pasted image 20260713230244.png"></p>
+<p><img src="../Archieve/Attachment/Pasted image 20260713230301.png" alt="Pasted image 20260713230301.png">
 The PMIC al</p>
 </body>
 </html>

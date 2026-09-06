@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,11 +76,13 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: System analysis and real-time tracing in STM32 requires a number of interaction technologies:
+<dl>
+<dd>System analysis and real-time tracing in STM32 requires a number of interaction technologies:
 - Serial Wire Viewer(SWV)
 - Serial Wire Debug(SWD)
 - Instrument Trace Macrocell(ITM)
-- Serial Wire Output(SWO)</p>
+- Serial Wire Output(SWO)</dd>
+</dl>
 <p>These technologies are part of Arm CoreSight debugger technology.</p>
 <h3><em>SWD(Serial Wire Debug)</em></h3>
 <hr />
@@ -96,7 +101,9 @@
 </ul>
 <h3><em>SWV(Serial Wire Viewer)</em></h3>
 <hr />
-<p>: SWV is a real-time trace technology that uses the Serial Wire Debug(SWD) port and the Serial Wire Output(SWO) pin. The Serial Wire Viewer provides advanced system analysis and real-time tracing without the need to halt the processor to extract the debug information.</p>
+<dl>
+<dd>SWV is a real-time trace technology that uses the Serial Wire Debug(SWD) port and the Serial Wire Output(SWO) pin. The Serial Wire Viewer provides advanced system analysis and real-time tracing without the need to halt the processor to extract the debug information.</dd>
+</dl>
 <ul>
 <li>Event notification on data reading and writing</li>
 <li>Event notification on exception entry and exit</li>

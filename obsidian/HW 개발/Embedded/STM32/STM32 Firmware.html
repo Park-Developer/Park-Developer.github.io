@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,9 +76,11 @@
 <body>
     <h3><em>Cohabiting of HAL and LL</em></h3>
 <hr />
-<p>: The low-layer APIs are designed to be used in standalone mode or combined with the HAL. They cannot be automatically used with th <a href="../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/HAL.html">HAL</a> for the same peripheral instance.</p>
-<p>If you use the <a href="../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/LL.html">LL</a> APIs for a specific instance, you can still use the HAL APIs for other instances. 
+<dl>
+<dd>The low-layer APIs are designed to be used in standalone mode or combined with the HAL. They cannot be automatically used with th <a href="Embedded/STM32/HAL.md.html">HAL</a> for the same peripheral instance.</dd>
+</dl>
+<p>If you use the <a href="Embedded/STM32/LL.md.html">LL</a> APIs for a specific instance, you can still use the HAL APIs for other instances. 
 =&gt; Be careful that the low-layer APIs might overwrite some registers which content is mirrored in the HAL handles.</p>
-<p><img src="../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260817204815.png" alt=""></p>
+<p><img alt="" src="Pasted%20image%2020260817204815.png" /></p>
 </body>
 </html>

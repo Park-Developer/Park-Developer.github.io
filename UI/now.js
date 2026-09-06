@@ -46,7 +46,7 @@ function loadRecentFiles() {
     const container = document.getElementById('now-recent-files');
     if (!container) return;
 
-    fetch('obsidian/recent.json')
+    fetch('../obsidian/recent.json')
         .then(res => {
             if (!res.ok) throw new Error('Network response was not ok');
             return res.json();

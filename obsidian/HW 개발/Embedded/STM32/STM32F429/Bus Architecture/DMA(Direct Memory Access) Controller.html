@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,7 +76,9 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: The devices featrue two general-purpose dual-port DMAs(DMA1 and DMA2) with 8 streams each. They are able to manange memory-to-memory, peripheral-to-memory, and memory-to-peripheral transfer.</p>
+<dl>
+<dd>The devices featrue two general-purpose dual-port DMAs(DMA1 and DMA2) with 8 streams each. They are able to manange memory-to-memory, peripheral-to-memory, and memory-to-peripheral transfer.</dd>
+</dl>
 <ul>
 <li>They feature dedicated FIFOs for APB/AHB peripherals, support burst transfer and are designed to provide the maximum peripheral bandwidth</li>
 <li>The two DMA controllers support circular buffer management, so that no specific code is needed when the controller reaches the end of the buffer.</li>
@@ -93,7 +98,9 @@
 </ul>
 <h3><em>?</em></h3>
 <hr />
-<p>: Direct memory access(DMA) is used in order to provide high-speed data transfer <u>between peripherals and memory and between memory and memory.</u></p>
+<dl>
+<dd>Direct memory access(DMA) is used in order to provide high-speed data transfer <u>between peripherals and memory and between memory and memory.</u></dd>
+</dl>
 <ul>
 <li>Data can be quickly moved by DMA without any CPU action
     -&gt; This keeps CPU resources free for other operations.</li>
@@ -101,17 +108,19 @@
 <li>The two DMA controller have 16 strems in total(8 for each controller), each dedicated to managing memory access requests from one or more peripherals.</li>
 <li>
 <p>Each has an arbiter for handling the priority between DMA requests.
-    <img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260701005833.png" alt="Pasted image 20260701005833.png"></p>
+    <img src="../../../../Archieve/Attachment/Pasted image 20260701005833.png" alt="Pasted image 20260701005833.png"></p>
 </li>
 <li>
 <p><strong>Data can be quickly moved by DMA without any CPU action.</strong>
     -&gt; This keeps CPU resources free for other operations.</p>
 </li>
 <li></li>
-<li><a href="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Not%20understand.html">The two DMA controller have 16 streams in total(8 for each controller), each dedicated to managing memory access requests from one or more peripherals</a></li>
+<li><a href="../Not understand.html">The two DMA controller have 16 streams in total(8 for each controller), each dedicated to managing memory access requests from one or more peripherals</a></li>
 <li>And each has an arbiter for handling the priority between DMA requests</li>
 </ul>
-<p>: The devices feature two general-purpose dual-port DMAs(DMA1 and DMA2 with 8 streams each.</p>
+<dl>
+<dd>The devices feature two general-purpose dual-port DMAs(DMA1 and DMA2 with 8 streams each.</dd>
+</dl>
 <ul>
 <li>They are able to manage memory-to-memory, peripheral-to-memory, and memory-to-peripheral transfers.</li>
 <li>They feature dedicated FIFOs for APB/AHB peripherals, support burst transfer and are designed to provide the maximum peripheral bandwidth(AHB/APB).</li>

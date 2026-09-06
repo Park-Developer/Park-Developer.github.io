@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,17 +76,21 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: The Embedded bootloader mode is used to reprogram the flash memory using one of the following serial interfaces:<br />
+<dl>
+<dd>The Embedded bootloader mode is used to reprogram the flash memory using one of the following serial interfaces:<br />
 - USART1
 - USART3
 - CAN2
-- USB OTG FS in Device Mode(DFU : device firmware upgrade)</p>
+- USB OTG FS in Device Mode(DFU : device firmware upgrade)</dd>
+</dl>
 <blockquote>
 <p>The USART peripherals operate at the internal 16 MHz oscillator (HSI) frequency, while the CAN and USB OTG FS require an external clock (HSE) multiple of 1 MHz (ranging from 4 to 26 MHz).</p>
 </blockquote>
 <h3><em>Embedded Bootloader Code</em></h3>
 <hr />
-<p>: The embedded bootloader code is located in <u>system memory</u>. It is programmed by ST
-during production. For additional information, refer to application note AN2606.</p>
+<dl>
+<dd>The embedded bootloader code is located in <u>system memory</u>. It is programmed by ST
+during production. For additional information, refer to application note AN2606.</dd>
+</dl>
 </body>
 </html>

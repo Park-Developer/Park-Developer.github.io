@@ -58,11 +58,11 @@ for group_name in ["In Progress", "Not Started", "Stop", "Completed"]:
         new_grid_html += generate_card(p['title'], p['tags'])
     new_grid_html += '</div>\n'
 
-with open('projects.html', 'r', encoding='utf-8') as f:
+with open('UI/projects.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
 pattern = re.compile(r'<!-- Projects Grid -->.*?(?=</main>)', re.DOTALL)
 new_content = pattern.sub(new_grid_html, content)
 
-with open('projects.html', 'w', encoding='utf-8') as f:
+with open('UI/projects.html', 'w', encoding='utf-8') as f:
     f.write(new_content)

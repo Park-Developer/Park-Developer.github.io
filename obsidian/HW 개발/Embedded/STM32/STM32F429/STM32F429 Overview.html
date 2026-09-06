@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -71,35 +74,44 @@
     </script>
 </head>
 <body>
-    <h3><em>Concept</em></h3>
+    <hr />
+<p>sticker: ""
+aliases:
+color: var(--mk-color-orange)</p>
 <hr />
-<p>: Arm 32-bit Cortex - M4 CPU with FPU, Adaptive Real-time accelerator(ART Accelerator)
-<img src="../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260701004229.png" alt="Pasted image 20260701004229.png"></p>
+<h3><em>Concept</em></h3>
+<hr />
+<dl>
+<dd>Arm 32-bit Cortex - M4 CPU with FPU, Adaptive Real-time accelerator(ART Accelerator)
+<img src="../../../Archieve/Attachment/Pasted image 20260701004229.png" alt="Pasted image 20260701004229.png"></dd>
+</dl>
 <h3><em>System Architecture</em></h3>
 <hr />
 <ul>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/STM32F4%20Series.html">STM32F4 Series</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Arm%2032-bit%20Cortex%20-%20M4%20CPU.html">Arm 32-bit Cortex - M4 CPU</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/FPU%28Floating%20Point%20Unit%29.html">FPU</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Art%20Accelerator/Adaptive%20Real%20time%20accelerator.html">Adaptive Real time accelerator</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Memory/Embedded%20flash%20memory.html">Embedded flash memory</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/CRC%28Cyclic%20Redundancy%20Check%29%20Calculation%20Unit.html">CRC(Cyclic Redundancy Check) Calculation Unit</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Memory/Embedded%20SRAM.html">Embedded SRAM</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Bus%20Architecture/Multi-AHB%28Advanced%20High-Performance%29%20bus%20matrix.html">Multi-AHB(Advanced High-Performance) bus matrix</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Bus%20Architecture/DMA%28Direct%20Memory%20Access%29%20Controller.html">DMA(Direct Memory Access) Controller</a></li>
+<li><a href="STM32F4 Series.html">STM32F4 Series</a></li>
+<li><a href="Arm 32-bit Cortex - M4 CPU.html">Arm 32-bit Cortex - M4 CPU</a></li>
+<li><a href="FPU(Floating Point Unit).html">FPU</a></li>
+<li><a href="Art Accelerator/Adaptive Real time accelerator.html">Adaptive Real time accelerator</a></li>
+<li><a href="Memory/Embedded flash memory.html">Embedded flash memory</a></li>
+<li><a href="CRC(Cyclic Redundancy Check) Calculation Unit.html">CRC(Cyclic Redundancy Check) Calculation Unit</a></li>
+<li><a href="Memory/Embedded SRAM.html">Embedded SRAM</a></li>
+<li><a href="Bus Architecture/Multi-AHB(Advanced High-Performance) bus matrix.html">Multi-AHB(Advanced High-Performance) bus matrix</a></li>
+<li><a href="Bus Architecture/DMA(Direct Memory Access) Controller.html">DMA(Direct Memory Access) Controller</a></li>
 <li></li>
 </ul>
 <h3><em>Memory Organization</em></h3>
 <hr />
-<p>: Program memory, data memory, registers and I/O ports are organized within the same linear 4 Gbyte address space.</p>
-<p>-&gt; The bytes are coded in memory in <a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/Endian.html">little endian</a> format.</p>
+<dl>
+<dd>Program memory, data memory, registers and I/O ports are organized within the same linear 4 Gbyte address space.</dd>
+</dl>
+<p>-&gt; The bytes are coded in memory in <a href="Embedded/Endian.md.html">little endian</a> format.</p>
 <ul>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Memory/Embedded%20SRAM.html">Embedded SRAM</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Memory/Embedded%20flash%20memory.html">Embedded Flash memory</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Bit%20banding.html">Bit banding</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Boot%20Configuration.html">Boot Configuration</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Embedded%20bootloader.html">Embedded bootloader</a></li>
-<li><a href="../../../../HW%20%EA%B0%9C%EB%B0%9C/Embedded/STM32/STM32F429/Physical%20Remap%20in%20STM32F42xxx%20and%20STM32F43xxx.html">Physical Remap in STM32F42xxx and STM32F43xxx</a></li>
+<li><a href="Memory/Embedded SRAM.html">Embedded SRAM</a></li>
+<li><a href="Memory/Embedded flash memory.html">Embedded Flash memory</a></li>
+<li><a href="Bit banding.html">Bit banding</a></li>
+<li><a href="Boot Configuration.html">Boot Configuration</a></li>
+<li><a href="Embedded bootloader.html">Embedded bootloader</a></li>
+<li><a href="Physical Remap in STM32F42xxx and STM32F43xxx.html">Physical Remap in STM32F42xxx and STM32F43xxx</a></li>
 </ul>
 </body>
 </html>

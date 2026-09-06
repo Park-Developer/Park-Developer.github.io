@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,21 +76,27 @@
 <body>
     <h3><em>RGB Interface</em></h3>
 <hr />
-<p>: The RGB interface is a still direct, pixel-by-pixel connection between the SoC and the TFT panel, <u>without any complicated conversion layers in between.</u></p>
+<dl>
+<dd>The RGB interface is a still direct, pixel-by-pixel connection between the SoC and the TFT panel, <u>without any complicated conversion layers in between.</u></dd>
+</dl>
 <ul>
 <li>It is simple, well understood, and easy to debug with an oscilloscope or logic analyzer.  </li>
 <li>For resolutions like 480×272, 800×480, 1024×600, or even 1280×800, it remains a very cost-effective choice.</li>
 </ul>
 <h3><em>RGB Meaning</em></h3>
 <hr />
-<p>: Each pixel of a TFT LCD is made up of three sub-pixel(R, G, and B). By driving each sub-pixel with a specific intensity, the panel can reproduce a wide range of colors.</p>
+<dl>
+<dd>Each pixel of a TFT LCD is made up of three sub-pixel(R, G, and B). By driving each sub-pixel with a specific intensity, the panel can reproduce a wide range of colors.</dd>
+</dl>
 <ul>
 <li>In an RGB interface, the display controller outputs the color value for each pixel as a set of digital signals.  </li>
 <li>The LCD timing controller (TCON) inside the panel receives these values in sync with the pixel clock and refreshes the pixel matrix line by line.</li>
 </ul>
 <h3><em>Parallel Interface</em></h3>
 <hr />
-<p>: The RGB interface is a parallel interface</p>
+<dl>
+<dd>The RGB interface is a parallel interface</dd>
+</dl>
 <ul>
 <li>For every pixel clock, several bits for red, green, and blue are output simultaneously on different lines/</li>
 <li>Parallel RGB is electrically simpler, but it requires more pins and more PCB traces.
@@ -99,7 +108,7 @@
 <li>
 <p>Color Data Lines
     : Depending on the required color depth, TFT LCDs with RGB interfaces usually support one of these common formats:
-    <img src="../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260815175356.png" alt=""></p>
+    <img alt="" src="Pasted%20image%2020260815175356.png" /></p>
 </li>
 <li>
 <p>Control and Synchonization singals

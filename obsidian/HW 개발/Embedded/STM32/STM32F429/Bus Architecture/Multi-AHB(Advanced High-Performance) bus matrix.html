@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,8 +76,10 @@
 <body>
     <h3><em>Overview</em></h3>
 <hr />
-<p>: The 32-bit multi-AHB bus matrix interconnects all the master(CPU, DMAs, Ethernet, USB HS, LCD-TFT, and DMA2D) and the slaves(Flash memory, RAM, FMC, AHB, and APB peripherals) and ensure a seamless operation even when several high-speed peripherals work simultaneously.</p>
-<p><img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260816015642.png" alt=""></p>
+<dl>
+<dd>The 32-bit multi-AHB bus matrix interconnects all the master(CPU, DMAs, Ethernet, USB HS, LCD-TFT, and DMA2D) and the slaves(Flash memory, RAM, FMC, AHB, and APB peripherals) and ensure a seamless operation even when several high-speed peripherals work simultaneously.</dd>
+</dl>
+<p><img alt="" src="Pasted%20image%2020260816015642.png" /></p>
 <h3><em>?</em></h3>
 <hr />
 <p>In the STM32F42xx and STM32F43xx devices, the main system consists of 32-bit multilayer
@@ -102,48 +107,66 @@ AHB bus matrix that interconnects:
     efficient operation even when several high-speed peripherals work simultaneously. </li>
 <li>The 64-Kbyte CCM (core coupled memory) data RAM is not part of the bus matrix and can be accessed only through the CPU.</li>
 </ul>
-<p><img src="../../../../../HW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260623002811.png" alt="Pasted image 20260623002811.png"></p>
+<p><img src="../../../../Archieve/Attachment/Pasted image 20260623002811.png" alt="Pasted image 20260623002811.png"></p>
 <h3>I-bus</h3>
 <hr />
-<p>: This bus connects the <strong>instruction</strong> bus of the Cortex-M4 with FPU core to the BusMatrix.
+<dl>
+<dd>This bus connects the <strong>instruction</strong> bus of the Cortex-M4 with FPU core to the BusMatrix.
 - This bus is used by the core to fetch instructions
-- The target of this bus is memory containing code(internal flash memroy/SRAM or external memories through the FSMC/FMC)</p>
+- The target of this bus is memory containing code(internal flash memroy/SRAM or external memories through the FSMC/FMC)</dd>
+</dl>
 <h3>D-bus</h3>
 <hr />
-<p>: This bus connects the databus of the Cortex-M4 with FPU to the 64-Kbyte CCM data RAM to the BusMatrix. 
+<dl>
+<dd>This bus connects the databus of the Cortex-M4 with FPU to the 64-Kbyte CCM data RAM to the BusMatrix. 
 - This bus is used by the core for literal load and debug access.
-- The target of this bus is a memory containing code or data(internal flash memory or external memories through the FSMC/FMC)</p>
+- The target of this bus is a memory containing code or data(internal flash memory or external memories through the FSMC/FMC)</dd>
+</dl>
 <h3>S-bus</h3>
 <hr />
-<p>: This bus connects the system bus of the Cortex-M4 with FPU core to a BusMatrix. 
+<dl>
+<dd>This bus connects the system bus of the Cortex-M4 with FPU core to a BusMatrix. 
 - This bus is used to access <u>data</u> located in peripheral or in SRAM.
 - Instructions may also be fetched on this bus(Less efficient than ICode).
-- The targets of this bus are internal SRAM1, SRAM2 and SRAM3, the AHB1 peripherals including the APB peripherals, the AHB2 peripherals and the external memories through the FSMC/FMC</p>
+- The targets of this bus are internal SRAM1, SRAM2 and SRAM3, the AHB1 peripherals including the APB peripherals, the AHB2 peripherals and the external memories through the FSMC/FMC</dd>
+</dl>
 <h3>DMA memory bus</h3>
 <hr />
-<p>: This bus connects the DMA memory bus master interface to the BusMatrix.
+<dl>
+<dd>This bus connects the DMA memory bus master interface to the BusMatrix.
 - It is used by the DMA to perform transfer to/from memories.
-- The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2 and SRAM3) and external memories through the FSMC/FMC.</p>
+- The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2 and SRAM3) and external memories through the FSMC/FMC.</dd>
+</dl>
 <h3>DMA peripheral bus</h3>
 <hr />
-<p>: This bus connects the DMA peripheral master bus interface to the BusMatrix. 
+<dl>
+<dd>This bus connects the DMA peripheral master bus interface to the BusMatrix. 
 - It is used by the DMA to access AHB peripherals or <u>to perform memory-to-memory</u> transfers.
-- The targets of this bus are the AHB and APB peripherals plus data memories: internal SRAMs(SRAM1, SRAM2 and SRAM3) and external memories through the FSMC/FMC.</p>
+- The targets of this bus are the AHB and APB peripherals plus data memories: internal SRAMs(SRAM1, SRAM2 and SRAM3) and external memories through the FSMC/FMC.</dd>
+</dl>
 <h3>Ethernet DMA Bus</h3>
 <hr />
-<p>: This bus connects the Ethernet DMA master interface to the BusMatrix. This bus is used by the Ethernet DMA to load/store data to a memory.</p>
+<dl>
+<dd>This bus connects the Ethernet DMA master interface to the BusMatrix. This bus is used by the Ethernet DMA to load/store data to a memory.</dd>
+</dl>
 <p>The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), internal flash memory, and external memories through the FSMC/FMC</p>
 <h3>USB OTG HS DMA Bus</h3>
 <hr />
-<p>: This bus connects the USB OTG HS DMA master interface to the BusMaxtrix. This bus is used by the USB OTG DAM to load/store data to a memory.</p>
+<dl>
+<dd>This bus connects the USB OTG HS DMA master interface to the BusMaxtrix. This bus is used by the USB OTG DAM to load/store data to a memory.</dd>
+</dl>
 <p>The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), internal flash memory, and external memories through the FSMC/FMC.</p>
 <h3>LCD-TFT Controller DMA bus</h3>
 <hr />
-<p>: This bus connects the LCD controller DMA master interface to the BusMatrix. It is used by the LCD-TFT DMA to load/store data to a memory.</p>
+<dl>
+<dd>This bus connects the LCD controller DMA master interface to the BusMatrix. It is used by the LCD-TFT DMA to load/store data to a memory.</dd>
+</dl>
 <p>The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), external memories through FMC, and internal flash memory.</p>
 <h3>DMA2D Bus</h3>
 <hr />
-<p>: This bus connect the DMA2D master interface to the BusMatrix. </p>
+<dl>
+<dd>This bus connect the DMA2D master interface to the BusMatrix. </dd>
+</dl>
 <p>This bus is used by the DMA2D graphic Accelerator to load/store data to  memory.
 The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), external memories through FMC, and internal flash memory.</p>
 <h3>BusMatrix</h3>
@@ -151,6 +174,8 @@ The targets of this bus are data memories: internal SRAMs(SRAM1, SRAM2, SRAM3), 
 <p>The BusMatrix manages the access arbitration between masters. The arbitration uses a round-robin algorithm</p>
 <h3>AHB/APB bridges</h3>
 <hr />
-<p>: The two AHB/APB bridges, APB1 and APB2, provide full synchronous connections between the AHB and the two APB buses, allowing flexible selection of the peripheral frequency.</p>
+<dl>
+<dd>The two AHB/APB bridges, APB1 and APB2, provide full synchronous connections between the AHB and the two APB buses, allowing flexible selection of the peripheral frequency.</dd>
+</dl>
 </body>
 </html>

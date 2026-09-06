@@ -54,6 +54,9 @@
             padding-left: 16px;
             color: #666;
         }
+        dd {
+            margin-left: 0;
+        }
     </style>
     <script>
         MathJax = {
@@ -73,24 +76,30 @@
 <body>
     <h3><em>Merge Command</em></h3>
 <hr />
-<p>: Incorporates changes from the named commits(since the time their histories diverged from the current branch) <span style="color: red;"><strong>into the current branch</strong></span></p>
+<dl>
+<dd>Incorporates changes from the named commits(since the time their histories diverged from the current branch) ~={red}<strong>into the current branch</strong>=~</dd>
+</dl>
 <h3><em>GIT CLI Merge 예시</em></h3>
 <hr />
-<p>: main과 coupon 브랜치에서 작업하고 있는데, coupon 브랜치의 내용을 main에 합치고 싶은 경우</p>
+<dl>
+<dd>main과 coupon 브랜치에서 작업하고 있는데, coupon 브랜치의 내용을 main에 합치고 싶은 경우</dd>
+</dl>
 <ol>
 <li>main 브랜치고 checkout하고</li>
 <li>coupon 브랜치를 합침</li>
 </ol>
 <p>=&gt; 이러면 coupon 브랜치의 코드들이 main 브랜치에 합쳐진다.</p>
-<ol start="3">
+<ol>
 <li>충돌 해결
-    <img src="../../SW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260725235947.png" alt="Pasted image 20260725235947.png"></li>
+    <img src="../Archieve/Attachment/Pasted image 20260725235947.png" alt="Pasted image 20260725235947.png"></li>
 </ol>
 <h3><em>Source Tree Merge 예시</em></h3>
 <hr />
-<p>: Branch에서 Master로 병합하는 경우
+<dl>
+<dd>Branch에서 Master로 병합하는 경우
 =&gt; Master 브랜치에 checkout 후 branch 병합
-<img src="../../SW%20%EA%B0%9C%EB%B0%9C/Archieve/Attachment/Pasted%20image%2020260726001250.png" alt="Pasted image 20260726001250.png"></p>
+<img src="../Archieve/Attachment/Pasted image 20260726001250.png" alt="Pasted image 20260726001250.png"></dd>
+</dl>
 <h3><em>Reference</em></h3>
 <hr />
 <p>https://winterakoon.tistory.com/94</p>

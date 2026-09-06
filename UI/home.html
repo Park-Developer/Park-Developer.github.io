@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daniel Park Record - Developer Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-highest": "#e0e3e5",
+                "surface-container-high": "#e6e8ea",
+                "on-surface-variant": "#3c494c",
+                "outline": "#6c797d",
+                "surface-container": "#f1f5f9",
+                "error-container": "#ffdad6",
+                "on-error-container": "#93000a",
+                "on-primary-container": "#005763",
+                "surface-variant": "#e0e3e5",
+                "outline-variant": "#bbc9cd",
+                "tertiary": "#732ee4",
+                "primary-container": "#22d3ee",
+                "secondary-fixed-dim": "#bec6e0",
+                "surface": "#f7f9fb",
+                "surface-bright": "#f7f9fb",
+                "error": "#ba1a1a",
+                "on-surface": "#191c1e",
+                "inverse-on-surface": "#eff1f3",
+                "inverse-primary": "#2fd9f4",
+                "on-background": "#191c1e",
+                "text-secondary": "#475569",
+                "on-tertiary-fixed": "#25005a",
+                "on-tertiary-fixed-variant": "#5a00c6",
+                "primary-fixed-dim": "#2fd9f4",
+                "surface-tint": "#006877",
+                "tertiary-container": "#cdb4ff",
+                "on-tertiary": "#ffffff",
+                "primary": "#006877",
+                "tertiary-fixed-dim": "#d2bbff",
+                "on-primary": "#ffffff",
+                "on-tertiary-container": "#630dd4",
+                "on-error": "#ffffff",
+                "surface-container-low": "#f2f4f6",
+                "on-primary-fixed": "#001f25",
+                "secondary-fixed": "#dae2fd",
+                "background": "#f7f9fb",
+                "surface-container-lowest": "#ffffff",
+                "code-bg": "#f1f5f9",
+                "on-primary-fixed-variant": "#004e5a",
+                "secondary-container": "#dae2fd",
+                "surface-dim": "#d8dadc",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed": "#131b2e",
+                "secondary": "#565e74",
+                "tertiary-fixed": "#eaddff",
+                "inverse-surface": "#2d3133",
+                "text-primary": "#0f172a",
+                "on-secondary-container": "#5c647a",
+                "primary-fixed": "#a2eeff",
+                "surface-border": "#e2e8f0",
+                "on-secondary-fixed-variant": "#3f465c"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "md": "24px",
+                "container-max": "1120px",
+                "base": "4px",
+                "sm": "16px",
+                "lg": "48px",
+                "xs": "8px",
+                "xl": "80px"
+        },
+        "fontFamily": {
+                "body-md": ["Inter"],
+                "headline-md": ["Inter"],
+                "code-block": ["JetBrains Mono"],
+                "headline-lg": ["Inter"],
+                "headline-lg-mobile": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-xl": ["Inter"],
+                "label-sm": ["JetBrains Mono"]
+        },
+        "fontSize": {
+                "body-md": ["16px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "code-block": ["14px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "32px", "fontWeight": "400"}],
+                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        .glow-hover:hover {
+            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.25); /* primary-container glow */
+            border-color: #22d3ee;
+            transform: translateY(-2px);
+        }
+    </style>
+
+<style>
+    /* Dark Mode Overrides */
+    .dark .bg-background { background-color: #0f172a !important; }
+    .dark .text-on-background { color: #e2e8f0 !important; }
+    .dark .bg-surface-container-lowest { background-color: #1e293b !important; }
+    .dark .bg-surface-container-low { background-color: #334155 !important; }
+    .dark .bg-surface-container { background-color: #1e293b !important; }
+    .dark .text-text-primary { color: #f8fafc !important; }
+    .dark .text-text-secondary { color: #94a3b8 !important; }
+    .dark .text-on-surface { color: #f1f5f9 !important; }
+    .dark .border-surface-border { border-color: #475569 !important; }
+    .dark .bg-code-bg { background-color: #020617 !important; }
+    .dark .bg-surface-variant { background-color: #334155 !important; }
+    .dark .text-primary { color: #22d3ee !important; }
+    .dark .border-primary { border-color: #22d3ee !important; }
+    .dark iframe { background-color: #0f172a !important; color-scheme: dark; }
+</style>
+
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-16">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest fixed top-0 w-full border-b border-surface-border z-50">
+<div class="flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<a href="home.html" class="font-bold italic text-on-surface text-[20.4px]" style="font-family: 'Courier New', Courier, Batang, serif;">Daniel Park Record</a>
+<div class="hidden md:flex space-x-md">
+<a class="text-primary border-b-2 border-primary pb-1 cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="home.html">Home</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="diary.html">Diary</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="projects.html">Projects</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="study.html">Study</a>
+<a class="text-text-secondary cursor-pointer transition-all active:scale-95 hover:text-primary transition-colors duration-200 font-body-md text-body-md" href="insight.html">Insight</a>
+</div>
+<div class="flex space-x-sm items-center">
+<span class="material-symbols-outlined text-on-surface cursor-pointer hover:text-primary transition-colors" id="theme-toggle">dark_mode</span>
+</div>
+</div>
+</nav>
+
+<!-- Main Content -->
+<main class="flex-grow pb-xl px-gutter max-w-container-max mx-auto w-full">
+    
+    <!-- Hero Section -->
+    <section id="home" class="flex flex-col md:flex-row items-center justify-between py-xl gap-lg">
+        <div class="flex-1">
+            <h3 class="font-headline-md text-headline-md text-primary mb-2">Hello, I'm</h3>
+            <h1 class="font-headline-xl text-headline-xl text-text-primary mb-4">Wonho Park</h1>
+            <h3 class="font-headline-md text-headline-md text-text-secondary mb-6">And I'm a <span class="text-primary">Developer</span></h3>
+            <p class="font-body-lg text-body-lg text-text-secondary mb-8 max-w-2xl">
+                Hello. I’m a developer who loves creating new things and dreams of becoming a full-stack developer with AI.
+            </p>
+            
+            <div class="flex gap-4 mb-8">
+                <a href="https://www.linkedin.com/in/wonho-park" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors border border-surface-border" title="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors border border-surface-border" title="Notion">
+                    <img src="https://1000logos.net/wp-content/uploads/2024/07/Notion-Logo.png" alt="Notion" class="w-10 h-10 object-contain rounded">
+                </a>
+                <a href="mailto:wonhopark94@gmail.com" class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors border border-surface-border" title="Email">
+                    <span class="material-symbols-outlined">mail</span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="flex-1 flex justify-center">
+            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full border-4 border-surface-border flex items-center justify-center bg-surface-container-low shadow-lg relative overflow-hidden">
+                <img src="../Contents/profile_image.JPG" alt="Profile Image" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-br from-primary-container/20 to-transparent pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-lg">
+        <div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-xl p-lg flex flex-col md:flex-row gap-lg">
+            <div class="flex-1">
+                <h2 class="font-headline-lg text-headline-lg text-text-primary mb-6">About <span class="text-primary">Me</span></h2>
+                <p class="font-body-md text-body-md text-text-secondary mb-8 leading-relaxed">
+                    최신 웹 기술에 관심이 많으며, 확장 가능하고 유지보수하기 쉬운 아키텍처를 설계하는 것을 목표로 합니다. 끊임없는 학습을 통해 더 나은 문제 해결책을 모색합니다.
+                </p>
+            </div>
+            
+            <div class="flex-1">
+                <h3 class="font-headline-md text-headline-md text-text-primary mb-6">Skills & Interests</h3>
+                <div class="flex flex-wrap gap-sm">
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">HTML5 / CSS3</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">JavaScript (ES6+)</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">React & Next.js</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">Node.js</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">UI/UX Design</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">Arduino</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">RaspberryPi</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">Antigravity Vibe Coding</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">Claude Code</span>
+                    <span class="px-4 py-2 bg-surface-container-low border border-surface-border rounded-lg text-text-secondary font-label-sm uppercase hover:border-primary transition-colors">KiCAD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribution Dashboard -->
+    <section id="contributions" class="py-lg flex flex-col md:flex-row gap-6">
+        <!-- Main Graph Area -->
+        <div class="flex-grow overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
+                <h3 class="font-headline-md text-[20px] text-text-primary font-normal" id="contribution-total">0 contributions in the last year</h3>
+            </div>
+            <div class="bg-surface-container-lowest border border-surface-border rounded-xl p-md overflow-x-auto overflow-y-hidden">
+                <div id="contribution-graph" class="min-w-max flex flex-col gap-2">
+                    <div class="flex items-center justify-center text-text-secondary h-32">Loading commit data...</div>
+                </div>
+                <div class="mt-4 text-text-secondary text-sm flex items-center justify-between min-w-max">
+                    <a href="#" class="hover:text-primary transition-colors text-xs">Learn how we count contributions</a>
+                    <div class="flex items-center gap-2 text-xs">
+                        <span>Less</span>
+                        <div class="flex items-center gap-[1px]">
+                            <div class="w-[10px] h-[10px] rounded-sm bg-surface-variant border border-surface-border"></div>
+                            <div class="w-[10px] h-[10px] rounded-sm bg-primary/40"></div>
+                            <div class="w-[10px] h-[10px] rounded-sm bg-primary/70"></div>
+                            <div class="w-[10px] h-[10px] rounded-sm bg-primary"></div>
+                        </div>
+                        <span>More</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Year Filter Sidebar -->
+        <div class="w-full md:w-48 flex flex-col gap-2 mt-2 md:mt-12 shrink-0">
+            <button class="bg-primary text-on-primary py-2 px-4 rounded-lg text-left text-sm font-semibold">2026</button>
+        </div>
+    </section>
+
+    <!-- Now Section -->
+    <section id="now" class="py-lg border-t border-surface-border">
+        <header class="mb-lg">
+            <h2 class="font-headline-lg text-headline-lg text-text-primary mb-2">What I'm doing <span class="text-primary">Now</span></h2>
+            <p class="font-body-md text-body-md text-text-secondary">현재 진행 중인 프로젝트, 공부하고 있는 주제, 그리고 다양한 계획들을 공유합니다.</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+            <!-- Left Column: Ongoing Projects & Studies -->
+            <div class="flex flex-col gap-lg">
+                <div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-xl p-md">
+                    <div class="flex items-center gap-2 mb-4 border-b border-surface-border pb-2">
+                        <span class="material-symbols-outlined text-primary">laptop_mac</span>
+                        <h3 class="font-headline-md text-[20px] text-text-primary">현재 진행중인 프로젝트</h3>
+                    </div>
+                    <div id="now-projects" class="flex flex-col gap-sm">
+                        <!-- Loaded dynamically from projects.js -->
+                        <div class="text-text-secondary">데이터를 불러오는 중입니다...</div>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-xl p-md">
+                    <div class="flex items-center gap-2 mb-4 border-b border-surface-border pb-2">
+                        <span class="material-symbols-outlined text-primary">schedule</span>
+                        <h3 class="font-headline-md text-[20px] text-text-primary">최근 작성한 문서</h3>
+                    </div>
+                    <ul id="now-recent-files" class="flex flex-col gap-2">
+                        <!-- Loaded dynamically from obsidian/recent.json -->
+                        <div class="text-text-secondary">데이터를 불러오는 중입니다...</div>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Other Plans & Input Form -->
+            <div class="flex flex-col gap-lg">
+                <div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-xl p-md">
+                    <div class="flex items-center gap-2 mb-4 border-b border-surface-border pb-2">
+                        <span class="material-symbols-outlined text-primary">event_note</span>
+                        <h3 class="font-headline-md text-[20px] text-text-primary">기타 계획 및 할 일</h3>
+                    </div>
+                    <ul id="now-plans" class="flex flex-col gap-3">
+                        <!-- Loaded dynamically from localStorage -->
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full mt-auto border-t border-surface-border">
+<div class="flex flex-col md:flex-row justify-between items-center py-md px-gutter max-w-container-max mx-auto">
+<div class="text-on-surface font-bold italic mb-sm md:mb-0 text-[20.4px]" style="font-family: 'Courier New', Courier, Batang, serif;">Daniel Park Record</div>
+<div class="flex space-x-md mb-sm md:mb-0">
+<a class="text-text-secondary font-label-sm text-label-sm hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#">RSS</a>
+<a class="text-text-secondary font-label-sm text-label-sm hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#">Newsletter</a>
+<a class="text-text-secondary font-label-sm text-label-sm hover:text-primary hover:underline transition-all opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="text-text-secondary font-label-sm text-label-sm opacity-80">
+    © 2024 Wonho Park. All Rights Reserved.
+</div>
+</div>
+</footer>
+
+<script src="script.js"></script>
+<script src="projects.js"></script>
+<script src="now.js"></script>
+<script>
+    
+    // Theme toggle logic
+    (function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (!themeToggle) return;
+        const themeIcon = themeToggle.tagName.toLowerCase() === 'span' ? themeToggle : themeToggle.querySelector('span');
+        
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            if (themeIcon) themeIcon.textContent = 'light_mode';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                if (themeIcon) themeIcon.textContent = 'dark_mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                if (themeIcon) themeIcon.textContent = 'light_mode';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    })();
+
+    // Fetch and render GitHub contribution graph
+    async function loadContributions() {
+        const container = document.getElementById('contribution-graph');
+        if (!container) return;
+        
+        try {
+            const response = await fetch('https://api.github.com/repos/Park-Developer/Park-Developer.github.io/stats/commit_activity');
+            if (!response.ok) throw new Error('Failed to fetch commit activity');
+            
+            const data = await response.json();
+            
+            if (!data || !Array.isArray(data) || data.length === 0) {
+                container.innerHTML = '<div class="text-text-secondary flex h-32 items-center justify-center">No commit data available at the moment.</div>';
+                return;
+            }
+
+            const grid = document.createElement('div');
+            grid.className = 'grid grid-rows-8 gap-[1px] grid-flow-col w-max mx-auto md:mx-0';
+
+            // Add Weekday labels column
+            const labels = ['', '', 'Mon', '', 'Wed', '', 'Fri', ''];
+            labels.forEach((label, i) => {
+                const cell = document.createElement('div');
+                cell.className = i === 0 ? 'h-4' : 'h-[10px] text-[8px] text-text-secondary pr-2 flex items-center justify-end';
+                cell.textContent = label;
+                grid.appendChild(cell);
+            });
+
+            let totalCommits = 0;
+            let lastMonth = -1;
+
+            data.forEach(week => {
+                totalCommits += week.total;
+                let weekStartDate = new Date(week.week * 1000);
+                
+                // Add Month Label Cell
+                const currentMonth = weekStartDate.getMonth();
+                const monthCell = document.createElement('div');
+                monthCell.className = 'w-[10px] h-4 text-[10px] text-text-secondary overflow-visible whitespace-nowrap flex items-end';
+                if (currentMonth !== lastMonth) {
+                    monthCell.textContent = weekStartDate.toLocaleString('en-US', { month: 'short' });
+                    lastMonth = currentMonth;
+                }
+                grid.appendChild(monthCell);
+
+                // Add Day Cells
+                week.days.forEach((commits, dayIndex) => {
+                    const date = new Date(weekStartDate);
+                    date.setDate(date.getDate() + dayIndex);
+                    
+                    const cell = document.createElement('div');
+                    cell.className = 'w-[10px] h-[10px] rounded-sm relative group cursor-pointer';
+                    
+                    if (commits === 0) cell.classList.add('bg-surface-variant');
+                    else if (commits <= 2) cell.classList.add('bg-primary/40');
+                    else if (commits <= 5) cell.classList.add('bg-primary/70');
+                    else cell.classList.add('bg-primary');
+                    
+                    const tooltip = document.createElement('div');
+                    tooltip.className = 'absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-inverse-surface text-inverse-on-surface text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none z-10';
+                    tooltip.textContent = `${commits} commits on ${date.toLocaleDateString()}`;
+                    
+                    cell.appendChild(tooltip);
+                    grid.appendChild(cell);
+                });
+            });
+            
+            container.innerHTML = '';
+            container.appendChild(grid);
+            
+            const totalEl = document.getElementById('contribution-total');
+            if (totalEl) totalEl.textContent = `${totalCommits} contributions in the last year`;
+            
+        } catch (error) {
+            console.error(error);
+            container.innerHTML = '<div class="text-error flex h-32 items-center justify-center">Could not load commit activity.</div>';
+        }
+    }
+    
+    loadContributions();
+</script>
+</body>
+</html>
