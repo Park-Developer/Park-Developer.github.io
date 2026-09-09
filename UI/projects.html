@@ -160,17 +160,26 @@
 <p class="font-body-lg text-body-lg text-text-secondary">A collection of open-source work, experiments, and deployed applications.</p>
 </header>
 <!-- Filters -->
-<div class="flex flex-wrap gap-sm mb-lg justify-center md:justify-start">
-<button class="px-sm py-xs bg-primary text-on-primary rounded font-label-sm text-label-sm uppercase transition-colors shadow-sm">All</button>
-<button class="px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors">Web</button>
-<button class="px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors">Mobile</button>
-<button class="px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors">Open Source</button>
+<div class="flex flex-wrap gap-sm mb-lg justify-center md:justify-start" id="project-filters">
+<button class="filter-btn px-sm py-xs bg-primary text-on-primary rounded font-label-sm text-label-sm uppercase transition-colors shadow-sm" data-filter="all">All</button>
+<button class="filter-btn px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors" data-filter="not-started">Not Started</button>
+<button class="filter-btn px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors" data-filter="in-progress">In Progress</button>
+<button class="filter-btn px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors" data-filter="stop">Stop</button>
+<button class="filter-btn px-sm py-xs border border-surface-border text-text-secondary hover:border-primary hover:text-primary rounded font-label-sm text-label-sm uppercase transition-colors" data-filter="completed">Completed</button>
 </div>
 <!-- Projects Grid -->
+<div class="project-section" data-category="not-started">
+<h2 class="font-headline-lg text-headline-lg text-text-primary mt-lg mb-md">Not Started</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<div class="text-text-secondary">No projects yet.</div>
+</div>
+</div>
+
+<div class="project-section" data-category="in-progress">
 <h2 class="font-headline-lg text-headline-lg text-text-primary mt-lg mb-md">In Progress</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
 
-<div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-lg p-sm flex flex-col transition-all glow-hover group relative overflow-hidden">
+<div class="project-card bg-surface-container-lowest border border-surface-border shadow-sm rounded-lg p-sm flex flex-col transition-all glow-hover group relative overflow-hidden cursor-pointer" data-attributes='{"Overview": ": LLM에 물어본 내용을 토대로 내가 모르는 개념과 앞으로 학습하면 좋을 내용들을 추천해주는 시스템", "Image": "", "Description": "", "Schedule": "", "Features": "", "TODO": "", "Reference": "", "Memo": "", "Result": ""}'>
 <div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 <div class="relative z-10 flex flex-col h-full">
 <div class="w-full h-48 bg-surface-container-low rounded mb-sm overflow-hidden flex items-center justify-center bg-[#1e293b]">
@@ -190,10 +199,20 @@
 </div>
 </div>
 </div>
+</div>
+
+<div class="project-section" data-category="stop" style="display: none;">
+<h2 class="font-headline-lg text-headline-lg text-text-primary mt-lg mb-md">Stop</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<div class="text-text-secondary">No projects yet.</div>
+</div>
+</div>
+
+<div class="project-section" data-category="completed">
 <h2 class="font-headline-lg text-headline-lg text-text-primary mt-lg mb-md">Completed</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
 
-<div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-lg p-sm flex flex-col transition-all glow-hover group relative overflow-hidden">
+<div class="project-card bg-surface-container-lowest border border-surface-border shadow-sm rounded-lg p-sm flex flex-col transition-all glow-hover group relative overflow-hidden cursor-pointer" data-attributes='{"Overview": ": Logseq를 이용한 TODO 관리 프로그램", "Image": "", "Description": "- Github : [https://github.com/Park-Developer/Logseq_Viewer](https://github.com/Park-Developer/Logseq_Viewer)\n- 어디에서나 사용하기 좋음", "Schedule": "", "Features": "", "TODO": "- [ ] Today 랑 Tomorrow도 반영하기", "Reference": "", "Memo": "- pyinstaller 명령어\n\t```bash\npyinstaller -w -F --icon=icon.ico -n logViewer main.py\n\t```\n- pyinstasller 명령어\n\t```javascript\npyinstaller -w -F --icon=Image\\icon.ico -n logViewer main.py\n\t```", "Result": ""}'>
 <div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 <div class="relative z-10 flex flex-col h-full">
 <div class="w-full h-48 bg-surface-container-low rounded mb-sm overflow-hidden flex items-center justify-center bg-[#1e293b]">
@@ -209,6 +228,27 @@
 <span class="material-symbols-outlined text-[20px]">code</span>
 <span class="font-label-sm text-label-sm uppercase">GitHub</span>
 </a>
+</div>
+</div>
+</div>
+<div class="project-card bg-surface-container-lowest border border-surface-border shadow-sm rounded-lg p-sm flex flex-col transition-all glow-hover group relative overflow-hidden cursor-pointer" data-attributes='{"Overview": ": Notion과 Antigravity를 이용해서 만드는 AI 자동화 블로그", "Image": "", "Description": "", "Schedule": "", "Features": "", "TODO": "- [ ] linkedin 수정하기 \n- [ ] notion open 링크 만들기\n- [ ] 자동화율 표\n- [ ] antigravity schedule task 이요\n- [ ] Notion에 있는 데이터를 불러와서 data.yaml 파일에 연결시키기, html에 class를 설정해서 이 class를 이용해서 데이터가 매칭되도록 하기\n- [ ] TODO List 정리하고, 일별 Load 계산까지 되도록 하기", "Reference": "[Github.io 블로그에 Google Analytics 적용하기](https://mino1982.tistory.com/39?category=1184394)", "Memo": ": 개인정보나 프로젝트 정보들은 공개 가능한 노션 page를 따로 만둘고, github에는 링크를 연결해두는게 작업하기 편할듯함", "Result": ""}'>
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="w-full h-48 bg-surface-container-low rounded mb-sm overflow-hidden flex items-center justify-center bg-[#1e293b]">
+  <span class="material-symbols-outlined text-[64px] text-[#475569]">folder</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary mb-base group-hover:text-primary transition-colors">Github 블로그</h3>
+<p class="text-text-secondary mb-sm flex-grow"></p>
+<div class="flex flex-wrap gap-xs mb-md">
+
+</div>
+<div class="flex items-center justify-between border-t border-surface-border pt-sm mt-auto">
+<a class="flex items-center space-x-2 text-text-secondary hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">code</span>
+<span class="font-label-sm text-label-sm uppercase">GitHub</span>
+</a>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -229,8 +269,101 @@
 </div>
 </footer>
 
+<!-- Project Modal -->
+<div id="project-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="modal-backdrop"></div>
+    <div class="relative bg-surface-container-lowest border border-surface-border w-11/12 md:w-3/4 max-w-4xl max-h-[90vh] rounded-xl shadow-2xl flex flex-col">
+        <!-- Header -->
+        <div class="flex items-center justify-between p-md border-b border-surface-border">
+            <h2 id="modal-title" class="font-headline-lg text-headline-lg text-text-primary">Project Title</h2>
+            <button id="modal-close" class="text-text-secondary hover:text-primary transition-colors">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <!-- Body -->
+        <div id="modal-body" class="p-md overflow-y-auto flex-grow flex flex-col gap-md text-text-secondary whitespace-pre-wrap font-body-md text-sm">
+            <!-- Content injected via JS -->
+        </div>
+    </div>
+</div>
+
 <script>
-    
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('.filter-btn');
+        const sections = document.querySelectorAll('.project-section');
+
+        // Initially show all (or handle display based on filter if needed)
+        // Set all to block by default except Stop (handled above), but we'll reset
+        sections.forEach(sec => sec.style.display = 'block');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button styles
+                buttons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+                    b.classList.add('border', 'border-surface-border', 'text-text-secondary');
+                });
+                btn.classList.remove('border', 'border-surface-border', 'text-text-secondary');
+                btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+
+                const filter = btn.getAttribute('data-filter');
+
+                sections.forEach(sec => {
+                    if (filter === 'all' || sec.getAttribute('data-category') === filter) {
+                        sec.style.display = 'block';
+                    } else {
+                        sec.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });
+
+    // Modal Logic
+    const projectCards = document.querySelectorAll('.project-card');
+    const modal = document.getElementById('project-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalClose = document.getElementById('modal-close');
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+
+    function closeModal() {
+        modal.classList.add('hidden');
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+
+    projectCards.forEach(card => {
+        card.addEventListener('dblclick', () => {
+            const title = card.querySelector('h3').innerText;
+            modalTitle.innerText = title;
+            
+            const attrStr = card.getAttribute('data-attributes');
+            if (attrStr) {
+                try {
+                    const attrs = JSON.parse(attrStr);
+                    let bodyHtml = '';
+                    for (const [key, value] of Object.entries(attrs)) {
+                        if (value && value.trim() !== '') {
+                            bodyHtml += `<div class="mb-sm">
+                                <h4 class="font-headline-md text-[18px] text-text-primary mb-2 border-b border-surface-border pb-1">${key}</h4>
+                                <div class="text-text-secondary text-sm bg-surface-container-low p-3 rounded border border-surface-border whitespace-pre-wrap font-code-block">${value}</div>
+                            </div>`;
+                        }
+                    }
+                    modalBody.innerHTML = bodyHtml || 'No additional attributes available.';
+                } catch (e) {
+                    modalBody.innerHTML = 'Error loading attributes.';
+                }
+            } else {
+                modalBody.innerHTML = 'No attributes found.';
+            }
+            
+            modal.classList.remove('hidden');
+        });
+    });
+
     // Theme toggle logic
     (function() {
         const themeToggle = document.getElementById('theme-toggle');
