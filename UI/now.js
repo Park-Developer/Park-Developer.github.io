@@ -1,7 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    renderOngoingProjects();
-    loadNowItems();
-    loadRecentFiles();
+    fetch('../data.yaml?t=' + new Date().getTime())
+        .then(res => res.text())
+        .then(yamlText => {
+            const data = jsyaml.load(yamlText);
+            loadNowDescription(data);
+            renderOngoingProjects(data);
+            loadNowItems(data);
+            loadRecentFiles(data);
+        })
+        .catch(err => {
+            console.error("Failed to parse data.yaml:", err);
+            const projectsContainer = document.getElementById('now-projects');
+            if (projectsContainer) projectsContainer.innerHTML = `<p class="empty-state text-error">데이터를 불러올 수 없습니다.<br>원인: ${err.message}</p>`;
+        });
 
     const form = document.getElementById('now-form');
     if (form) {
@@ -9,67 +20,179 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Load 'inprogress' projects from projectsData (assumes projects.js is loaded before this)
-function renderOngoingProjects() {
-    const container = document.getElementById('now-projects');
-    if (!container || typeof projectsData === 'undefined') return;
+// Load 'What I'm doing Now' description from data.yaml
+function loadNowDescription(data) {
+    if (!data.WHAT_IM_DOING_NOW) return;
+    const descItem = data.WHAT_IM_DOING_NOW.find(item => item.name === "Description");
+    if (descItem && descItem.value) {
+        const el = document.getElementById('now-description-text');
+        if (el) {
+            el.textContent = descItem.value;
+        }
+    }
+}
 
-    const ongoing = projectsData.filter(p => p.status === 'inprogress');
+// Load 'inprogress' projects from data.yaml
+function renderOngoingProjects(data) {
+    const container = document.getElementById('now-projects');
+    if (!container || !data) return;
+
+    let ongoing = [];
+    if (data.WHAT_IM_DOING_NOW) {
+        const projItem = data.WHAT_IM_DOING_NOW.find(item => item.name === "In_Progress_Project");
+        if (projItem) {
+            if (typeof projItem.value === 'string' && data[projItem.value] && Array.isArray(data[projItem.value].value)) {
+                // Resolve string reference (e.g. "IN_PROGGRESS_PROJECT")
+                ongoing = data[projItem.value].value;
+            } else if (Array.isArray(projItem.value)) {
+                ongoing = projItem.value;
+            }
+        }
+    }
     
     if (ongoing.length === 0) {
-        container.innerHTML = '<p class="empty-state">현재 진행중인 프로젝트가 없습니다.</p>';
+        container.innerHTML = '<p class="empty-state text-text-secondary text-sm">현재 진행중인 프로젝트가 없습니다.</p>';
         return;
     }
 
     container.innerHTML = ongoing.map(project => `
-        <div class="now-project-card">
-            <h4>${project.title}</h4>
-            <p>${project.description.substring(0, 80)}...</p>
-            <div class="tech-stack">
-                ${project.techStack.map(t => `<span class="tech-tag">${t}</span>`).join('')}
-            </div>
+        <div class="now-project-card p-4 border border-surface-border rounded-lg bg-surface hover:border-primary transition-colors cursor-pointer" onclick="window.open('${project.url}', '_blank')">
+            <h4 class="font-headline-md text-base text-text-primary mb-2 hover:text-primary transition-colors flex items-center gap-2">
+                ${project.name}
+                <i class='bx bx-link-external text-text-secondary text-sm'></i>
+            </h4>
+            <p class="text-text-secondary text-sm leading-relaxed">${(project.attributes && project.attributes.Overview) ? project.attributes.Overview.replace(/^:\s*/, '') : ''}</p>
         </div>
     `).join('');
 }
 
-// Load studies and plans from localStorage
-function loadNowItems() {
+// Load studies and plans from TODO_LIST.md
+function loadNowItems(data) {
     const plansList = document.getElementById('now-plans');
-    if (!plansList) return;
+    if (!plansList || !data) return;
 
-    const plans = JSON.parse(localStorage.getItem('nowPlans')) || [];
-    renderList(plansList, plans, 'plan');
+    let todoPath = null;
+    if (data.WHAT_IM_DOING_NOW) {
+        const todoItem = data.WHAT_IM_DOING_NOW.find(item => item.name === "TODO_List");
+        if (todoItem && todoItem.value && todoItem.value !== "None") {
+            todoPath = '../' + todoItem.value;
+        }
+    }
+
+    if (!todoPath) {
+        plansList.innerHTML = '<li class="empty-state text-error text-sm">TODO_List 경로를 찾을 수 없습니다.</li>';
+        return;
+    }
+
+    fetch(todoPath + '?t=' + new Date().getTime())
+        .then(res => {
+            if (!res.ok) throw new Error("Failed to load TODO_LIST.md");
+            return res.text();
+        })
+        .then(text => {
+            const lines = text.split('\n');
+            let html = '';
+            for (const line of lines) {
+                const trimmed = line.trim();
+                if (trimmed.startsWith('- [ ] ')) {
+                    const textContent = trimmed.substring(6);
+                    html += `
+                    <li class="plan-item" style="display: flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" disabled style="width: 16px; height: 16px;">
+                        <span class="plan-text text-text-primary text-sm">${textContent}</span>
+                    </li>`;
+                } else if (trimmed.startsWith('- [x] ') || trimmed.startsWith('- [X] ')) {
+                    const textContent = trimmed.substring(6);
+                    html += `
+                    <li class="plan-item" style="display: flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" checked disabled style="width: 16px; height: 16px;">
+                        <span class="plan-text text-text-secondary text-sm" style="text-decoration: line-through;">${textContent}</span>
+                    </li>`;
+                } else if (trimmed.startsWith('## ') || trimmed.startsWith('# ')) {
+                     const headerText = trimmed.replace(/#/g, '').trim();
+                     if (headerText !== 'Logseq TODOs') {
+                         html += `<li style="margin-top: 12px; margin-bottom: 4px; font-weight: bold; color: var(--text-primary); font-size: 14px;">${headerText}</li>`;
+                     }
+                } else if (trimmed.length > 0 && !trimmed.startsWith('*')) {
+                     html += `<li style="margin-left: 24px; color: var(--text-secondary); font-size: 13px;">${trimmed}</li>`;
+                }
+            }
+            if (html === '') {
+                plansList.innerHTML = '<li class="empty-state text-text-secondary text-sm">할 일이 없습니다.</li>';
+            } else {
+                plansList.innerHTML = html;
+            }
+        })
+        .catch(err => {
+            console.error("TODO Fetch Error:", err);
+            plansList.innerHTML = `<li class="empty-state text-error text-sm" style="word-break: break-all;">할 일 목록을 불러올 수 없습니다.<br>원인: ${err.message}</li>`;
+        });
 }
 
-// Load recent files from generated json
-function loadRecentFiles() {
+// Load recent files from markdown analysis file
+function loadRecentFiles(data) {
     const container = document.getElementById('now-recent-files');
-    if (!container) return;
+    if (!container || !data) return;
 
-    fetch('../obsidian/recent.json')
+    let docPath = null;
+    if (data.WHAT_IM_DOING_NOW) {
+        const docItem = data.WHAT_IM_DOING_NOW.find(item => item.name === "Recent_Document");
+        if (docItem && docItem.value && docItem.value !== "None") {
+            docPath = '../' + docItem.value;
+        }
+    }
+
+    if (!docPath) {
+        container.innerHTML = '<li class="empty-state text-text-secondary text-sm">최근 작성된 문서가 없습니다.</li>';
+        return;
+    }
+
+    fetch(docPath + '?t=' + new Date().getTime())
         .then(res => {
-            if (!res.ok) throw new Error('Network response was not ok');
-            return res.json();
+            if (!res.ok) throw new Error('Failed to load markdown file');
+            return res.text();
         })
-        .then(files => {
+        .then(text => {
+            const lines = text.split('\n');
+            const files = [];
+            let inTable = false;
+            for (const line of lines) {
+                const trimmed = line.trim();
+                if (trimmed.startsWith('|')) {
+                    if (trimmed.includes('파일 이름') || trimmed.includes(':---')) {
+                        inTable = true;
+                        continue;
+                    }
+                    if (inTable) {
+                        const parts = trimmed.split('|').map(s => s.trim());
+                        if (parts.length >= 4 && parts[2]) {
+                            const filename = parts[2];
+                            files.push({ name: filename });
+                        }
+                    }
+                }
+            }
+
             if (files.length === 0) {
-                container.innerHTML = '<li class="empty-state">최근 작성된 문서가 없습니다.</li>';
+                container.innerHTML = '<li class="empty-state text-text-secondary text-sm">최근 작성된 문서가 없습니다.</li>';
                 return;
             }
+
             container.innerHTML = files.map(file => `
-                <li>
-                    <a href="study.html" class="recent-file-link">
-                        <i class='bx bx-file'></i>
-                        <div class="file-info">
-                            <span class="file-name">${file.name}</span>
-                            <span class="file-date">${file.date}</span>
+                <li class="p-3 border border-surface-border rounded-lg bg-surface hover:border-primary transition-colors cursor-pointer" onclick="window.location.href='study.html'">
+                    <div class="flex items-center gap-3">
+                        <i class='bx bx-file text-primary text-lg'></i>
+                        <div class="file-info flex flex-col">
+                            <span class="file-name text-text-primary text-sm font-semibold">${file.name}</span>
+                            <span class="file-date text-text-secondary text-xs mt-1">최근 변환됨</span>
                         </div>
-                    </a>
+                    </div>
                 </li>
             `).join('');
         })
         .catch(err => {
-            container.innerHTML = '<li class="empty-state">최근 문서를 불러올 수 없습니다.<br>(update_recent 스크립트를 실행해 주세요)</li>';
+            console.error("Recent Document Fetch Error:", err);
+            container.innerHTML = `<li class="empty-state text-error text-sm" style="word-break: break-all;">문서를 불러올 수 없습니다.<br>원인: ${err.message}</li>`;
         });
 }
 

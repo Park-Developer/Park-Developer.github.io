@@ -158,9 +158,7 @@
     <!-- Hero Section -->
     <section id="home" class="flex flex-col md:flex-row items-center justify-between py-xl gap-lg">
         <div class="flex-1">
-            <h3 class="font-headline-md text-headline-md text-primary mb-2">Hello, I'm</h3>
-            <h1 class="font-headline-xl text-headline-xl text-text-primary mb-4">Wonho Park</h1>
-            <h3 class="font-headline-md text-headline-md text-text-secondary mb-6">And I'm a <span class="text-primary">Developer</span></h3>
+            <h1 class="font-headline-xl text-headline-xl text-text-primary mb-6 NOTION_AI_UPDATE_WHO_AM_I">Hello, I’m Daniel Park. And I’m a Developer</h1>
             <p class="font-body-lg text-body-lg text-text-secondary mb-8 max-w-2xl NOTION_AI_UPDATE_BLOG_INTRODUCTION">
                 This is a personal blog created with Antigravity, Obsidian, and Notion.
             </p>
@@ -247,7 +245,7 @@
     <section id="now" class="py-lg border-t border-surface-border">
         <header class="mb-lg">
             <h2 class="font-headline-lg text-headline-lg text-text-primary mb-2">What I'm doing <span class="text-primary">Now</span></h2>
-            <p class="font-body-md text-body-md text-text-secondary">현재 진행 중인 프로젝트, 공부하고 있는 주제, 그리고 다양한 계획들을 공유합니다.</p>
+            <p id="now-description-text" class="font-body-md text-body-md text-text-secondary">I’m sharing the projects I’m currently working on, the topics I’m studying, and various plans.</p>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
@@ -255,8 +253,8 @@
             <div class="flex flex-col gap-lg">
                 <div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-xl p-md">
                     <div class="flex items-center gap-2 mb-4 border-b border-surface-border pb-2">
-                        <span class="material-symbols-outlined text-primary">laptop_mac</span>
-                        <h3 class="font-headline-md text-[20px] text-text-primary">현재 진행중인 프로젝트</h3>
+                        <svg fill="currentColor" class="w-6 h-6 text-primary" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Notion</title><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg>
+                        <h3 class="font-headline-md text-[20px] text-text-primary">In Progress Project</h3>
                     </div>
                     <div id="now-projects" class="flex flex-col gap-sm">
                         <!-- Loaded dynamically from projects.js -->
@@ -266,8 +264,8 @@
 
                 <div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-xl p-md">
                     <div class="flex items-center gap-2 mb-4 border-b border-surface-border pb-2">
-                        <span class="material-symbols-outlined text-primary">schedule</span>
-                        <h3 class="font-headline-md text-[20px] text-text-primary">최근 작성한 문서</h3>
+                        <svg fill="currentColor" class="w-6 h-6 text-primary" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Obsidian</title><path d="M19.355 18.538a68.967 68.959 0 0 0 1.858-2.954.81.81 0 0 0-.062-.9c-.516-.685-1.504-2.075-2.042-3.362-.553-1.321-.636-3.375-.64-4.377a1.707 1.707 0 0 0-.358-1.05l-3.198-4.064a3.744 3.744 0 0 1-.076.543c-.106.503-.307 1.004-.536 1.5-.134.29-.29.6-.446.914l-.31.626c-.516 1.068-.997 2.227-1.132 3.59-.124 1.26.046 2.73.815 4.481.128.011.257.025.386.044a6.363 6.363 0 0 1 3.326 1.505c.916.79 1.744 1.922 2.415 3.5zM8.199 22.569c.073.012.146.02.22.02.78.024 2.095.092 3.16.29.87.16 2.593.64 4.01 1.055 1.083.316 2.198-.548 2.355-1.664.114-.814.33-1.735.725-2.58l-.01.005c-.67-1.87-1.522-3.078-2.416-3.849a5.295 5.295 0 0 0-2.778-1.257c-1.54-.216-2.952.19-3.84.45.532 2.218.368 4.829-1.425 7.531zM5.533 9.938c-.023.1-.056.197-.098.29L2.82 16.059a1.602 1.602 0 0 0 .313 1.772l4.116 4.24c2.103-3.101 1.796-6.02.836-8.3-.728-1.73-1.832-3.081-2.55-3.831zM9.32 14.01c.615-.183 1.606-.465 2.745-.534-.683-1.725-.848-3.233-.716-4.577.154-1.552.7-2.847 1.235-3.95.113-.235.223-.454.328-.664.149-.297.288-.577.419-.86.217-.47.379-.885.46-1.27.08-.38.08-.72-.014-1.043-.095-.325-.297-.675-.68-1.06a1.6 1.6 0 0 0-1.475.36l-4.95 4.452a1.602 1.602 0 0 0-.513.952l-.427 2.83c.672.59 2.328 2.316 3.335 4.711.09.21.175.43.253.653z"/></svg>
+                        <h3 class="font-headline-md text-[20px] text-text-primary">Obsidian Note</h3>
                     </div>
                     <ul id="now-recent-files" class="flex flex-col gap-2">
                         <!-- Loaded dynamically from obsidian/recent.json -->
@@ -280,11 +278,11 @@
             <div class="flex flex-col gap-lg">
                 <div class="bg-surface-container-lowest border border-surface-border shadow-sm rounded-xl p-md">
                     <div class="flex items-center gap-2 mb-4 border-b border-surface-border pb-2">
-                        <span class="material-symbols-outlined text-primary">event_note</span>
-                        <h3 class="font-headline-md text-[20px] text-text-primary">기타 계획 및 할 일</h3>
+                        <svg fill="currentColor" class="w-6 h-6 text-primary" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Logseq</title><path d="M19.3 9.838c-2.677-1.366-5.467-1.56-8.316-.607-1.738.58-3.197 1.58-4.267 3.088-1.031 1.452-1.45 3.071-1.184 4.837.268 1.781 1.164 3.228 2.505 4.4C9.96 23.231 12.24 23.942 15.092 24c.41-.053 1.157-.103 1.883-.255 2.004-.418 3.754-1.325 5.08-2.915 1.621-1.942 2.108-4.148 1.272-6.562-.704-2.034-2.138-3.467-4.027-4.43ZM7.515 6.295c.507-2.162-.88-4.664-2.988-5.37-1.106-.37-2.156-.267-3.075.492C.61 2.114.294 3.064.271 4.146c.009.135.016.285.029.435.01.102.021.205.042.305.351 1.703 1.262 2.98 2.9 3.636 1.912.766 3.808-.244 4.273-2.227Zm4.064-1.146c1.075.377 2.152.31 3.22-.033.94-.3 1.755-.793 2.341-1.609.803-1.117.5-2.387-.717-3.027-.6-.317-1.246-.438-1.927-.48-.47.076-.95.117-1.41.234-1.068.27-2.002.781-2.653 1.7-.495.697-.64 1.45-.174 2.227.303.504.779.799 1.32.988Z"/></svg>
+                        <h3 class="font-headline-md text-[20px] text-text-primary">Logseq TODO List</h3>
                     </div>
-                    <ul id="now-plans" class="flex flex-col gap-3">
-                        <!-- Loaded dynamically from localStorage -->
+                    <ul id="now-plans" class="flex flex-col gap-3 NOTION_AI_UPDATE_TODO_List">
+                        <!-- Loaded dynamically -->
                     </ul>
                 </div>
 
@@ -309,9 +307,10 @@
 </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="script.js"></script>
 <script src="projects.js"></script>
-<script src="now.js"></script>
+<script src="now.js?v=5"></script>
 <script>
     
     // Theme toggle logic

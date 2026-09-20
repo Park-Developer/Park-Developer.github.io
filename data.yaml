@@ -1,26 +1,42 @@
 # [AI UPDATE INFORMATION] ============================================================================
-# Fetched from Home Page (3c7da17c39c88019a581c45586a32c2e) on 2026-09-10T00:37:42+09:00
-# Fetched from Project Page (3c7da17c39c880a2be2fd14704d95217) on 2026-09-10T00:37:42+09:00
+# Fetched from Home Page (3c7da17c39c88019a581c45586a32c2e) on 2026-09-20T20:47:00+09:00
+# Fetched from Project Page (3c7da17c39c880a2be2fd14704d95217) on 2026-09-20T20:47:00+09:00
 # Updated using Google Antigravity AI via the `sync-notion-data` skill.
 
 
 # [ HOME UI ] =======================================================================================
 
 BLOG_INTRODUCTION:
-  value: "This is a personal blog created with Antigravity, Obsidian, and Notion."
+  value: "This is a personal blog created with Antigravity, Obsidian, Logseq, and Notion."
   html_class: "NOTION_AI_UPDATE_BLOG_INTRODUCTION"
+
+WHO_AM_I:
+  value: "Hello, I’m Daniel Park. And I’m a Developer"
+  html_class: "NOTION_AI_UPDATE_WHO_AM_I"
 
 ABOUT_ME:
   value: "Hello. I’m a developer who loves creating new things and dreams of becoming a full-stack developer with AI."
   html_class: "NOTION_AI_UPDATE_ABOUT_ME"
 
 SKILLS_n_INTEREST:
-  value: "Notion, Obsidian, Logseq"
+  value: "Notion, Obsidian, Logseq, MCU, DIgital Circuit"
   html_class: "NOTION_AI_UPDATE_SKILLS_n_INTEREST"
 
 WHAT_IM_DOING_NOW:
-  value: None
-  html_class: "NOTION_AI_UPDATE_WHAT_IM_DOING_NOW"
+  - name : "Description"
+    value : "I’m sharing the projects I’m currently working on, the topics I’m studying, and various plans."
+    
+  - name : "In_Progress_Project"
+    value: "IN_PROGGRESS_PROJECT"
+    html_class: "NOTION_AI_UPDATE_In_Progress_Project"
+
+  - name : "TODO_List"
+    value : "Output/TODO_List/TODO_LIST.md"
+    html_class: "NOTION_AI_UPDATE_TODO_List"
+
+  - name : "Recent_Document"
+    value : "Output/Study/obsidian_file_analysis.md"
+    html_class: "NOTION_AI_UPDATE_Recent_Document"
 
 MY_LINK:
   LINKED_IN:
@@ -51,6 +67,26 @@ IN_PROGGRESS_PROJECT:
         Reference: ""
         Memo: ""
         Result: ""
+    - name: "Github 블로그"
+      url: "https://app.notion.com/p/3c4da17c39c880b0ace2f782ffddcc3b"
+      attributes:
+        Overview: ": Notion과 Antigravity를 이용해서 만드는 AI 자동화 블로그"
+        Image: "https://prod-files-secure.s3.us-west-2.amazonaws.com/d32dd2bd-b4fe-40b6-a628-1097dbd2b359/bde1f377-b615-4d1b-b542-c32f6fcf13fe/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB46627C2QI2H%2F20260920%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260920T114606Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGGE%2By7ba6pwE58%2F3vlZDx875w9F6UNCdSSgTsO6vnfgAiEAtwK%2FQfWqQAE3q3MllErlERw4DAAKC0tfjxUAOK9%2BvI0q%2FwMIdBAAGgw2Mzc0MjMxODM4MDUiDEtoO829dbBVFBisYircA5z2g8VhLy8T%2FUQ6fg00k96fXmpSRn3TTGdIVVXLdkYEK4GXa4rL4eJo70yd8SGW2NvFDB1QLaOKwM2aeYyFzXrtlzLl6v8X1UkHZqKCqEte8CtQCPpb%2FFnk2ONnEsZ9PyVXutnbVJVUwqSpIuKlzTOv3h%2Bo7m4u%2FBJDRc2bA%2FYWIU%2FauCDS%2F5o5PvBx1nD2hIZZrcA4X6G4SrOQ4iCi3%2FLRqY0SCRaSgz7XpCpKuhXlcZ5aZDIi0pIHdxFO6PUHFK5vKjY4gpAUmq%2FgurvTbw0axDOOpp37aBCXi72oLqL%2Fi6R0RcFYh%2BEBjcRopyTTCJqWg%2FCS6VhtxpvDsWzPOG1sCYzWieF7WwYlDQvfOBvqSSEMCYuIGRdmNpWLCEUqI0CWglmaqu4JAau1xOT8YxZW3s18w5LdBJP7BDlG1MMYj3KItMW%2BJszP%2BAAxpHfJTIcYzp64pYWwdyDU4dby9mIE%2FwW%2BOLuexuMga6af4MK1HiUVs8ZlGjMUukL1cjbNTL2j082s644DXP8f8p9qCo42szWJNF8lWB2IENeJNaKAZ%2BO8M0CVs%2FRO1Utu7oppeZzjppfqcimL5MuLTFqwswfY7jCo9J63IyVbI0ThTAT2BLH6HYJyuHA0QaIUMKz8vtUGOqUBlBdamhxb8muWaQ9UgU4pRB4RFOZ06Ujmk%2F3P2xdPH0idUZk6HVa6alU2JA%2BvnPgXSGDEb4vtEnmLMduza5D3HqCITlVHvSCP4FryFsoGOIVpPnvGIRoHyQnUQPt%2FjtYH40hGvo8HBNFh2n0BW1bY0OfjjvG7sklCsYmshBfyrlOrs96YHbK%2BpCdBGIQi3Xyi9Mm2nFXFg3kgR8EhpWO1j25Z52O1&X-Amz-Signature=70d252a058fc4529150790beb7a25be979e5c37ba3e0e3dbc84d6d74234bafc4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+        Description: ""
+        Schedule: ""
+        Features: ""
+        TODO: |
+          - [ ] linkedin 수정하기 
+          - [ ] notion open 링크 만들기
+          - [ ] 자동화율 표
+          - [ ] antigravity schedule task 이요
+          - [ ] Notion에 있는 데이터를 불러와서 data.yaml 파일에 연결시키기, html에 class를 설정해서 이 class를 이용해서 데이터가 매칭되도록 하기
+          - [ ] TODO List 정리하고, 일별 Load 계산까지 되도록 하기
+          - [ ] 스킬에서 참조하는 링크나 local address들은 config.yaml에 저장하기
+          - [ ] 모든 링크 및 로컬 디렉토리는 config.yaml 파일에 저장하기
+        Reference: "[Github.io 블로그에 Google Analytics 적용하기](https://mino1982.tistory.com/39?category=1184394)"
+        Memo: ": 개인정보나 프로젝트 정보들은 공개 가능한 노션 page를 따로 만둘고, github에는 링크를 연결해두는게 작업하기 편할듯함"
+        Result: ""
   html_class: "NOTION_AI_UPDATE_IN_PROGGRESS_PROJECT"
 
 STOP_PROJECT:
@@ -80,24 +116,6 @@ COMPLETED_PROJECT:
           	```javascript
           pyinstaller -w -F --icon=Image\icon.ico -n logViewer main.py
           	```
-        Result: ""
-    - name: "Github 블로그"
-      url: "https://app.notion.com/p/3c4da17c39c880b0ace2f782ffddcc3b"
-      attributes:
-        Overview: ": Notion과 Antigravity를 이용해서 만드는 AI 자동화 블로그"
-        Image: "https://prod-files-secure.s3.us-west-2.amazonaws.com/..."
-        Description: ""
-        Schedule: ""
-        Features: ""
-        TODO: |
-          - [ ] linkedin 수정하기 
-          - [ ] notion open 링크 만들기
-          - [ ] 자동화율 표
-          - [ ] antigravity schedule task 이요
-          - [ ] Notion에 있는 데이터를 불러와서 data.yaml 파일에 연결시키기, html에 class를 설정해서 이 class를 이용해서 데이터가 매칭되도록 하기
-          - [ ] TODO List 정리하고, 일별 Load 계산까지 되도록 하기
-        Reference: "[Github.io 블로그에 Google Analytics 적용하기](https://mino1982.tistory.com/39?category=1184394)"
-        Memo: ": 개인정보나 프로젝트 정보들은 공개 가능한 노션 page를 따로 만둘고, github에는 링크를 연결해두는게 작업하기 편할듯함"
         Result: ""
   html_class: "NOTION_AI_UPDATE_COMPLETED_PROJECT"
 
