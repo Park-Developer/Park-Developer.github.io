@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTSpice</title>
+    <title>RIGOL</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -74,7 +74,27 @@
     </script>
 </head>
 <body>
-    <hr />
-<h2>color: var(--mk-color-charcoal)</h2>
+    <h3><em>상태 표시</em></h3>
+<hr />
+<dl>
+<dd>화면 맨 윗줄(주로 좌측 또는 중앙)을 보면 현재 오실로스코프의 동작 상태가 텍스트로 표시된다.
+<img alt="530" src="Pasted%20image%2020260908233814.png" />
+- <strong>AUTO / NORM / SING:</strong> 현재 설정된 트리거 모드입니다. (자동, 일반, 싱글)
+- <strong>T'D (Triggered) / WAIT:</strong> 트리거 조건을 만족하여 파형을 성공적으로 잡았는지(T'D), 트리거 신호를 기다리는 중인지(WAIT) 나타냅니다.
+- <strong>STOP / RUN:</strong> 파형 캡처가 정지된 상태인지(STOP), 작동 중인지(RUN) 보여줍니다. 전면 패널의 <strong>RUN/STOP</strong> 버튼 색상(녹색=RUN, 빨간색=STOP)으로도 알 수 있습니다.</dd>
+</dl>
+<h3><em>Roll Mode</em></h3>
+<hr />
+<dl>
+<dd>신호를 연속적으로 스크롤하는 방식으로 표시하는 기능이다. 이 모드는 주로 저주파 신호를 관찰할 때 사용되며, 신호가 화면을 가로질러 실시간으로 "굴러가는" 것처럼 보이게 합니다. ROLL 모드는 오실로스코프를 사용하여 시간에 따른 신호 변화를 더 세밀하게 관찰할 수 있게 해줍니다. 특히, 길게 이어지는 신호나 느리게 변화하는 신호를 모니터링할 때 유용합니다.</dd>
+</dl>
+<p><img alt="" src="Pasted%20image%2020260908233936.png" /></p>
+<h3><em>주의 사항</em></h3>
+<hr />
+<ul>
+<li>수평 시간축(Timebase)이 매우 느리게 설정되면(보통 50ms/div 이상) 오실로스코프가 트리거릴 대기하지 않고 파형을 연속해서 화면에 흘려보내는 롤 모드로 자동 전환된다.
+    <code>ad-info
+    이 상태에서는 트리거 제어가 비활성화된다. 해제하고 싶은 경우 시간축을 수정하면 된다.</code></li>
+</ul>
 </body>
 </html>

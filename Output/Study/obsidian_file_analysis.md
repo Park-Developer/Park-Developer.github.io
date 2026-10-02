@@ -2,15 +2,15 @@
 
 `import-obsidian` 스킬을 통해 변환된 HTML 파일 중 가장 최근에 작성(수정)된 10개의 파일 목록입니다. (Archieve.html, Attachment.html 제외)
 
-| 번호 | 파일 이름 | 파일 위치 |
-| :---: | :--- | :--- |
-| 1 | 태그.html | `C:\WH_Project\Github_IO\obsidian\Tech\Obsidian\태그.html` |
-| 2 | Navigator.html | `C:\WH_Project\Github_IO\obsidian\Tech\Obsidian\Navigator.html` |
-| 3 | Design.html | `C:\WH_Project\Github_IO\obsidian\Tech\Design\Design.html` |
-| 4 | Obsidian.html | `C:\WH_Project\Github_IO\obsidian\Tech\Obsidian\Obsidian.html` |
-| 5 | Obsidian 파일 첨부 폴더 지정.html | `C:\WH_Project\Github_IO\obsidian\Tech\Obsidian\Obsidian 파일 첨부 폴더 지정.html` |
-| 6 | AI Design Tool.html | `C:\WH_Project\Github_IO\obsidian\Tech\Design\AI Design Tool.html` |
-| 7 | 회로 부품 검색.html | `C:\WH_Project\Github_IO\obsidian\Tech\AI\업무효율화\회로 부품 검색.html` |
-| 8 | 프로젝트 기억 방법.html | `C:\WH_Project\Github_IO\obsidian\Tech\AI\Claude Code\프로젝트 기억 방법.html` |
-| 9 | 업무효율화.html | `C:\WH_Project\Github_IO\obsidian\Tech\AI\업무효율화\업무효율화.html` |
-| 10 | 이슈 대응 보고서 생성.html | `C:\WH_Project\Github_IO\obsidian\Tech\AI\업무효율화\이슈 대응 보고서 생성.html` |
+| 번호 | 파일 이름 | 마지막 수정일자 | 파일 위치 |
+| :---: | :--- | :--- | :--- |
+| 1 | HW 개발/Circuit/Current Sensor/Filter 회로 주의 사항 | 2026-10-01 00:50 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\Current Sensor\Filter 회로 주의 사항.html` |
+| 2 | HW 개발/Circuit/Current Sensor/Current Sensor | 2026-10-01 00:48 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\Current Sensor\Current Sensor.html` |
+| 3 | HW 개발/Interface/SPI/Reference | 2026-10-01 00:17 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Reference.html` |
+| 4 | HW 개발/Interface/SPI/Multi Slave | 2026-10-01 00:17 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Multi Slave.html` |
+| 5 | HW 개발/Interface/SPI/How SPI Works | 2026-10-01 00:14 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\How SPI Works.html` |
+| 6 | HW 개발/Interface/SPI/Overview | 2026-10-01 00:10 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Overview.html` |
+| 7 | HW 개발/Interface/SPI/SPI | 2026-10-01 00:06 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\SPI.html` |
+| 8 | HW 개발/Interface/CAN/Reference Circuit | 2026-10-01 00:02 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\CAN\Reference Circuit.html` |
+| 9 | HW 개발/Circuit/TVS | 2026-09-27 00:41 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\TVS.html` |
+| 10 | HW 개발/Electrical Engineering/Pin Header & Socket Header | 2026-09-23 00:28 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Electrical Engineering\Pin Header & Socket Header.html` |

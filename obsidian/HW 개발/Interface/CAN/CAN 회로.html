@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAN 회로</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 24px 32px;
+            box-sizing: border-box;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+        dd {
+            margin-left: 0;
+        }
+    </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+<body>
+    <h3><em>Overview</em></h3>
+<hr />
+<dl>
+<dd>CAN 통신을 구현하려면 MCU와 CAN Controller, CAN Transceiver, CAN Bus Cable이 필요하다.</dd>
+</dl>
+<p><img alt="" src="Pasted%20image%2020260906191902.png" /></p>
+<p>요즘은 대부분 MCU 내부에 CAN Controller가 내장되어 나오기 때문에 회로를 구성할 때, CAN Transceiver와 주변회로, 종단저항을 잘 구성하면 문제없이 통신을 할 수 있습니다.</p>
+<p>그리고 CAN 통신 시 임피던스를 60ohm으로 맞춰야 통신이 원활하게 진행되기 때문에 양측에 120ohm 종단저항을 2개 연결해준다.</p>
+<p><img alt="" src="Pasted%20image%2020260906192200.png" /></p>
+<h3><em>CAN Transceiver</em></h3>
+<hr />
+<dl>
+<dd>MCU와 CAN BUS(CAN_H, CAN_L) 사이에 위치하여 MCU에서 생성한 디지털 신호를 아날로그로 변환하여 CAN BUS를 통해 타 제어기로 송신하거나 CAN BUS를 통해 수신된 아날로그 신호를 MCU가 이해할 수 있는 디지털 신호로 변환해주는 역할을 한다.</dd>
+</dl>
+<p><img alt="" src="Pasted%20image%2020260906192426.png" /></p>
+<h3><em>Common Mode Choke(CMC)</em></h3>
+<hr />
+<ul>
+<li>
+<p>공통 모드 노이즈 제거 : 공통 모드 노이즈가 인가될 때  코일에는 시계 방향으로 자기장의 변화가 발생한다. 이를 방해하기 위해 역방향의 유도기전력이 발생하고, 이 유도기전력에 의해 공통 모드노이즈 전류와 반대 방향의 전류가 발생하되어 공통 모드 노이즈를 억제하게 된다.</p>
+<p><img alt="" src="Pasted%20image%2020260906192914.png" />
+- 차동 모드 노이즈 제거 : 차동 모드 노이즈가 발생하게 되면, 두 개의 도선에 의한 자기장의 방향은 반대가 되어 상쇄되므로 역방향의 유도기전력은 발생하지 않는다. 따라서 차동 신호는 그대로 통과된다.</p>
+<p><img alt="" src="Pasted%20image%2020260906192922.png" /></p>
+</li>
+</ul>
+<h3><em>Filtering Circuit</em></h3>
+<hr />
+<dl>
+<dd>공통 모드 노이즈를 제거하기 위한 Low Pass Filter와 차동 모드 노이즈를 제거하기 위한 커패시터로 구성된다.</dd>
+</dl>
+<p>LPF는 $R_T$ 와 $C_T$에 의해 구현된다. </p>
+<p><img alt="" src="Pasted%20image%2020260906193549.png" />
+=&gt; CAN_H와 CAN_L로 공통 모드 노이즈가 유입된다고 하면, CMC에 의해 CAN Transceiver로 유입되는 것을 차단하고, 노이즈의 경로를 $R_T$와 $C_T$가 만들어 줌으로써 공통 모드 노이즈가 제거된다.</p>
+<p>=&gt; 차동 모드 노이즈 제거는 $C_F$를 CAN BUS 라인과 GND에 병렬로 연결해 줌으로써 제거한다.</p>
+<h3><em>Refernece</em></h3>
+<hr />
+<ul>
+<li>https://analog-circuit-design.tistory.com/entry/38-CAN-%ED%86%B5%EC%8B%A0-%ED%9A%8C%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0
+    wSVA</li>
+</ul>
+</body>
+</html>

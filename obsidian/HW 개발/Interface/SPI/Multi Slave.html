@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTSpice</title>
+    <title>Multi Slave</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -74,7 +74,19 @@
     </script>
 </head>
 <body>
-    <hr />
-<h2>color: var(--mk-color-charcoal)</h2>
+    <h3><em>Concept</em></h3>
+<hr />
+<dl>
+<dd>It can be set up with multiple slaves controlled by a single master.</dd>
+</dl>
+<p>There are two ways to connect multiple slaves to the master.</p>
+<dl>
+<dt><strong>CASE1</strong></dt>
+<dd>If the master has multiplee slave select pins, the slaves can be wired in parallel like this.
+<img alt="" src="Pasted%20image%2020261001001656.png" /></dd>
+<dt><strong>CASE2</strong></dt>
+<dd>If only one slave select pin is available, the slaves can be daisy-chained like this
+<img alt="" src="Pasted%20image%2020261001001738.png" /></dd>
+</dl>
 </body>
 </html>

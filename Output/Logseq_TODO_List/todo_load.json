@@ -1,0 +1,48 @@
+{
+    "2026-09-19": {
+        "Project": {
+            "TODO": 0,
+            "DOING": 0,
+            "DONE": 0
+        },
+        "Study": {
+            "TODO": 0,
+            "DOING": 0,
+            "DONE": 0
+        },
+        "Life": {
+            "TODO": 0,
+            "DOING": 0,
+            "DONE": 0
+        },
+        "Other": {
+            "TODO": 2,
+            "DOING": 0,
+            "DONE": 0
+        },
+        "Total": 2
+    },
+    "2026-10-03": {
+        "Project": {
+            "TODO": 0,
+            "DOING": 0,
+            "DONE": 0
+        },
+        "Study": {
+            "TODO": 1,
+            "DOING": 0,
+            "DONE": 0
+        },
+        "Life": {
+            "TODO": 2,
+            "DOING": 0,
+            "DONE": 0
+        },
+        "Other": {
+            "TODO": 0,
+            "DOING": 0,
+            "DONE": 0
+        },
+        "Total": 3
+    }
+}

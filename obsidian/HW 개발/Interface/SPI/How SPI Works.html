@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTSpice</title>
+    <title>How SPI Works</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -74,7 +74,13 @@
     </script>
 </head>
 <body>
-    <hr />
-<h2>color: var(--mk-color-charcoal)</h2>
+    <h3>The Clock</h3>
+<hr />
+<p>The clock signal synchronizes the output of data bits from the master to the sampling of bits by the slave. One bit of data is transferred in each clock cycle, so the speed of data transfer is determined by the frequency of the clock signal. SPI communication is always initiated by the master since the master configures and generates the clock signal.</p>
+<p>Any communication protocol where devices share a clock signal is known as <em>synchronous.</em> SPI is a synchronous communication protocol. There are also <em>asynchronous</em> methods that don’t use a clock signal. For example, in UART communication, both sides are set to a pre-configured baud rate that dictates the speed and timing of data transmission.</p>
+<p>The clock signal in SPI can be modified using the properties of <em>clock polarity</em> and <em>clock phase</em>. These two properties work together to define when the bits are output and when they are sampled. Clock polarity can be set by the master to allow for bits to be output and sampled on either the rising or falling edge of the clock cycle. Clock phase can be set for output and sampling to occur on either the first edge or second edge of the clock cycle, regardless of whether it is rising or falling.</p>
+<h3>Slave Select</h3>
+<hr />
+<p>The master can choose which slave it wants to talk to by setting the slave’s CS/SS line to a low voltage level. In the idle, non-transmitting state, the slave select line is kept at a high voltage level. Multiple CS/SS pins may be available on the master, which allows for multiple slaves to be wired in parallel. If only one CS/SS pin is present, multiple slaves can be wired to the master by daisy-chaining</p>
 </body>
 </html>

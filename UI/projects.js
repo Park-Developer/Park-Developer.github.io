@@ -1,88 +1,46 @@
-const projectsData = [
-    {
-        id: 1,
-        title: "Developer Portfolio Website",
-        status: "done", // todo, inprogress, done
-        description: "A personal developer portfolio built with HTML, CSS, and vanilla JavaScript. Features a glassmorphism design, dark mode, and a responsive layout.",
-        techStack: ["HTML5", "CSS3", "JavaScript"],
-        tasks: [
-            { text: "Design UI mockups", completed: true },
-            { text: "Implement Home and About sections", completed: true },
-            { text: "Add dark mode toggle", completed: true },
-            { text: "Build Projects Kanban board", completed: true }
-        ],
-        timeline: [
-            { date: "2024-03-01", event: "Project initialized" },
-            { date: "2024-03-05", event: "Completed base layout and styling" },
-            { date: "2024-03-10", event: "Added Obsidian integration for Study page" },
-            { date: "2024-03-15", event: "Project deployed to GitHub Pages" }
-        ],
-        links: [
-            { text: "GitHub Repo", url: "#" },
-            { text: "Live Demo", url: "#" }
-        ]
-    },
-    {
-        id: 2,
-        title: "E-commerce Platform API",
-        status: "inprogress",
-        description: "A robust backend API for an e-commerce platform built with Node.js and Express. Features user authentication, product management, and order processing.",
-        techStack: ["Node.js", "Express", "MongoDB", "JWT"],
-        tasks: [
-            { text: "Database schema design", completed: true },
-            { text: "User authentication (JWT)", completed: true },
-            { text: "Product CRUD endpoints", completed: false },
-            { text: "Payment gateway integration", completed: false }
-        ],
-        timeline: [
-            { date: "2024-04-01", event: "Repository created" },
-            { date: "2024-04-05", event: "Database connected and schemas defined" },
-            { date: "2024-04-12", event: "Auth middleware implemented" }
-        ],
-        links: [
-            { text: "GitHub Repo", url: "#" }
-        ]
-    },
-    {
-        id: 3,
-        title: "AI Chat Assistant",
-        status: "todo",
-        description: "A web-based chat application that integrates with OpenAI API to provide intelligent responses. Includes chat history and customizable personalities.",
-        techStack: ["React", "Tailwind CSS", "OpenAI API"],
-        tasks: [
-            { text: "Set up React project", completed: false },
-            { text: "Design chat interface", completed: false },
-            { text: "Integrate OpenAI API", completed: false },
-            { text: "Implement local storage for chat history", completed: false }
-        ],
-        timeline: [
-            { date: "Pending", event: "Gathering requirements" }
-        ],
-        links: []
-    },
-    {
-        id: 4,
-        title: "Legacy Backend Service",
-        status: "halted",
-        description: "An old monolithic backend service that was planned to be refactored into microservices, but the project has been paused due to shifting priorities.",
-        techStack: ["Java", "Spring Boot", "MySQL"],
-        tasks: [
-            { text: "Analyze current architecture", completed: true },
-            { text: "Design microservice boundaries", completed: false },
-            { text: "Migrate user data", completed: false }
-        ],
-        timeline: [
-            { date: "2023-11-01", event: "Project started" },
-            { date: "2023-12-15", event: "Project paused" }
-        ],
-        links: []
-    }
-];
+let projectsData = [];
 
 document.addEventListener('DOMContentLoaded', () => {
-    renderKanbanBoard();
-    setupModalListeners();
+    fetch('../data.yaml?t=' + new Date().getTime())
+        .then(res => res.text())
+        .then(yamlText => {
+            const data = jsyaml.load(yamlText);
+            parseYamlToProjects(data);
+            renderKanbanBoard();
+            setupModalListeners();
+        })
+        .catch(err => {
+            console.error("Failed to load projects data from data.yaml", err);
+        });
 });
+
+function parseYamlToProjects(data) {
+    projectsData = [];
+    let idCounter = 1;
+
+    const mapStatus = {
+        'Not_STARTED_PROJECT': 'todo',
+        'IN_PROGGRESS_PROJECT': 'inprogress',
+        'STOP_PROJECT': 'halted',
+        'COMPLETED_PROJECT': 'done'
+    };
+
+    for (const [yamlKey, status] of Object.entries(mapStatus)) {
+        if (data[yamlKey] && Array.isArray(data[yamlKey].value)) {
+            data[yamlKey].value.forEach(proj => {
+                projectsData.push({
+                    id: idCounter++,
+                    title: proj.name,
+                    status: status,
+                    description: (proj.attributes && proj.attributes.Overview) ? proj.attributes.Overview.replace(/^:\s*/, '') : 'No description provided.',
+                    techStack: [], // We can extract this if available, leaving empty for now
+                    url: proj.url,
+                    attributes: proj.attributes || {}
+                });
+            });
+        }
+    }
+}
 
 function renderKanbanBoard() {
     const columns = {
@@ -107,12 +65,18 @@ function renderKanbanBoard() {
             card.className = 'project-card fade-in';
             card.innerHTML = `
                 <h4>${project.title}</h4>
-                <p>${project.description.substring(0, 60)}...</p>
+                <p>${project.description.substring(0, 60)}${project.description.length > 60 ? '...' : ''}</p>
                 <div class="card-footer">
-                    <span class="tech-tag">${project.techStack[0]}</span>
+                    <span class="tech-tag">Notion</span>
                     <button class="view-btn" data-id="${project.id}">View Details</button>
                 </div>
             `;
+            
+            // Add double click listener
+            card.addEventListener('dblclick', () => {
+                openProjectModal(project.id);
+            });
+            
             col.appendChild(card);
         }
     });
@@ -136,12 +100,15 @@ function renderKanbanBoard() {
 
 function setupModalListeners() {
     const modal = document.getElementById('project-modal');
+    if (!modal) return;
     const closeBtn = document.querySelector('.close-modal');
 
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Restore scrolling
-    });
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        });
+    }
 
     // Close when clicking outside modal content
     modal.addEventListener('click', (e) => {
@@ -157,60 +124,79 @@ function openProjectModal(projectId) {
     if (!project) return;
 
     // Populate data
-    document.getElementById('modal-title').textContent = project.title;
+    const titleEl = document.getElementById('modal-title');
+    if (titleEl) titleEl.textContent = project.title;
     
     const statusBadge = document.getElementById('modal-status');
-    statusBadge.textContent = project.status === 'todo' ? '진행 예정' : 
-                              project.status === 'inprogress' ? '진행중' : 
-                              project.status === 'halted' ? '중단됨' : '완료됨';
-    statusBadge.className = `status-badge ${project.status}`;
+    if (statusBadge) {
+        statusBadge.textContent = project.status === 'todo' ? '진행 예정' : 
+                                  project.status === 'inprogress' ? '진행중' : 
+                                  project.status === 'halted' ? '중단됨' : '완료됨';
+        statusBadge.className = `status-badge ${project.status}`;
+    }
 
-    document.getElementById('modal-desc').textContent = project.description;
+    const descEl = document.getElementById('modal-desc');
+    if (descEl) descEl.textContent = project.attributes.Overview || project.description;
 
-    // Tech Stack
+    // Tech Stack (Empty for now)
     const techContainer = document.getElementById('modal-tech');
-    techContainer.innerHTML = project.techStack.map(tech => `<span class="skill-tag">${tech}</span>`).join('');
+    if (techContainer) {
+        techContainer.innerHTML = '';
+    }
 
-    // Tasks Progress
-    const totalTasks = project.tasks.length;
-    const completedTasks = project.tasks.filter(t => t.completed).length;
-    const progressPercent = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
-    
-    document.getElementById('modal-progress-fill').style.width = `${progressPercent}%`;
-    document.getElementById('modal-progress-text').textContent = `${progressPercent}%`;
+    // Replace the tasks and timeline with Notion Attributes
+    // Since projects.html originally had Progress and Timeline, we will repurpose those or just inject our HTML
+    const modalBody = document.querySelector('.modal-body');
+    if (modalBody) {
+        let attrsHtml = '<div class="notion-attributes" style="margin-top: 20px; text-align: left;">';
+        
+        const attrs = ['Description', 'Features', 'TODO', 'Schedule', 'Reference', 'Memo', 'Result'];
+        attrs.forEach(key => {
+            if (project.attributes[key] && project.attributes[key].trim() !== '') {
+                attrsHtml += `<div style="margin-bottom: 16px;">
+                    <h5 style="font-weight: 600; margin-bottom: 8px; color: var(--primary);">${key}</h5>
+                    <pre style="white-space: pre-wrap; font-family: inherit; font-size: 14px; background: var(--surface-container-low); padding: 10px; border-radius: 8px;">${project.attributes[key]}</pre>
+                </div>`;
+            }
+        });
+        
+        if (project.attributes.Image && project.attributes.Image.trim() !== '') {
+            attrsHtml += `<div style="margin-bottom: 16px;">
+                <h5 style="font-weight: 600; margin-bottom: 8px; color: var(--primary);">Image</h5>
+                <img src="${project.attributes.Image}" style="max-width: 100%; border-radius: 8px;" />
+            </div>`;
+        }
+        
+        attrsHtml += '</div>';
 
-    const tasksList = document.getElementById('modal-tasks');
-    tasksList.innerHTML = project.tasks.map(task => `
-        <li class="${task.completed ? 'completed' : ''}">
-            <i class='bx ${task.completed ? 'bx-check-circle' : 'bx-circle'}'></i>
-            <span>${task.text}</span>
-        </li>
-    `).join('');
-
-    // Timeline
-    const timelineContainer = document.getElementById('modal-timeline');
-    timelineContainer.innerHTML = project.timeline.map(item => `
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-date">${item.date}</div>
-            <div class="timeline-content">${item.event}</div>
-        </div>
-    `).join('');
+        // Find or create the notion details container
+        let detailsContainer = document.getElementById('notion-details-container');
+        if (!detailsContainer) {
+            detailsContainer = document.createElement('div');
+            detailsContainer.id = 'notion-details-container';
+            modalBody.appendChild(detailsContainer);
+        }
+        detailsContainer.innerHTML = attrsHtml;
+    }
 
     // Links
     const linksContainer = document.getElementById('modal-links');
-    if (project.links.length > 0) {
-        linksContainer.innerHTML = project.links.map(link => `
-            <a href="${link.url}" class="project-link" target="_blank">
-                <i class='bx bx-link-external'></i> ${link.text}
-            </a>
-        `).join('');
-    } else {
-        linksContainer.innerHTML = '<p>No links available.</p>';
+    if (linksContainer) {
+        if (project.url) {
+            linksContainer.innerHTML = `
+                <a href="${project.url}" class="project-link" target="_blank">
+                    <i class='bx bx-link-external'></i> Notion Page
+                </a>
+            `;
+        } else {
+            linksContainer.innerHTML = '<p>No links available.</p>';
+        }
     }
 
     // Show modal
     const modal = document.getElementById('project-modal');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
 }

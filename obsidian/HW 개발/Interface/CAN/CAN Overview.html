@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAN Overview</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 24px 32px;
+            box-sizing: border-box;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        blockquote {
+            border-left: 4px solid #ccc;
+            margin: 0;
+            padding-left: 16px;
+            color: #666;
+        }
+        dd {
+            margin-left: 0;
+        }
+    </style>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+<body>
+    <h3><em>CAN(Controller Area Network)</em></h3>
+<hr />
+<dl>
+<dd>여러개의 Device를 병렬로 연결하여 데이터를 주고 받는 통신방법이다.
+<img alt="" src="Pasted%20image%2020260906162941.png" /></dd>
+</dl>
+<h3><em>CAN 특징</em></h3>
+<hr />
+<ul>
+<li>
+<p>Multi Mater 통신 방식
+    : 통신 버스를 여러 노드들이 공유하면서 언제든지 버스를 사용할 수 있다.</p>
+</li>
+<li>
+<p>간단한 구조
+    : CAN_High와 CAN_Low 두 개의 신호만으로 통신하므로 단 2개의 선이 필요하다. </p>
+</li>
+<li>
+<p>잡음에 강함
+    : CAN Bus는 Twist Pair 2선으로 되어 있어 전기적 잡음에 강해 메세지를 보호할 수 있다.</p>
+</li>
+<li>
+<p>ID값을 이용한 우선 순위
+    : CAN 메세지들은 고유한 ID 값을 가지고 있으며, ID 값은 낮을수록 우선순위가 높은데, CAN에서는 여과 과정을 통해 설정된 ID값을 수신해 우선순위를 결정한다.</p>
+<p>=&gt; 주소가 아닌 ID값으로 메세지 내용과 우선순위가 결정되며 이는 시스템 제어 속도와 안정성을 확보할 수 있다.</p>
+</li>
+<li>
+<p>고속 및 원거리 통신
+    : CAN 통신은 최대 1M bps에 달하는 고속 통신을 제공하며, 보통 통신 속도가 500k ~ 1M bps 속도로 CAN 통신이 가능하다. 또한 1000m까지 원거리 통신이 가능하다.</p>
+</li>
+<li>
+<p>Plug &amp; Play 기능
+    : PLUG &amp; PLAY 기능을 제공해서 CAN 제어기를 버스에 간편하게 연결하고 끊을 수 있어서, 여러 장치를 관리하기 매우 쉽다.</p>
+</li>
+</ul>
+<h3><em>CAN 프레임 구조</em></h3>
+<hr />
+<dl>
+<dd>CAN 통신은 프레임이라는 패킷(Packet)으로 데이터를 전송한다. 프레임이란 하나의 메세지를 이루는 필드 또는 bit들의 집합을 말한다.
+<img alt="" src="Pasted%20image%2020260906170801.png" />
+- SOF(Start of Frame) 비트
+    : 메세지의 시작을 의미하는 비트로 버스의 노드를 동기화하기 위해 사용된다.</dd>
+</dl>
+<ul>
+<li>
+<p>ID(Identifier)
+    : 식별자로서 메세지의 내용을 식별하고 메세지의 우선 순위를 부여한다.</p>
+<ul>
+<li>ID 길이에 따라서 표준 CAN(11비트 식별자)과 확장 CAN(29비트 식별자) 두 가지 Mode로 구분된다.</li>
+</ul>
+</li>
+<li>
+<p>Control
+    : 데이터의 길이(DLC)를 의미한다.</p>
+</li>
+<li>
+<p>Data
+    : 전달하고자 하는 내용을 의미한다.</p>
+</li>
+<li>
+<p>CRC
+    : 프레임의 송신 오류 및 오류 검출에 사용된다.</p>
+</li>
+<li>
+<p>ACK 비트
+    : 오류가 없는 메세지가 전송되었다는 것을 의미하는 비트로서, CAN 제어기는 메지를 정확하게 수신했다면 ACK 비트를 전송한다. </p>
+</li>
+<li>
+<p>EOF(End of Frame)
+    : 프레임의 끝을 나태나고 종류를 의미한다.</p>
+</li>
+</ul>
+</body>
+</html>

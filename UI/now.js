@@ -92,29 +92,84 @@ function loadNowItems(data) {
         .then(text => {
             const lines = text.split('\n');
             let html = '';
+            let inTable = false;
+            let isFirstRow = true;
+
             for (const line of lines) {
                 const trimmed = line.trim();
-                if (trimmed.startsWith('- [ ] ')) {
-                    const textContent = trimmed.substring(6);
-                    html += `
-                    <li class="plan-item" style="display: flex; align-items: center; gap: 8px;">
-                        <input type="checkbox" disabled style="width: 16px; height: 16px;">
-                        <span class="plan-text text-text-primary text-sm">${textContent}</span>
-                    </li>`;
-                } else if (trimmed.startsWith('- [x] ') || trimmed.startsWith('- [X] ')) {
-                    const textContent = trimmed.substring(6);
-                    html += `
-                    <li class="plan-item" style="display: flex; align-items: center; gap: 8px;">
-                        <input type="checkbox" checked disabled style="width: 16px; height: 16px;">
-                        <span class="plan-text text-text-secondary text-sm" style="text-decoration: line-through;">${textContent}</span>
-                    </li>`;
-                } else if (trimmed.startsWith('## ') || trimmed.startsWith('# ')) {
-                     const headerText = trimmed.replace(/#/g, '').trim();
-                     if (headerText !== 'Logseq TODOs') {
-                         html += `<li style="margin-top: 12px; margin-bottom: 4px; font-weight: bold; color: var(--text-primary); font-size: 14px;">${headerText}</li>`;
-                     }
-                } else if (trimmed.length > 0 && !trimmed.startsWith('*')) {
-                     html += `<li style="margin-left: 24px; color: var(--text-secondary); font-size: 13px;">${trimmed}</li>`;
+
+                if (trimmed.startsWith('|')) {
+                    if (!inTable) {
+                        inTable = true;
+                        isFirstRow = true;
+                    }
+                    
+                    const isHeaderSeparator = trimmed.includes('---');
+                    
+                    if (isHeaderSeparator) {
+                        continue;
+                    }
+                    
+                    let cells = trimmed.split('|').map(s => s.trim());
+                    cells.shift(); // remove first empty element
+                    cells.pop();   // remove last empty element
+                    
+                    if (isFirstRow) {
+                        isFirstRow = false;
+                        continue; // Skip the header row (Category | TODO | DOING | DONE | Total)
+                    }
+
+                    // Data row: Category, TODO, DOING, DONE, Total
+                    if (cells.length >= 4) {
+                        const category = cells[0];
+                        const todo = cells[1];
+                        const doing = cells[2];
+                        const done = cells[3];
+                        // Render as a beautiful list item matching Obsidian Note's composition
+                        html += `
+                        <li class="p-3 border border-surface-border rounded-lg bg-surface hover:border-primary transition-colors cursor-pointer mb-2">
+                            <div class="flex items-center gap-3">
+                                <span class="material-symbols-outlined text-primary text-xl">fact_check</span>
+                                <div class="file-info flex flex-col w-full">
+                                    <span class="file-name text-text-primary text-sm font-semibold">${category}</span>
+                                    <div class="flex gap-4 mt-1 text-xs text-text-secondary">
+                                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> TODO: <strong class="text-text-primary">${todo}</strong></span>
+                                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> DOING: <strong class="text-text-primary">${doing}</strong></span>
+                                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-surface-border"></span> DONE: <strong class="text-text-primary">${done}</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>`;
+                    }
+                } else {
+                    if (inTable) {
+                        inTable = false;
+                    }
+
+                    if (trimmed.startsWith('- [ ] ')) {
+                        const textContent = trimmed.substring(6);
+                        html += `
+                        <li class="plan-item" style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" disabled style="width: 16px; height: 16px;">
+                            <span class="plan-text text-text-primary text-sm">${textContent}</span>
+                        </li>`;
+                    } else if (trimmed.startsWith('- [x] ') || trimmed.startsWith('- [X] ')) {
+                        const textContent = trimmed.substring(6);
+                        html += `
+                        <li class="plan-item" style="display: flex; align-items: center; gap: 8px;">
+                            <input type="checkbox" checked disabled style="width: 16px; height: 16px;">
+                            <span class="plan-text text-text-secondary text-sm" style="text-decoration: line-through;">${textContent}</span>
+                        </li>`;
+                    } else if (trimmed.startsWith('## ') || trimmed.startsWith('# ')) {
+                         const headerText = trimmed.replace(/#/g, '').trim();
+                         if (headerText !== 'Logseq TODOs') {
+                             html += `<li style="margin-top: 12px; margin-bottom: 4px; font-weight: bold; color: var(--text-primary); font-size: 14px; list-style: none;">${headerText}</li>`;
+                         }
+                    } else if (trimmed.length > 0 && !trimmed.startsWith('*')) {
+                         html += `<li style="margin-left: 24px; color: var(--text-secondary); font-size: 13px; list-style: none;">${trimmed}</li>`;
+                    } else if (trimmed.startsWith('*')) {
+                         html += `<li style="margin-left: 12px; color: var(--text-secondary); font-size: 13px; font-style: italic; list-style: none;">${trimmed.replace(/\*/g, '')}</li>`;
+                    }
                 }
             }
             if (html === '') {
@@ -165,9 +220,13 @@ function loadRecentFiles(data) {
                     }
                     if (inTable) {
                         const parts = trimmed.split('|').map(s => s.trim());
-                        if (parts.length >= 4 && parts[2]) {
+                        if (parts.length >= 5 && parts[2]) {
                             const filename = parts[2];
-                            files.push({ name: filename });
+                            const modDate = parts[3];
+                            files.push({ name: filename, date: modDate });
+                        } else if (parts.length >= 4 && parts[2]) {
+                            const filename = parts[2];
+                            files.push({ name: filename, date: '최근 변환됨' });
                         }
                     }
                 }
@@ -178,17 +237,29 @@ function loadRecentFiles(data) {
                 return;
             }
 
-            container.innerHTML = files.map(file => `
+            container.innerHTML = files.map(file => {
+                let dirPart = '';
+                let filePart = file.name;
+                if (file.name.includes('/')) {
+                    const lastSlash = file.name.lastIndexOf('/');
+                    dirPart = file.name.substring(0, lastSlash + 1);
+                    filePart = file.name.substring(lastSlash + 1);
+                }
+                
+                return `
                 <li class="p-3 border border-surface-border rounded-lg bg-surface hover:border-primary transition-colors cursor-pointer" onclick="window.location.href='study.html'">
                     <div class="flex items-center gap-3">
                         <i class='bx bx-file text-primary text-lg'></i>
-                        <div class="file-info flex flex-col">
-                            <span class="file-name text-text-primary text-sm font-semibold">${file.name}</span>
-                            <span class="file-date text-text-secondary text-xs mt-1">최근 변환됨</span>
+                        <div class="file-info flex flex-col w-full">
+                            <span class="file-name text-text-primary text-sm font-semibold truncate block max-w-full">
+                                ${dirPart ? `<span class="text-text-secondary font-normal">${dirPart}</span>` : ''}${filePart}
+                            </span>
+                            <span class="file-date text-text-secondary text-xs mt-1">${file.date || '최근 변환됨'}</span>
                         </div>
                     </div>
                 </li>
-            `).join('');
+                `;
+            }).join('');
         })
         .catch(err => {
             console.error("Recent Document Fetch Error:", err);

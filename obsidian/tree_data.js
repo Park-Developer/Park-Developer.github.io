@@ -148,6 +148,23 @@ window.OBSIDIAN_TREE_DATA = [
         "path": "HW 개발/Circuit",
         "children": [
           {
+            "name": "Current Sensor",
+            "type": "directory",
+            "path": "HW 개발/Circuit/Current Sensor",
+            "children": [
+              {
+                "name": "Current Sensor",
+                "type": "file",
+                "path": "HW 개발/Circuit/Current Sensor/Current Sensor.html"
+              },
+              {
+                "name": "Filter 회로 주의 사항",
+                "type": "file",
+                "path": "HW 개발/Circuit/Current Sensor/Filter 회로 주의 사항.html"
+              }
+            ]
+          },
+          {
             "name": "USB",
             "type": "directory",
             "path": "HW 개발/Circuit/USB",
@@ -183,6 +200,11 @@ window.OBSIDIAN_TREE_DATA = [
             "name": "PMIC(Power Management Integrated Circuit)",
             "type": "file",
             "path": "HW 개발/Circuit/PMIC(Power Management Integrated Circuit).html"
+          },
+          {
+            "name": "TVS",
+            "type": "file",
+            "path": "HW 개발/Circuit/TVS.html"
           }
         ]
       },
@@ -192,9 +214,19 @@ window.OBSIDIAN_TREE_DATA = [
         "path": "HW 개발/Electrical Engineering",
         "children": [
           {
+            "name": "회생 저항",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/회생 저항.html"
+          },
+          {
             "name": "Connector Baisc",
             "type": "file",
             "path": "HW 개발/Electrical Engineering/Connector Baisc.html"
+          },
+          {
+            "name": "DC 링크",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/DC 링크.html"
           },
           {
             "name": "ELCB(Earth Leakage Circuit Breaker)",
@@ -215,6 +247,11 @@ window.OBSIDIAN_TREE_DATA = [
             "name": "IDC Cable",
             "type": "file",
             "path": "HW 개발/Electrical Engineering/IDC Cable.html"
+          },
+          {
+            "name": "Pin Header & Socket Header",
+            "type": "file",
+            "path": "HW 개발/Electrical Engineering/Pin Header & Socket Header.html"
           },
           {
             "name": "SO DIMM Socket",
@@ -701,6 +738,77 @@ window.OBSIDIAN_TREE_DATA = [
         ]
       },
       {
+        "name": "Interface",
+        "type": "directory",
+        "path": "HW 개발/Interface",
+        "children": [
+          {
+            "name": "CAN",
+            "type": "directory",
+            "path": "HW 개발/Interface/CAN",
+            "children": [
+              {
+                "name": "CAN 회로",
+                "type": "file",
+                "path": "HW 개발/Interface/CAN/CAN 회로.html"
+              },
+              {
+                "name": "CAN Overview",
+                "type": "file",
+                "path": "HW 개발/Interface/CAN/CAN Overview.html"
+              },
+              {
+                "name": "CAN",
+                "type": "file",
+                "path": "HW 개발/Interface/CAN/CAN.html"
+              },
+              {
+                "name": "Reference Circuit",
+                "type": "file",
+                "path": "HW 개발/Interface/CAN/Reference Circuit.html"
+              }
+            ]
+          },
+          {
+            "name": "SPI",
+            "type": "directory",
+            "path": "HW 개발/Interface/SPI",
+            "children": [
+              {
+                "name": "How SPI Works",
+                "type": "file",
+                "path": "HW 개발/Interface/SPI/How SPI Works.html"
+              },
+              {
+                "name": "Multi Slave",
+                "type": "file",
+                "path": "HW 개발/Interface/SPI/Multi Slave.html"
+              },
+              {
+                "name": "Overview",
+                "type": "file",
+                "path": "HW 개발/Interface/SPI/Overview.html"
+              },
+              {
+                "name": "Reference",
+                "type": "file",
+                "path": "HW 개발/Interface/SPI/Reference.html"
+              },
+              {
+                "name": "SPI",
+                "type": "file",
+                "path": "HW 개발/Interface/SPI/SPI.html"
+              }
+            ]
+          },
+          {
+            "name": "Interface",
+            "type": "file",
+            "path": "HW 개발/Interface/Interface.html"
+          }
+        ]
+      },
+      {
         "name": "ML63Q2557",
         "type": "directory",
         "path": "HW 개발/ML63Q2557",
@@ -905,6 +1013,21 @@ window.OBSIDIAN_TREE_DATA = [
             "path": "HW 개발/Tool/LTSpice",
             "children": [
               {
+                "name": "노드 설정",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/노드 설정.html"
+              },
+              {
+                "name": "독립 전원",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/독립 전원.html"
+              },
+              {
+                "name": "라이브러리 관리",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/라이브러리 관리.html"
+              },
+              {
                 "name": "라이브러리 추가",
                 "type": "file",
                 "path": "HW 개발/Tool/LTSpice/라이브러리 추가.html"
@@ -923,6 +1046,11 @@ window.OBSIDIAN_TREE_DATA = [
                 "name": "LTSpice 기본",
                 "type": "file",
                 "path": "HW 개발/Tool/LTSpice/LTSpice 기본.html"
+              },
+              {
+                "name": "LTSPICE 참고",
+                "type": "file",
+                "path": "HW 개발/Tool/LTSpice/LTSPICE 참고.html"
               },
               {
                 "name": "LTSpice",
@@ -950,6 +1078,23 @@ window.OBSIDIAN_TREE_DATA = [
                 "name": "OrCAD",
                 "type": "file",
                 "path": "HW 개발/Tool/OrCAD/OrCAD.html"
+              }
+            ]
+          },
+          {
+            "name": "Oscilloscope",
+            "type": "directory",
+            "path": "HW 개발/Tool/Oscilloscope",
+            "children": [
+              {
+                "name": "Oscilloscope",
+                "type": "file",
+                "path": "HW 개발/Tool/Oscilloscope/Oscilloscope.html"
+              },
+              {
+                "name": "RIGOL",
+                "type": "file",
+                "path": "HW 개발/Tool/Oscilloscope/RIGOL.html"
               }
             ]
           },
