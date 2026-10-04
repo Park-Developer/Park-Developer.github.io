@@ -1,6 +1,6 @@
 # [AI UPDATE INFORMATION] ============================================================================
-# Fetched from Home Page (3c7da17c39c88019a581c45586a32c2e) on 2026-10-03T00:44:00+09:00
-# Fetched from Project Page (3c7da17c39c880a2be2fd14704d95217) on 2026-10-03T00:44:00+09:00
+# Fetched from Home Page (3c7da17c39c88019a581c45586a32c2e) on 2026-10-04T17:53:24+09:00
+# Fetched from Project Page (3c7da17c39c880a2be2fd14704d95217) on 2026-10-04T17:53:24+09:00
 # Updated using Google Antigravity AI via the `sync-notion-data` skill.
 
 
@@ -11,7 +11,7 @@ BLOG_INTRODUCTION:
   html_class: "NOTION_AI_UPDATE_BLOG_INTRODUCTION"
 
 WHO_AM_I:
-  value: "Hello, I’m Daniel Park. And I’m a Developer"
+  value: "Hello, I’m Daniel Park."
   html_class: "NOTION_AI_UPDATE_WHO_AM_I"
 
 ABOUT_ME:
@@ -55,7 +55,7 @@ Not_STARTED_PROJECT:
 
 IN_PROGGRESS_PROJECT:
   value: 
-    - name: "AI 고속 학습"
+    - name: "AI 영어 학습"
       url: "https://app.notion.com/p/39cda17c39c880399004c8f1fb56590f"
       attributes:
         Overview: ": LLM에 물어본 내용을 토대로 내가 모르는 개념과 앞으로 학습하면 좋을 내용들을 추천해주는 시스템\n/"
@@ -71,12 +71,11 @@ IN_PROGGRESS_PROJECT:
       url: "https://app.notion.com/p/3c4da17c39c880b0ace2f782ffddcc3b"
       attributes:
         Overview: ": Notion과 Antigravity를 이용해서 만드는 AI 자동화 블로그"
-        Image: "https://prod-files-secure.s3.us-west-2.amazonaws.com/d32dd2bd-b4fe-40b6-a628-1097dbd2b359/bde1f377-b615-4d1b-b542-c32f6fcf13fe/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466TOMW4MA6%2F20261002%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261002T154443Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEM7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCiAXWmQZusq0nwfa4O1%2Fzu1wbdqu4PDb7AjXI4sNeiWAIhAMiM4lHHaqz7%2BVo%2BGGtT5yTgk8QDLZC0x2SlZcOEaKoHKogECJf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgxSIdsCynOzka4amMYq3AOn73KHeWg6UkDuzqRMrqx8oWfGbDHIExGy4kDK4EAAI7jSNfXWJwzAvgllCxamLqVsJCrpLbYaaDo5RChrAolRApRtK0KKKLQIoehsHqase%2FhAkoIE2uyJRILhIwe8Di9%2FvfgCOQvH87JtQolZQUvDESHtIopvSSbJBnUI0rtA4jvFexqaDfHxxzH%2B3bYa44zxOwiSGmMq3f1XZI%2FiFPsvMPmZmS0O6UO58Uvjc%2Fq%2FyWjN5U5zQ8vbENAbNKvqI2fymAD9OapBKQMJiXCymAwzzbSxNJT%2B5%2FRz%2FD4wk56O%2FBwlthMY3Us89zDRR9kRQWdnWNNYyuMx2UqOw49UU4CZPcZZOhwMqt33O%2BbqGn51U5rSLoswUfLPY3J0sCuV27c0jzoOjnUbXjh7gz3TmOltms34ZZgmvbdp4oA%2FOv2uWoygwPxaPjmP7usGuLjuC0XvU%2B5%2FIXM6a1CaUpu5Vq0%2FAwsNFGQL6sbDzas2jaWVDIDC59q2djWyp7fdKAPhAb58e%2BtV9lCRT6pTNvgUOdq7rWN9cA4%2BKGwt4vCeHfpuUtfTBlMxm6ZSHJ%2BiSOLZhPat85l22VMIoLz1dWi44zvTewCKwp9sJTQIp3z5fyHGJA94CMVApGifEXluZjCt9P7VBjqkAbuefZdFyMNyiQNT0Gw59BboYernaiWLunbIG89%2Bssq2WwaYm4kYtcZlfnMt14eSzUOHsWI1%2BSoSeq5mXKb9FdlQf5aJ3OQ0psLU2BlSFiFVCgXRJCADokTSTjfzlZ7YILgSlGkAV55icENLFjauhgfV0XkoR8PC1%2FYAiQBvUrYsdvVfbJTqvabjR3vJlZcKWpjML2iEoAx3rWg%2F6%2F%2BiLCbgcIVJ&X-Amz-Signature=23cf22449e0ecfb87611a1b14c8603e22ec3b1e25c5c417faee3c98a13420335&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject#notion_record=block.3c7da17c-39c8-802b-8bc5-fdcbd73f802f.d32dd2bd-b4fe-40b6-a628-1097dbd2b359"
+        Image: "https://prod-files-secure.s3.us-west-2.amazonaws.com/d32dd2bd-b4fe-40b6-a628-1097dbd2b359/bde1f377-b615-4d1b-b542-c32f6fcf13fe/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665RINIG7X%2F20261004%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20261004T085219Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD7ixRPAhtMlVPYL%2BK0cZCOxCrDa3xUaUrJ0Z7avb1GkgIhAL9%2BU0Jxj%2BV0VwqqKkLcPy5BjXn6yozULnz1ntgvPsCMKogECMH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igzn4LfnqYaRfoE%2Bj3Qq3AOu8M1Ciwac2DKDhr3M9l0rPq77%2Bilz9JyDwcBrvgbfP76wUtqT7SXuMTC2dxxUJBDBXj7GHL4oEGdtiOesCpZ1qV9PhPS0tkBegIgnNk0n%2BFiCxv%2Bd2MhUPDuXW0OVJXTInyq%2Fr8tbmTI8HsKRsuseRYKi4VtEHD1ZEXe9owebWdupb3MJeolkCZF401lgMQMFGyY%2Bxu9wYkvRAccbE%2FuPhKxT%2FL2iGwuqHRyQVJ3T%2BPX4MoTKdJg2ugsafhrb9CQ%2B0KWjaGNZ4ahLewnlrGYpzvr9v4HTyiYpaR7D1sdrI5R3lZ3Mxs5f6r9SuuHp%2F3ZbAgBDX9uqDN54Vb3L6nqcdqwgFnGuPbfdbjMdNWQR6YAhjflqnlvJ8cJ1vnTPFzu1I2cnDrtovMOEUdHZsb%2FlSoJurQOWqm2gdNSoVEjm1y3jNpkU0WklO6N7s%2BmRxpdWnqRSpUdyPIeU4faM%2BiCbKf%2B8jgeHkEor3ZbrPP1jAaLOsYc0XavGFfBB0oNdu2ScjX%2FssC3Ea7AqDuV6L4ohK%2FxssR3WEq7Opox7wA4AlvK2TS7xInSY0fwaCQn5eE15TX%2Fw3s4dO70NSYg03dORDUYItjAl8T89jCgqIETN1qazLDJJ4yX%2BkQrapTCTmYjWBjqkAYvzygVNoSrqVB8Mr%2BGkfGm5FmPkAsFwkw2Q6fIo%2FFt0PcrhMi4113MnyQlaa%2BphWmE9IQlRtVhN0jd9jjf%2B88xXBglT4dPSnhu09RippkNrv6w2CopEGp3D5n6qzd%2Bp3FVCg1htStrjPCCSUprOXzEs70j76vWyUQa0ML5xbiVADi5OfJtjjj%2FyiGceU3yggcwNwW1OztdNCbrW3zBZpTg4T7t3&X-Amz-Signature=bad524c6a281b55f32753fb9c2f5377b8e3209be1458cc83050afe77e7461e8d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
         Description: ""
         Schedule: ""
         Features: ""
         TODO: |
-          - [ ] linkedin 수정하기 
           - [ ] notion open 링크 만들기
           - [ ] 자동화율 표
           - [ ] antigravity schedule task 이요

@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script id="tailwind-config">
     tailwind.config = {
         darkMode: "class",
@@ -119,16 +120,40 @@
                 </div>
             </div>
 
-            <!-- Completed -->
+
+        </div>
+    </section>
+
+    <!-- Part 3: Study Progress -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+            <span class="material-symbols-outlined">menu_book</span> Study Progress
+        </h2>
+        
+        <div class="flex flex-col gap-8">
+            <!-- Obsidian Analysis Chart -->
             <div>
                 <h3 class="text-lg font-bold text-text-primary mb-4 flex items-center gap-2 border-b border-surface-border pb-2">
-                    <span class="w-3 h-3 rounded-full bg-surface-border inline-block"></span>
-                    Completed
+                    <span class="w-3 h-3 rounded-full bg-primary inline-block"></span>
+                    Obsidian Documents (Last 30 Days)
                 </h3>
-                <div id="projects-completed" class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                    <div class="text-text-secondary text-sm">완료된 프로젝트를 불러오는 중입니다...</div>
+                <div class="bg-surface-container-lowest border border-surface-border rounded-xl p-5 shadow-sm" style="height: 350px;">
+                    <canvas id="obsidian-chart"></canvas>
                 </div>
             </div>
+            
+
+        </div>
+    </section>
+
+    <!-- Part 4: Diary Progress -->
+    <section class="mb-12">
+        <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2">
+            <span class="material-symbols-outlined">edit_document</span> Diary Progress
+        </h2>
+        
+        <div class="flex flex-col gap-8">
+
         </div>
     </section>
 </main>

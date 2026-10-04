@@ -6,6 +6,7 @@ let currentPeriod = 7;
 document.addEventListener('DOMContentLoaded', () => {
     loadTodoLoad();
     loadProjectProgress();
+    loadObsidianChart();
     setupFilters();
 });
 
@@ -130,7 +131,6 @@ function renderTodoCalendar() {
 // Load and render Project Progress from data.yaml
 async function loadProjectProgress() {
     const inProgressContainer = document.getElementById('projects-in-progress');
-    const completedContainer = document.getElementById('projects-completed');
     
     try {
         const fetchUrl = window.location.protocol === 'file:' 
@@ -152,17 +152,9 @@ async function loadProjectProgress() {
             inProgressContainer.innerHTML = '<div class="text-text-secondary text-sm">진행 중인 프로젝트가 없습니다.</div>';
         }
         
-        // Render Completed Projects
-        if (data.COMPLETED_PROJECT && Array.isArray(data.COMPLETED_PROJECT.value)) {
-            renderProjects(data.COMPLETED_PROJECT.value, completedContainer, false);
-        } else {
-            completedContainer.innerHTML = '<div class="text-text-secondary text-sm">완료된 프로젝트가 없습니다.</div>';
-        }
-        
     } catch (error) {
-        console.error("Error loading Project Progress:", error);
-        inProgressContainer.innerHTML = `<div class="text-error text-sm">프로젝트 데이터를 불러오지 못했습니다. (${error.toString()})</div>`;
-        completedContainer.innerHTML = '';
+        console.error("Error loading Progress data:", error);
+        if (inProgressContainer) inProgressContainer.innerHTML = `<div class="text-error text-sm">프로젝트 데이터를 불러오지 못했습니다. (${error.toString()})</div>`;
     }
 }
 
@@ -204,4 +196,77 @@ function renderProjects(projects, container, isInProgress) {
     });
     
     container.innerHTML = html;
+}
+
+// Load and render Obsidian Analysis Chart
+async function loadObsidianChart() {
+    const canvas = document.getElementById('obsidian-chart');
+    if (!canvas) return;
+
+    try {
+        const fetchUrl = window.location.protocol === 'file:' 
+            ? '../Insight/obsidian_analysis.json' 
+            : `../Insight/obsidian_analysis.json?t=${new Date().getTime()}`;
+            
+        const response = await fetch(fetchUrl);
+        if (!response.ok) {
+            throw new Error('Failed to load obsidian_analysis.json');
+        }
+        
+        const data = await response.json();
+        
+        const labels = data.map(item => {
+            const dateObj = new Date(item.date);
+            return `${dateObj.getMonth() + 1}/${dateObj.getDate()}`;
+        });
+        const counts = data.map(item => item.count);
+
+        new Chart(canvas, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Obsidian Documents',
+                    data: counts,
+                    backgroundColor: 'rgba(0, 104, 119, 0.7)',
+                    borderColor: 'rgba(0, 104, 119, 1)',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            precision: 0,
+                            color: '#475569'
+                        },
+                        grid: {
+                            color: 'rgba(226, 232, 240, 0.5)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#475569'
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+        
+    } catch (error) {
+        console.error("Error loading Obsidian Chart:", error);
+        canvas.parentElement.innerHTML = `<div class="text-error text-sm flex flex-col items-center justify-center h-full gap-2"><span class="material-symbols-outlined">error</span>차트 데이터를 불러오지 못했습니다. (${error.message})</div>`;
+    }
 }

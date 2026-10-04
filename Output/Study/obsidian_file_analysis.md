@@ -4,13 +4,13 @@
 
 | 번호 | 파일 이름 | 마지막 수정일자 | 파일 위치 |
 | :---: | :--- | :--- | :--- |
-| 1 | HW 개발/Circuit/Current Sensor/Filter 회로 주의 사항 | 2026-10-01 00:50 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\Current Sensor\Filter 회로 주의 사항.html` |
-| 2 | HW 개발/Circuit/Current Sensor/Current Sensor | 2026-10-01 00:48 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\Current Sensor\Current Sensor.html` |
-| 3 | HW 개발/Interface/SPI/Reference | 2026-10-01 00:17 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Reference.html` |
-| 4 | HW 개발/Interface/SPI/Multi Slave | 2026-10-01 00:17 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Multi Slave.html` |
-| 5 | HW 개발/Interface/SPI/How SPI Works | 2026-10-01 00:14 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\How SPI Works.html` |
-| 6 | HW 개발/Interface/SPI/Overview | 2026-10-01 00:10 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Overview.html` |
-| 7 | HW 개발/Interface/SPI/SPI | 2026-10-01 00:06 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\SPI.html` |
-| 8 | HW 개발/Interface/CAN/Reference Circuit | 2026-10-01 00:02 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\CAN\Reference Circuit.html` |
-| 9 | HW 개발/Circuit/TVS | 2026-09-27 00:41 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\TVS.html` |
-| 10 | HW 개발/Electrical Engineering/Pin Header & Socket Header | 2026-09-23 00:28 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Electrical Engineering\Pin Header & Socket Header.html` |
+| 1 | Tech/AI/Skill Design | 2026-10-04 16:41 | `c:\WH_Project\Github_IO\obsidian\Tech\AI\Skill Design.html` |
+| 2 | HW 개발/Circuit/Current Sensor/Filter 회로 주의 사항 | 2026-10-01 00:50 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\Current Sensor\Filter 회로 주의 사항.html` |
+| 3 | HW 개발/Circuit/Current Sensor/Current Sensor | 2026-10-01 00:48 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\Current Sensor\Current Sensor.html` |
+| 4 | HW 개발/Interface/SPI/Reference | 2026-10-01 00:17 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Reference.html` |
+| 5 | HW 개발/Interface/SPI/Multi Slave | 2026-10-01 00:17 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Multi Slave.html` |
+| 6 | HW 개발/Interface/SPI/How SPI Works | 2026-10-01 00:14 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\How SPI Works.html` |
+| 7 | HW 개발/Interface/SPI/Overview | 2026-10-01 00:10 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\Overview.html` |
+| 8 | HW 개발/Interface/SPI/SPI | 2026-10-01 00:06 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\SPI\SPI.html` |
+| 9 | HW 개발/Interface/CAN/Reference Circuit | 2026-10-01 00:02 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Interface\CAN\Reference Circuit.html` |
+| 10 | HW 개발/Circuit/TVS | 2026-09-27 00:41 | `c:\WH_Project\Github_IO\obsidian\HW 개발\Circuit\TVS.html` |

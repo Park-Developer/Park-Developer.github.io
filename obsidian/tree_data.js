@@ -1529,6 +1529,11 @@ window.OBSIDIAN_TREE_DATA = [
             "name": "AI",
             "type": "file",
             "path": "Tech/AI/AI.html"
+          },
+          {
+            "name": "Skill Design",
+            "type": "file",
+            "path": "Tech/AI/Skill Design.html"
           }
         ]
       },
